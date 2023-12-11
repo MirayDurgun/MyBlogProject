@@ -24,9 +24,8 @@ namespace EntityLayer.Concrete
         public string SkillScore { get; set; }
         public string SoftwareUsed { get; set; } //kullandığım programlar
 
-        /* projoler sayfasından gelsin
-         * public string ProjectName { get; set;}
-         public string ProjectSummary { get; set;} //proje özet açıklama*/
+        // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
+        
 
         //sertifikalar
         public string CertificateName { get; set; }
