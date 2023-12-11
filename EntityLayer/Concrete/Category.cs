@@ -15,5 +15,8 @@ namespace EntityLayer.Concrete
                                                  //bir categoryi silmek yerine aktif ya da pasif duruma
                                                  //getireceğiz bu nedenle CategoryStatus kullanıyoruz.
                                                  //bool iki tane ihtimalin olduğu yerlerde kullanılır evet ya da hayır gibi.
+
+
+        public List<Blog> Blogs { get; set; }
     }
 }

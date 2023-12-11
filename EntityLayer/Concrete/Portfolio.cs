@@ -8,7 +8,7 @@ namespace EntityLayer.Concrete
 {
     public class Portfolio
     {
-        public int Id { get; set; }
+        public int PortfolioId { get; set; }
         public string NameTitle { get; set; }
         
         //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
