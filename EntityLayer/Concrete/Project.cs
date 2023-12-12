@@ -12,5 +12,9 @@ namespace EntityLayer.Concrete
         public string ProjectName { get; set; }
         public string ProjectSummary { get; set; } //proje özet açıklama
         public string ProjectDescription { get; set; } //hangi teknolojiler kullanıldı
+
+        //portfolio
+        public int PortfolioId { get; set; }
+        public Portfolio Portfolio { get; set; }
     }
 }

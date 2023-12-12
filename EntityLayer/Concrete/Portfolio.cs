@@ -25,7 +25,7 @@ namespace EntityLayer.Concrete
         public string SoftwareUsed { get; set; } //kullandığım programlar
 
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
-        
+        public List<Project> Projects { get; set; }
 
         //sertifikalar
         public string CertificateName { get; set; }
@@ -40,6 +40,7 @@ namespace EntityLayer.Concrete
         public string TestimonialsJobTitle { get; set; }
         public string TestimonialsDescription { get; set; }
 
-        public List<About> About { get; set; }
+        //hakkımızda ilişkilendirildi
+        public List<About> Abouts { get; set; }
     }
 }
