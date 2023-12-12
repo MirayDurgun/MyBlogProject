@@ -1,0 +1,67 @@
+// 
+// taskboard.scss
+//
+
+.taskList {
+  min-height: 40px;
+  margin-bottom: 0;
+  >li {
+      background-color: $card-bg;
+      border: 1px solid #{map-get($grays, "300")};
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+  }
+  .kanban-detail {
+      margin-left: 35px;
+      ul {
+          li {
+              a {
+                  display: inline-block;
+                  i {
+                      font-size: 16px;
+                      color: #{map-get($grays, "600")};
+                      padding: 0px 5px;
+                      line-height: 32px;
+                  }
+              }
+          }
+      }
+  }
+}
+
+.task-placeholder {
+  border: 1px dashed #{map-get($grays, "300")} !important;
+  background-color: #{map-get($grays, "200")} !important;
+  padding: 20px;
+}
+
+.gu-mirror {
+  list-style: none;
+}
+
+
+
+// dark mode
+body[data-layout-color="dark"] {
+  .taskList {
+      >li {
+          border: 1px solid #{map-get($dark-grays, "300")};
+      }
+      .kanban-detail {
+          ul {
+              li {
+                  a {
+                      i {
+                          color: #{map-get($dark-grays, "600")};
+                      }
+                  }
+              }
+          }
+      }
+  }
+  .task-placeholder {
+    border: 1px dashed #{map-get($dark-grays, "300")} !important;
+    background-color: #{map-get($dark-grays, "200")} !important;
+  }
+}

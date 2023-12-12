@@ -1,0 +1,14 @@
+
+EDITOR HTML TEMPLATE  - CHANGE LOG
+
+
+v1.0.1 - 10 April 2020
+- fixed portfolio/blog masonry layout issue
+
+Changed Files
+- js/jquery.isotope.min.js
+
+-----
+
+v1.0 - 17.02.2017
+- initial release

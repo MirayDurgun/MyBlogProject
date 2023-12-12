@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editor Documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Editor Documentation">
+<meta name="author" content="Pixelwars">
+
+<!-- styles -->
+<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab|Lora:400,700|Rokkitt:700' rel='stylesheet' type='text/css'>
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/docs.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/pixelwars.css">
+<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- fav -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<!-- Subhead
+    ================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Editor Documentation</h1>
+    <p class="lead">Overview of the template, its contents, and how to get started with the template.</p>
+  </div>
+</header>
+<!-- Subhead
+    ================================================== --> 
+
+<!-- CONTAINER -->
+<div class="container"> 
+  <!-- ROW -->
+  <div class="row"> 
+    
+    <!-- Docs nav
+      ================================================== -->
+    <div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li><a href="#introduction">Introduction</a></li>
+        <li class="dropdown"><a href="#getting-started">Getting Started</a>
+          <ul class="nav nav-list sub-nav">
+            <li><a href="#file-structure">File Structure</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#html">HTML</a>
+          <ul class="nav nav-list sub-nav">
+            <li><a href="#head">Head</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#css">CSS</a></li>
+        <li class="dropdown"><a href="#javascript">Javascript</a> </li>
+        <li class="dropdown"><a href="#customization">Customization</a>
+          <ul class="nav nav-list sub-nav">
+            <li><a href="#custom-css">Custom CSS</a></li>
+            <li><a href="#fonts">Fonts</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#credits">Credits</a></li>
+      </ul>
+    </div>
+    <!-- Docs nav
+      ================================================== --> 
+    
+    <!-- CONTENT -->
+    <div class="span9"> 
+      
+      <!-- INTRODUCTION
+        ================================================== -->
+      <section id="introduction">
+        <div class="page-header">
+          <h1>Introduction<small>a quick introduction</small></h1>
+        </div>
+        
+        <!--row fluid-->
+        <div class="row-fluid">
+          <div class="span8">
+            <div class="page-header">
+              <h4>created : <small>17.02.2017</small></h4>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="page-header">
+              <h4>by <a href="http://themeforest.net/user/pixelwars" target="_blank">pixelwars</a></h4>
+            </div>
+          </div>
+        </div>
+        <!--row fluid--> 
+        
+        <!--thanks-->
+        <blockquote>
+          <p class="lead">Thank you for purchasing our template. If you have any questions that are beyond the scope of this help file, you can sign up to our support forums with your purchase code and start a ticket, and please rate the template on themeforest if you liked it. Thanks so much!</p>
+          <cite  class="muted" title="Source Title"> - Pixelwars Team</cite> </blockquote>
+        <!--thanks--> 
+        
+        <!--row fluid-->
+        <div class="row-fluid">
+          <div class="span4">
+            <h3>Support Forums</h3>
+            <p>Any questions that are beyond the scope of this help file, use <span class="highlight">support forums</span>.</p>
+            <p><a class="btn btn-large" href="http://www.pixelwars.org/forums/" target="_blank" >Visit Support Forums</a></p>
+          </div>
+          <div class="span4">
+            <h3>Follow us</h3>
+            <p>Follow us on themeforest and don't miss new upcoming premium themes.</p>
+            <p><a class="btn btn-large" href="http://themeforest.net/user/pixelwars/follow" target="_blank" >Follow us on themeforest</a></p>
+          </div>
+          <div class="span4">
+            <h3>Rate The Theme</h3>
+            <p>If you liked the theme you can rate it on themeforest in your downloads menu.</p>
+            <p><a class="btn btn-large btn-success" href="http://themeforest.net/user/pixelwars/portfolio" target="_blank">Rate on themeforest</a></p>
+          </div>
+        </div>
+        <!--row fluid--> 
+        
+      </section>
+      <!-- INTRODUCTION
+        ================================================== --> 
+      
+      <!-- GETTING STARTED
+        ================================================== -->
+      <section id="getting-started">
+        <div class="page-header">
+          <h1>Getting Started<small>things to know before get started</small></h1>
+        </div>
+        <p class="lead">We assume you have basic knowledge of HTML / CSS and JS. In this doc you will not learn how to code but you will learn how to setup, use and customize the theme. Before you begin make sure you have a code editor, you can use Dreamweaver or any other editor like <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a> will be enough.</p>
+        
+        <!-- FILE STRUCTURE
+            ================================================== -->
+        <div id="file-structure" class="sub-section">
+          <div class="page-header">
+            <h2>File structure</h2>
+          </div>
+          <p class="lead">Within the download you'll find the following file structure, logically groupped common assets.</p>
+          <p>There are two project folders in the the downloaded package, one contains Dreamweaver Template and other one contains Plain Html template.</p>
+          <p>Once downloaded, unzip the compressed folder to see the structure of th theme. You'll see something like this:</p>
+          <pre class="prettyprint">
+  Editor/
+  ├── css/
+  ├── js/
+  ├── images/
+  ├── Templates/
+  └── index.html
+  └── other html files
+</pre>
+			<p>If you have Dreamweaver, and you are going to build a static html site with this template you can benefit template files in "Templates" folder. Template files includes layout markup shared by all pages, and once you have updated a template all pages that inherits that template are automatically updated. For example if you create a new site in Dreamweaver, then copy all project files to this site folder, then open "layout.dwt" under "Templates/" folder and update some parts in the markup in "layout.dwt", when you save it, all pages' markup will be updated. Check out this <a target="_blank" href="http://www.thesitewizard.com/gettingstarted/dreamweaver5.shtml">article</a> for more about Dreamweaver templates. Here are the Dreamweaver template files in this project;</p>
+        
+        <ul>
+        	<li><strong>layout.dwt</strong> Includes general layout markup shared by all  pages.</li>
+        	<li><strong>page-default.dwt</strong> Includes layout markup shared by non-sidebar page templates.</li>
+        	<li><strong>page-fixed.dwt</strong> Includes layout markup shared by narrow width pages.</li>
+        	<li><strong>page-full-width.dwt</strong> Includes layout markup shared by full width pages.</li>
+        	<li><strong>page-medium.dwt</strong> Includes layout markup shared by medium width pages.</li>
+        	<li><strong>page-with-sidebar.dwt</strong> Includes layout markup shared by pages with sidebar.</li>
+        </ul>
+        </div>
+        <!-- FILE STRUCTURE
+            ================================================== --> 
+        
+      </section>
+      <!-- GETTING STARTED
+        ================================================== --> 
+      
+      <!-- HTML
+        ================================================== -->
+      <section id="html">
+        <div class="page-header">
+          <h1>HTML<small>html structure and layout</small></h1>
+        </div>
+        <p class="lead">In this template you will find all HTML files in well formatted and highly commented. Most of the markup is self explanatory with comments. So i will only explain the parts where the markup needs more attention.</p>
+       
+        <h3>Doctype</h3>
+        <p>Uses plain HTML5 Doctype</p>
+        <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;</pre>
+		<h3>Html tag</h3>
+        <p>html tag with custom html5 data attributes for easy customizing. You can learn more about in <a href="#customization">customization section</a></p>
+        <pre class="prettyprint linenums">&lt;html class=&quot;is-menu-fixed&quot;&gt;</pre>
+        
+        <p>Remove <code>is-menu-fixed</code> class if you don't want stciky menu.</p>
+        
+        <!-- HEAD
+            ================================================== -->
+        <div id="head" class="sub-section">
+          <div class="page-header">
+            <h2>Head</h2>
+          </div>
+          <p>Head tags contains meta tags, font / css and some script files, other script files are added just before the closing tag of the body.</p>
+          <p>Here are meta tags and title. You can edit them as you want except the <span class="highlight">viewport</span> meta tag, it preserves responsive layout.</p>
+          <pre class="prettyprint linenums">&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Editor - Responsive HTML5 Template&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;editor, blog, html5, portfolio&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Pixelwars&quot;&gt;</pre>
+			
+          <p>Here are favicon and apple touch icon (196x196 pixels .png format);</p>
+          <pre class="prettyprint linenums">&lt;!-- FAV and TOUCH ICONS --&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;images/ico/favicon.ico&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;images/ico/apple-touch-icon.png&quot;/&gt;
+</pre>
+          <p>Here is font file. Fonts by <a target="_new" href="http://www.google.com/webfonts">Google Webfonts</a></p>
+          <pre class="prettyprint linenums">&lt;!-- FONTS --&gt;
+&lt;link href=&#39;http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+&lt;link href=&#39;http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+</pre>
+          
+          <p>Initial scripts in the head.</p>
+          <pre class="prettyprint linenums">&lt;!-- INITIAL SCRIPTS --&gt;
+&lt;script src=&quot;js/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/modernizr.min.js&quot;&gt;&lt;/script&gt;</pre>
+          <p>Here are css files.</p>
+          <pre class="prettyprint linenums">
+&lt;!-- STYLES --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/fonts/fontello/css/fontello.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/jquery.uniform/uniform.default.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/jquery.magnific-popup/magnific-popup.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/jquery.fluidbox/fluidbox.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/owl-carousel/owl.carousel.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/selection-sharer/selection-sharer.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;js/responsive-image-gallery/elastislide.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/align.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/main.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/768.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/992.css&quot;&gt;
+</pre> 
+          
+			<p>All other script files are located at the <span class="highlight">end of the body tag</span>. These are the general script files used over all files.</p>
+          <pre class="prettyprint linenums">
+&lt;script src=&quot;js/fastclick.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.fitvids.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.validate.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.uniform/jquery.uniform.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/imagesloaded.pkgd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.isotope.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.magnific-popup/jquery.magnific-popup.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.fluidbox/jquery.fluidbox.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/owl-carousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/readingTime.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/selection-sharer/selection-sharer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/responsive-image-gallery/r-gallery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+        <!-- HEAD
+            ================================================== --> 
+        
+        
+        <!-- GRID
+            ================================================== -->
+        <div id="grid" class="sub-section">
+          <div class="page-header">
+            <h2>Grid<small>Responsive Grid System</small></h2>
+          </div>
+          <p class="lead">This template is based on <a target="_blank" href="http://getbootstrap.com/">Bootstrap </a>'s solid responsive 12 column <a target="_blank" href="http://getbootstrap.com/css/#grid">grid system</a>.</p>
+          
+          <p>Here is a simple example of using grid to crate a 3 column layout;</p>
+
+          <pre class="prettyprint linenums">
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;column 4/12&lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;column 4/12&lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;column 4/12&lt;/div&gt;
+&lt;/div&gt;</pre>
+		
+        <p>Note that: columns must be wrapped by a <code>row</code> container. This is a simple usage of the grid system. Bootstrap grid sytems has more powerfull features, check out <a target="_blank" href="http://getbootstrap.com/css/#grid">Bootstrap Doc</a> to learn more about the grid system.</p>
+        
+        </div>
+        <!-- GRID
+            ================================================== -->
+        
+
+
+        <!-- ICONS
+            ================================================== -->
+        <div id="icons" class="sub-section">
+          <div class="page-header">
+            <h2>Icons<small>over 500 icons ready to use</small></h2>
+          </div>
+          <p class="lead">This template uses 2 font icon set. They are all font icons(vector) and can be styled easily with css. They are also easy to drop in anywhere as you will see in some part of this template.</p> 
+          
+          <h3>All Available Icons</h3>
+                    
+          <p><a target="_blank" href="../css/fonts/fontello/demo.html">Fontello Icons</a></p>
+          
+          
+          <h3>Usage of the icons</h3>
+          
+          <pre class="prettyprint linenums">
+&lt;i class=&quot;pw-icon-facebook&quot;&gt;</pre>
+        
+        </div>
+        <!-- ICONS
+            ================================================== -->
+
+              
+      
+        <!-- PORTFOLIO
+            ================================================== -->
+        <div id="portfolio" class="sub-section">
+          <div class="page-header">
+            <h2>Portfolio</h2>
+          </div>
+          <p>Portfolio page has multi column masonry layout and filtering powered by <a target="_blank" href="http://isotope.metafizzy.co/">isotope</a> plugin.</p>
+          <h3>Filters</h3>
+          <p>Here is the markup for filters;</p>
+          
+          <pre class="prettyprint linenums">
+&lt;!--FILTERS--&gt;
+&lt;ul id=&quot;filters&quot; class=&quot;filters&quot;&gt;
+  &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;#&quot; data-filter=&quot;*&quot;&gt;ALL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; data-filter=&quot;.design&quot;&gt;DESIGN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; data-filter=&quot;.coding&quot;&gt;CODING&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; data-filter=&quot;.logo&quot;&gt;LOGO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--FILTERS--&gt;
+</pre>
+<p><strong>Note that : </strong> <code>data-filter=".design"</code> attiribute keeps the class name of items which will be filtered under same category.</p>
+
+			<h3>Portfolio Items</h3>
+          <p>Here is the structure of portfolio items;</p>
+          
+          <pre class="prettyprint linenums">&lt;!-- PORTFOLIO ITEMS --&gt;
+&lt;div class=&quot;portfolio media-grid masonry&quot; data-layout=&quot;masonry&quot; data-item-width=&quot;360&quot;&gt;
+
+  &lt;div class=&quot;media-cell design hentry&quot;&gt;
+	...
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;media-cell logo hentry&quot;&gt;
+	...
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;media-cell coding hentry&quot;&gt;
+	..
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+&lt;!-- PORTFOLIO ITEMS --&gt;   </pre>
+			<p><code>data-item-width</code> is the column width for the items in the portfolio grid.</p>
+			<p><strong>Note that again : </strong> class name "logo" in <code>&lt;div class=&quot;media-cell logo hentry&quot;&gt;</code> is related to <code>data-filter=".logo"</code> attribute of filter markup.</p>
+            <p><code>data-layout</code> determines grid layout, see <a target="_blank" href="http://isotope.metafizzy.co/docs/layout-modes.html">all isotope layouts</a>. Most used two layouts are <code>masonry</code> and <code>fitRows</code>.</p>
+            
+        </div>
+        <!-- PORTFOLIO
+            ================================================== --> 
+        
+       
+        
+        <!-- CONTACT
+            ================================================== -->
+        <div id="contact" class="sub-section">
+          <div class="page-header">
+            <h2>Contact</h2>
+          </div>
+          <p>Contact page is consist of : Contact Info / Social Icons / Contact Form / Google Map.</p>
+          
+          <h3>Setting up Contact Form</h3>
+          
+          <p>1-) You can change mail subject in form's html markup;</p>
+          
+          <pre class="prettyprint linenums">&lt;!-- enter mail subject here --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;subject&quot; id=&quot;subject&quot; value=&quot;You have a new message from Editor!&quot;&gt;</pre>
+          <p>Change only the <code>value="You have a new message from Empathy!"</code> to your desired subject.</p>
+          
+          <p>2-) Edit <code>send-mail.php</code> in a text editor, </p>
+          
+          <pre class="prettyprint linenums">// site owner
+$site_name = 'Editor HTML5 Template';
+$sender_domain = 'server@your-domain.com';
+$to = 'your-mail@gmail.com';
+</pre>
+          <ul>
+          	<li><code>$site_name</code> : this will be shown as sender name.</li>
+            <li><code>$sender_domain</code> : this is required for some hosting like dreamhost. It should be like <code>server@your-domain.com</code>.</li>
+            <li><code>$to</code> : This is the receiver e-mail address, your address.</li>
+          </ul>
+          
+          <h3>Social Icons</h3>
+          
+          <p>Here is the markup for all available social icons;</p>
+          
+          <pre class="prettyprint linenums">&lt;!-- SOCIAL --&gt;
+&lt;ul class=&quot;social&quot;&gt;
+	&lt;li&gt;&lt;a class=&quot;facebook&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;twitter&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;linkedin&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;google-plus&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;pinterest&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;github&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;behance&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;dribbble&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;instagram&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;lastfm&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;vine&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;rss&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;vimeo&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;forrst&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;skype&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;picasa&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;youtube&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;flickr&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;tumblr&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;blogger&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;delicious&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;digg&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;friendfeed&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;wordpress&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;stack-overflow&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;foursquare&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;xing&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;weibo&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;soundcloud&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;fivehundredpx&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;slideshare&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;vkontakte&quot; href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- SOCIAL --&gt;
+</pre>
+			
+        </div>
+        <!-- CONTACT
+            ================================================== --> 
+        
+
+        
+      </section>
+      <!-- HTML
+        ================================================== --> 
+      
+      <!-- CSS
+        ================================================== -->
+      <section id="css">
+        <div class="page-header">
+          <h1>CSS<small>style files used</small></h1>
+        </div>
+        <p class="lead">Here is a complete list of used css files in the theme and what thay stand for;</p>
+        <ul>
+          <li><strong>bootstrap.min.css :</strong> <a href="http://getbootstrap.com/" target="_blank">Bootstrap </a> is a powerful front-end framework and we only used the responsive grid system for our layout.</li>
+          <li><strong>fontello.css : </strong>includes styles for fontello font icons.</li>
+          <li><strong>align.css :</strong> content alignment styles (image alignments etc..).</li>
+          <li><strong>main.css :</strong> is the main style file of the theme. Layout/font/color and other style declerations are in this file. Code blocks are grouped and commented.</li>
+          <li><strong>768.css :</strong> is the main style file for the theme, contains tablet styles.</li>
+          <li><strong>992.css :</strong> is the main style file for the theme, contains desktop styles.</li>
+        </ul>
+        
+        <h3>Included Fonts (Font icons)</h3>
+        <p>In this theme we have used font icons instead of png icons, because font icons are vector-scalable, ready for retina screens, saves bandwidth and easy to work with.</p>
+        <ul>
+          <li><strong>css/fonts/fontello : </strong> a custom set of icons from <a href="http://fontello.com/" target="_blank">Fontello.com</a>, mostly used for social icons.</li>
+        </ul>
+      </section>
+      <!-- CSS
+        ================================================== --> 
+      
+      <!-- JAVASCRIPT
+        ================================================== -->
+      <section id="javascript">
+        <div class="page-header">
+          <h1>Javascript<small>script files used</small></h1>
+        </div>
+         <p class="lead">We are using jquery as javascipt framework.</p>
+        <p>Here is a complete list of used script files in the template and what thay stand for;</p>
+        <ul>
+          <li><strong>jquery-1.11.1.min.js :</strong> <a href="http://jquery.com/" target="_blank">jQuery</a> is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.</li>
+          
+          <li><strong>jquery-migrate-1.2.1.min.js</strong> a <a target="_blank" href="https://github.com/jquery/jquery-migrate/">jQuery Migrate</a> is a plugin used to detect and restore APIs or features that have been deprecated in jQuery and removed as of version 1.9 </li>
+          
+          <li><strong>modernizr.js :</strong> <a href="http://modernizr.com/" target="_blank">Modernizr</a> is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser. We are using it to proivde fallbacks for not supported browser. </li>
+        
+          <li><strong>fastclick.js :</strong> <a target="_blank" href="http://ftlabs.github.io/fastclick/">fastclick</a> is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers.</li>
+          
+          <li><strong>imagesloaded.pkgd.min.js :</strong> <a href="https://github.com/desandro/imagesloaded" target="_blank">imagesLoaded</a> is a jQuery plugin to detect when images have been loaded, used on portfolio single ajax view.</li>
+          
+          <li><strong>jquery.isotope.min.js :</strong> <a href="http://isotope.metafizzy.co/" target="_blank">Isotope</a> is an exquisite jQuery plugin for magical layouts. We used it to build portfolio layout and filtering. Also for gallery page layout.</li>
+          
+          <li><strong>jquery.fitvids.js :</strong> <a href="http://fitvidsjs.com/" target="_blank">fitvids.JS</a> is a lightweight, easy-to-use jQuery plugin for fluid width video embeds. We used it for responsive video embeeding.</li>
+          
+          <li><strong>jquery.validate.min.js :</strong> <a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">jQuery validate plugin</a> is a jQuery plugin makes simple client-side form validation. We used it for contact form client-side validation.</li>
+          
+          <li><strong>jquery.uniform : </strong> <a href="https://github.com/pixelmatrix/uniform" target="_blank">jQuery Uniform</a> is a form style plugin, used for cross browser styled form elements.</li>
+          
+          <li><strong>jquery.magnific-popup :</strong> is the script file of <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific Popup </a> jquery plugin, used for lightbox.</li>
+          
+          <li><strong>owl-carousel : </strong> <a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank">Owl Carousel</a> is a touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider. We used it for main slider.</li>
+          
+          <li><strong>responsive-image-gallery </strong> <a href="http://tympanus.net/codrops/2011/09/20/responsive-image-gallery/" target="_blank">Resposive image gallery</a> is used for galleries.</li>
+          
+          <li><strong>selection-sharer :</strong> <a href="https://github.com/xdamman/selection-sharer" target="_blank">selection-sharer</a> is a popover menu to share on Twitter or by email any text selected on the page with support for mobile devices (with a popunder).</li>
+          
+          <li><strong>jquery.fluidbox :</strong> <a href="https://github.com/xdamman/selection-sharer" target="_blank">Fluidbox</a> is a plugin for replicating and improving the lightbox module seen on Medium with fluid transitions.</li>
+          
+          <li><strong class="highlight">main.js :</strong> This is the main script file of the theme. Plugin calls and other script works are done in this file with comments.</li> 
+        </ul>
+      </section>
+      <!-- JAVASCRIPT
+        ================================================== --> 
+      
+      <!-- CUSTOMIZATION
+        ================================================== -->
+      <section id="customization">
+        <div class="page-header">
+          <h1>Customization<small>how to customize the template to your needs.</small></h1>
+        </div>
+        <p class="lead">We designed this template for easy customization. You can customize the template easily to your needs in two general ways : Html Data Attributes / CSS Skins.</p>
+        
+        
+        <!-- CUSTOM CSS
+            ================================================== -->
+        <div id="custom-css" class="sub-section">
+          <div class="page-header">
+            <h2>Custom CSS</h2>
+          </div>
+          <p>While this template is designed for easily styling with predefined css skin files if you want to edit a specific section of the site, follow these steps; </p>
+          <p>First grab the element you want to style by inspecting element in your browser, right click the element and click <span class="highlight">Inspect Element</span>. If you don't know how, check out <a href="http://net.tutsplus.com/tutorials/tools-and-tips/chrome-dev-tools-markup-and-style/" target="_blank">this article</a>, once you are familiar with this approach you will find it extremely easy to edit/override current styles of an element.</p>
+          <p>Let's say you want to make active filter link item bolder in portfolio filtering. Grab the element by right click on it and click "Inspect Element", on the right pane of developer tool window we can see to code to grab the elemnent with css : <code>#filters .current a</code> Then do the following;</p>
+          <pre class="prettyprint linenums">#filters .current a { font-weight: bold; }</pre>
+          <p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight .</p>
+          <pre class="prettyprint linenums">#portfolio #filters .current a { font-weight: bold ; }</pre>
+          <p>And if your new style is not overriding, add <code>!important</code> at the end of style definition;</p>
+          <pre class="prettyprint linenums">#filters .current a { font-weight: bold !important; }</pre>
+          <p> <strong>NOTE : </strong> Add your custom css code after all style definitions in your <code>head</code> tag. </p>
+          <pre class="prettyprint linenums">&lt;style&gt;
+	#filters .current a { font-weight: bold !important; }
+&lt;/style&gt;</pre>
+			
+            <p>Here are some simple css code snippets to customize the essentials;</p>
+          
+         
+			
+            <p>Change link colors;</p>
+          <pre class="prettyprint linenums">
+/* Links */
+a { color: #096; }
+a:hover { color: #5BCF80; }</pre>
+			
+		  <p>Change text-selection color;</p>
+          <pre class="prettyprint linenums">
+/* Text Selection */
+::selection { text-shadow: none; color: #333; background: #FFFFCF; }
+::-moz-selection { text-shadow: none; color: #333; background: #FFFFCF; }</pre>
+           
+        </div>
+        <!-- CUSTOM CSS
+            ================================================== --> 
+        
+        <!-- FONTS
+            ================================================== -->
+        <div id="fonts" class="sub-section">
+          <div class="page-header">
+            <h2>Fonts</h2>
+          </div>
+          <h3>Fonts by <a target="_new" href="http://www.google.com/webfonts">Google Webfonts</a></h3>
+          <p>We included the fonts in this template from <a target="_blank" href="http://www.google.com/webfonts">Google Webfonts</a> which uses font-face technique for font embeeding.</p>
+          <p>Font declerations are at the head section;</p>
+          <pre class="prettyprint linenums">&lt;!-- FONTS --&gt;
+&lt;link href=&#39;http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+&lt;link href=&#39;http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+</pre>
+          <h3>Changing Fonts</h3>
+          <p>To change fonts, just go to <a target="_new" href="http://www.google.com/webfonts">Google Webfonts</a> site, search and select a new font, click <b>"Quick use"</b> link, then copy the stylesheet code from <b> Add this code to your website: / Standart</b> section and paste the code into <code>head</code> section. Then change the font family name in <b>main.css</b> starting from <b>line:376</b>. These font definitions in main.css are the only font definitions for the entire theme, once you have changed font-family in these lines, you are done!</p>
+          <pre class="prettyprint linenums">/* ----- 1.2 FONTS ----- */ 
+/* BODY */
+body,
+input,
+textarea,
+select,
+button {
+ 	font-family: 'Droid Serif', Georgia, serif;
+	}
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6, 
+.nav-menu, 
+.entry-meta, 
+.entry-header, 
+.navigation, 
+.pagination.navigation, 
+tr th, 
+dl dt, 
+.header-links,
+input[type=submit],
+input[type=button],
+button,
+.button,
+label,
+.comment .reply,
+.comment-meta,
+.yarpp-thumbnail-title,
+.tab-titles,
+.skill-unit .bar .progress span,
+.owl-theme .owl-nav [class*='owl-'],
+.widget_categories ul li.cat-item a {
+	font-family: 'Open Sans', sans-serif;
+	}</pre>
+        </div>
+        <!-- FONTS
+            ================================================== --> 
+        
+      </section>
+      <!-- CUSTOMIZATION
+        ================================================== --> 
+      
+      <!-- CREDITS
+        ================================================== -->
+      <section id="credits">
+        <div class="page-header">
+          <h1>Credits<small>thanks to the creators of this great files</small></h1>
+        </div>
+        <ul>
+            <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+            <li><a target="_blank" href="https://github.com/jquery/jquery-migrate/">jQuery Migrate</a></li>
+            <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+            <li><a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific Popup</a></li>
+            <li><a href="http://isotope.metafizzy.co/" target="_blank">Isotope</a></li>
+            <li><a href="https://github.com/desandro/imagesloaded" target="_blank">imagesloaded</a></li>
+            <li><a href="http://fitvidsjs.com/" target="_blank">fitvids.JS</a></li>
+            <li><a target="_blank" href="http://ftlabs.github.io/fastclick/">fastclick</a></li>
+            <li><a href="http://fontello.com/" target="_blank">Fontello</a></li>
+            <li><a href="http://modernizr.com/" target="_blank">Modernizr</a></li>
+            <li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">jQuery validate plugin</a></li>
+            <li><a target="_new" href="http://www.google.com/webfonts">Google Webfonts</a></li>
+        </ul>
+      </section>
+      <!-- CREDITS
+        ================================================== --> 
+      
+    </div>
+    <!-- CONTENT --> 
+  </div>
+  <!-- ROW --> 
+</div>
+<!-- CONTAINER --> 
+
+<!-- Footer
+    ================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12">
+        <p><a href="#">Back to top</a></p>
+        <ul class="footer-links">
+          <li><a href="http://www.pixelwars.org/forums/" target="_blank">Support Forums</a></li>
+          <li><a href="http://themeforest.net/user/pixelwars/portfolio" target="_blank">More themes from pixelwars</a></li>
+        </ul>
+        <p>built with <a href="http://twitter.github.com/bootstrap/" target="_blank">twitter bootstrap</a>.</p>
+        <p>&copy;2012 Pixelwars</p>
+        <p><img src="assets/img/pixelwars-logo.png" alt="pixelwars logo"></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer
+    ================================================== --> 
+
+<!-- javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-transition.js"></script> 
+<script src="assets/js/bootstrap-alert.js"></script> 
+<script src="assets/js/bootstrap-modal.js"></script> 
+<script src="assets/js/bootstrap-dropdown.js"></script> 
+<script src="assets/js/bootstrap-scrollspy.js"></script> 
+<script src="assets/js/bootstrap-tab.js"></script> 
+<script src="assets/js/bootstrap-tooltip.js"></script> 
+<script src="assets/js/bootstrap-popover.js"></script> 
+<script src="assets/js/bootstrap-button.js"></script> 
+<script src="assets/js/bootstrap-collapse.js"></script> 
+<script src="assets/js/bootstrap-carousel.js"></script> 
+<script src="assets/js/bootstrap-typeahead.js"></script> 
+<script src="assets/js/bootstrap-affix.js"></script> 
+<script src="assets/js/application.js"></script>
+</body>
+</html>
