@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
 	public interface IAboutService : IGenericService<About>
 	{
-	}
+        List<About> GetBlogListWithPortfolio(); //portfolio ile ilişkili
+    }
 }

@@ -16,7 +16,12 @@ namespace BusinessLayer.Concrete
         {
             _aboutDal = aboutDal;
         }
-      
+
+        public List<About> GetBlogListWithPortfolio()
+        {
+            return _aboutDal.GetListWithPortfolio();
+        }
+
         public About GetById(int id)
         {
             return _aboutDal.GetById(id);

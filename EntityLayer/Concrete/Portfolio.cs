@@ -39,5 +39,7 @@ namespace EntityLayer.Concrete
         public string TestimonialsName { get; set; }
         public string TestimonialsJobTitle { get; set; }
         public string TestimonialsDescription { get; set; }
+
+        public List<About> About { get; set; }
     }
 }

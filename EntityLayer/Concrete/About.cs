@@ -12,5 +12,9 @@ namespace EntityLayer.Concrete
         public string AboutDetails1 { get; set; }
         public string AboutImage1 { get; set; }
         public string AboutImage2 { get; set; }
+
+        //portfolio
+        public int PortfolioId { get; set; }
+        public Portfolio Portfolio { get; set; }
     }
 }
