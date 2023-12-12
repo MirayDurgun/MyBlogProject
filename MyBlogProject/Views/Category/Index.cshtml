@@ -1,18 +1,74 @@
-﻿@using EntityLayer.Concrete
+﻿@* @using EntityLayer.Concrete
 @model List<Category>
 
 @{
     Layout = null;
-}
+} *@
+
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8" />
+    <title>Kategoriler</title>
+    <link rel="shortcut icon" href="~/Adminto_v5.2.0/assets/images/favicon.ico">
+    <link href="~/Adminto_v5.2.0/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="~/Adminto_v5.2.0/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <h1>Category Sayfası admin paneli için category eklemek veya silmek için lazım</h1>
+<body class="loading" data-layout-color="light" data-layout-mode="default" data-layout-size="fluid" data-topbar-color="light" data-leftbar-position="fixed" data-leftbar-color="light" data-leftbar-size='default' data-sidebar-user='true'>
+    <div id="wrapper">
+        <div class="content-page">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table mb-0" id="colorful-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Kategori Adı</th>
+                                        <th>Ekle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.CategoryID</th>
+                                            <td>@item.CategoryName</td>
+                                            <td><i class="ti-plus"></i> ti-plus</td>
+                                            <td> <i class="ti-eraser"></i> ti-eraser</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* random renk *@
+    @section Scripts {
+        <script>
+            var colors = ['#F8B195', '#F67280', '#C06C84', '#6C5B7B', '#355C7D', '#FFFF33'];
+            var tableRows = document.querySelectorAll('#colorful-table tbody tr');
+
+            for (var i = 0; i < tableRows.length; i++) {
+                tableRows[i].style.backgroundColor = colors[i % colors.length];
+            }
+        </script>
+    }
+
+    <script src="~/Adminto_v5.2.0/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="~/Adminto_v5.2.0/assets/js/app.min.js"></script>
 </body>
 </html>
