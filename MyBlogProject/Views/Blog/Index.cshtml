@@ -27,7 +27,7 @@
                     <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
 
 
-                       @*  @if (Model != null)
+                        @*  @if (Model != null)
                         { *@
                         @foreach (var item in Model)
                         {
@@ -55,7 +55,8 @@
                                         </span>
                                         <span class="read-time"><span class="eta"></span> read</span>
                                         <span class="cat-links">
-                                            <a href="#" title="View all posts in Adventure" rel="category tag">@item.Category.CategoryName
+                                            <a href="#" title="View all posts in Adventure" rel="category tag">
+                                                @item.Category.CategoryName
                                             </a>
                                         </span>
                                     </div>
@@ -66,7 +67,7 @@
                                 <div class="entry-content">
 
                                     <p>
-                                        @item.BlogContent
+                                        @item.BlogContent.Substring(0,item.BlogContent.Substring(0,73).LastIndexOf(" "))....
                                         <span class="more">
                                             <a href="blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
                                         </span>
