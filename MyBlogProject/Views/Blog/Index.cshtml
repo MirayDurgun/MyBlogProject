@@ -10,7 +10,6 @@
 
     <div id="main" class="site-main">
 
-
         <!-- primary -->
         <div id="primary" class="content-area">
 
@@ -26,61 +25,55 @@
                     <!-- BLOG MASONRY -->
                     <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
 
+                        @if (Model != null)
 
-                        @*  @if (Model != null)
-                        { *@
-                        @foreach (var item in Model)
-                        {
-                            <article class="hentry post">
+                            @foreach (var item in Model)
+                            {
+                                <article class="hentry post">
 
-                                <!-- .featured-image -->
-                                <div class="featured-image">
-                                    <a href="blog-single.html"><img src="@item.BlogImage"></a>
-                                </div>
-                                <!-- .featured-image -->
-                                <!-- .entry-header -->
-                                <header class="entry-header">
-
-                                    <!-- .entry-title -->
-                                    <h1 class="entry-title"><a href="blog-single.html">@item.BlogTitle</a></h1>
-
-
-                                    <!-- .entry-meta -->
-                                    <div class="entry-meta">
-                                        <span class="entry-date">
-                                            <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
-                                        </span>
-                                        <span class="comment-link">
-                                            <a href="blog-single.html#comments">124 Comments</a>
-                                        </span>
-                                        <span class="read-time"><span class="eta"></span> read</span>
-                                        <span class="cat-links">
-                                            <a href="#" title="View all posts in Adventure" rel="category tag">
-                                                @item.Category.CategoryName
-                                            </a>
-                                        </span>
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                        <a href="blog-single.html"><img src="@item.BlogImage"></a>
                                     </div>
-                                    <!-- .entry-meta -->
+                                    <!-- .featured-image -->
+                                    <!-- .entry-header -->
+                                    <header class="entry-header">
+
+                                        <!-- .entry-title -->
+                                        <h1 class="entry-title"><a href="blog-single.html">@item.BlogTitle</a></h1>
 
 
-                                </header>
-                                <div class="entry-content">
+                                        <!-- .entry-meta -->
+                                        <div class="entry-meta">
+                                            <span class="entry-date">
+                                                <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
+                                            </span>
+                                            <span class="comment-link">
+                                                <a href="blog-single.html#comments">124 Comments</a>
+                                            </span>
+                                            <span class="read-time"><span class="eta"></span> read</span>
+                                            <span class="cat-links">
+                                                <a href="#" title="View all posts in Adventure" rel="category tag">
+                                                    @item.Category.CategoryName
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <!-- .entry-meta -->
 
-                                    <p>
-                                        @item.BlogContent.Substring(0,item.BlogContent.Substring(0,73).LastIndexOf(" "))....
-                                        <span class="more">
-                                            <a href="blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
-                                        </span>
-                                    </p>
 
-                                </div>
-                                <!-- .entry-content -->
+                                    </header>
+                                    <div class="entry-content">
 
+                                        <p>
+                                            @item.BlogContent.Substring(0,item.BlogContent.Substring(0,73).LastIndexOf(" "))....
+                                        </p>
+                                        <a href="/Blog/BlogSingle/@item.BlogID/" class="button">Devamını Oku</a>
+                                    </div>
+                                    <!-- .entry-content -->
 
-                            </article>
-
+                                </article>
+                            }
                         }
-                        @*  } *@
                     </div>
                     <!-- layout-medium -->
                 </div>
@@ -90,12 +83,7 @@
         </div>
         <!-- primary -->
 
-
-
-
     </div>
-
-
 
 </div>
 
