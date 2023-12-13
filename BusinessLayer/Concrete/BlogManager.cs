@@ -21,6 +21,7 @@ namespace BusinessLayer.Concrete
         public List<Blog> GetBlogListWithCategory()
         {
             return _blogDal.GetListWithCategory(); //daldan geliyor
+            //categoryi listeleyebilmek için
         }
 
         public Blog GetById(int id)
