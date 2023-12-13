@@ -20,16 +20,47 @@
                     <!-- entry-header -->
                     <header class="entry-header">
                         <h1 class="entry-title">BLOGLAR</h1>
+
+                        <!--FILTERS-->
+                        <ul id="filters" class="filters">
+                            <li><a href="#" data-filter=".tumu">Tümü</a></li>
+                            @foreach (var item in Model.Select(m => m.Category.CategoryName).Distinct())
+                            //sayfada yer alan kategorileri filter kısmına bir kez yazdırır
+                            {
+                                <li><a href="#" data-filter=".@item">@item</a></li>
+                               
+                            }
+                        </ul>
+                     @*    <script>
+                            $('.filters a').on('click', function (e) {
+                                e.preventDefault();
+                                var filterValue = $(this).attr('data-filter');
+
+                                if (filterValue === '.tumu') {
+                                    $('.blog-post').show();
+                                } else {
+                                    $('.blog-post[data-kategori="' + filterValue + '"]').show();
+                                }
+                            });
+
+                        </script> *@
+
+
+
+                        <!--FILTERS-->
+
                     </header>
                     <!-- entry-header -->
                     <!-- BLOG MASONRY -->
                     <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
 
                         @if (Model != null)
+                        {
 
                             @foreach (var item in Model)
                             {
-                                <article class="hentry post">
+                                
+                                <article class="hentry post" data-kategori="@item.Category.CategoryName">
 
                                     <!-- .featured-image -->
                                     <div class="featured-image">
@@ -74,6 +105,7 @@
                                 </article>
                             }
                         }
+
                     </div>
                     <!-- layout-medium -->
                 </div>
