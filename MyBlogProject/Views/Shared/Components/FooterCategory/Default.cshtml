@@ -1,0 +1,28 @@
+﻿@model List<Category>
+
+<aside class="widget widget_categories">
+    <h3 class="widget-title">Kategoriler</h3>
+
+    @if (Model != null)
+    {
+        <ul>
+            @foreach (var item in Model)
+            {
+                if (item != null && item.CategoryName != null)
+                {
+
+                    <li class="cat-item" style="margin-right:10.5px; display:inline-block;">
+                        <a href="#">@item.CategoryName</a>
+
+                    </li>
+
+                }
+            }
+        </ul>
+    }
+    else
+    {
+        <li></li>
+    }
+
+</aside>

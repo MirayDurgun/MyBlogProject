@@ -1,0 +1,19 @@
+﻿@model List<Blog>
+
+
+<aside class="widget widget_recent_entries">
+    <h3 class="widget-title">Son Postlar</h3>
+
+    @if (Model != null)
+    {
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="#">@item.BlogTitle</a>
+                    <br>@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))
+                </li>
+            }
+        </ul>
+    }
+</aside>

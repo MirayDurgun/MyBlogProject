@@ -38,7 +38,12 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Category t)
         {
-          _categoryDal.Update(t);
+            _categoryDal.Update(t);
+        }
+
+        public List<Category> GetFooterCategory()
+        {
+            return _categoryDal.GetListAll();
         }
     }
 }

@@ -1,0 +1,202 @@
+﻿@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+<div id="page" class="hfeed site">
+
+    <div id="main" class="site-main">
+
+
+
+
+        <!-- primary -->
+        <div id="primary" class="content-area">
+
+            <!-- site-content -->
+            <div id="content" class="site-content" role="main">
+                <!-- layout-medium -->
+                <div class="layout-medium">
+                    <!-- entry-header -->
+                    <header class="entry-header">
+                        <h1 class="entry-title">BLOGLAR</h1>
+                    </header>
+                    <!-- entry-header -->
+                    <!-- BLOG MASONRY -->
+                    <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
+
+
+                        <!-- .hentry -->
+                        <article class="hentry post format-video">
+
+                            <!-- .featured-image -->
+                            <div class="featured-image">
+                                <a href="blog-single.html"><img src="images/blog/06.jpg" alt="blog-image"></a>
+                            </div>
+                            <!-- .featured-image -->
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="blog-single.html">Runaway A Road Adventure</a></h1>
+
+
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="entry-date">
+                                        <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                    </span>
+                                    <span class="comment-link">
+                                        <a href="blog-single.html#comments">124 Comments</a>
+                                    </span>
+                                    <span class="read-time"><span class="eta"></span> read</span>
+                                    <span class="cat-links">
+                                        <a href="#" title="View all posts in Adventure" rel="category tag">LIFE</a>
+                                    </span>
+                                </div>
+                                <!-- .entry-meta -->
+
+
+                            </header>
+                            <!-- .entry-header -->
+                            <!-- .entry-content -->
+                            <div class="entry-content">
+
+                                <p>
+                                    It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years.
+                                    <span class="more">
+                                        <a href="blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                    </span>
+                                </p>
+
+                            </div>
+                            <!-- .entry-content -->
+
+
+                        </article>
+                        <!-- .hentry -->
+                        <!-- .hentry -->
+                        <article class="hentry post">
+
+                            <!-- .featured-image -->
+                            <div class="featured-image">
+                                <a href="blog-single.html"><img src="images/blog/07.jpg" alt="blog-image"></a>
+                            </div>
+                            <!-- .featured-image -->
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="blog-single.html">All In Our Head</a></h1>
+
+
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="entry-date">
+                                        <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                    </span>
+                                    <span class="comment-link">
+                                        <a href="blog-single.html#comments">124 Comments</a>
+                                    </span>
+                                    <span class="read-time"><span class="eta"></span> read</span>
+                                    <span class="cat-links">
+                                        <a href="#" title="View all posts in Adventure" rel="category tag">Nature</a>
+                                    </span>
+                                </div>
+                                <!-- .entry-meta -->
+
+
+                            </header>
+                            <!-- .entry-header -->
+                            <!-- .entry-content -->
+                            <div class="entry-content">
+
+                                <p>
+                                    It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years.
+                                    <span class="more">
+                                        <a href="blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                    </span>
+                                </p>
+
+                            </div>
+                            <!-- .entry-content -->
+
+
+                        </article>
+                        <!-- .hentry -->
+                        <!-- .hentry -->
+                       @*  @if (Model != null)
+                        { *@
+                            @foreach (var item in Model)
+                            {
+                                <article class="hentry post">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                        <a href="blog-single.html"><img src="@item.BlogImage"></a>
+                                    </div>
+                                    <!-- .featured-image -->
+                                    <!-- .entry-header -->
+                                    <header class="entry-header">
+
+                                        <!-- .entry-title -->
+                                        <h1 class="entry-title"><a href="blog-single.html">@item.BlogTitle</a></h1>
+
+
+                                        <!-- .entry-meta -->
+                                        <div class="entry-meta">
+                                            <span class="entry-date">
+                                                <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
+                                            </span>
+                                            <span class="comment-link">
+                                                <a href="blog-single.html#comments">124 Comments</a>
+                                            </span>
+                                            <span class="read-time"><span class="eta"></span> read</span>
+                                            <span class="cat-links">
+                                                <a href="#" title="View all posts in Adventure" rel="category tag">@item.Category.CategoryName</a>
+                                            </span>
+                                        </div>
+                                        <!-- .entry-meta -->
+
+
+                                    </header>
+                                    <div class="entry-content">
+
+                                        <p>
+                                            @item.BlogContent
+                                            <span class="more">
+                                                <a href="blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                            </span>
+                                        </p>
+
+                                    </div>
+                                    <!-- .entry-content -->
+
+
+                                </article>
+
+                            }
+                       @*  } *@
+                    </div>
+                    <!-- layout-medium -->
+                </div>
+            </div>
+            <!-- site-content -->
+
+        </div>
+        <!-- primary -->
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+

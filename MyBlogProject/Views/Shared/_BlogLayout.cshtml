@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="is-menu-fixed">
+<head>
+
+    <meta charset="utf-8">
+    @await Html.PartialAsync("Partial/LinkPartial")
+</head>
+
+<body>
+
+    <!-- page -->
+    <div id="page" class="hfeed site">
+
+        @await Html.PartialAsync("Partial/HeaderPartial")
+
+
+        <div id="main" class="site-main"></div>
+        @RenderBody()
+
+        @await Html.PartialAsync("Partial/FooterPartial")
+  
+
+    </div>
+
+
+    @await Html.PartialAsync("Partial/ScriptPartial")
+
+
+</body>
+</html>

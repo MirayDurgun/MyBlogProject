@@ -47,5 +47,16 @@ namespace BusinessLayer.Concrete
         {
             _blogDal.Update(t);
         }
+
+        public List<Blog> GetLast4Blog()
+        {
+            return _blogDal.GetListAll().Take(4).ToList();
+            //koleksiyondan sadece ilk 5 öğeyi seçer.
+
+
+            //footerda son postların hepsini yansıtmak yerine sadece 
+            //5 tane getirmesini sağladım
+        }
     }
+
 }
