@@ -13,32 +13,32 @@ namespace EntityLayer.Concrete
         
         //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
         public DateTime StartDate { get; set; } //işe giriş
-        public DateTime EndDate { get; set; } //işten çıkış
-        public string JobTitle { get; set; }
-        public string CompanyName { get; set; }
-        public string Description { get; set; }
-        public string PortfolioTitle { get; set; }
+        public DateTime? EndDate { get; set; } //işten çıkış
+        public string? JobTitle { get; set; }
+        public string? CompanyName { get; set; }
+        public string? Description { get; set; }
+        public string? PortfolioTitle { get; set; }
 
         //yetkinlikler
         public string SkillName { get; set; }
-        public string SkillScore { get; set; }
-        public string SoftwareUsed { get; set; } //kullandığım programlar
+        public string? SkillScore { get; set; }
+        public string? SoftwareUsed { get; set; } //kullandığım programlar
 
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
         public List<Project> Projects { get; set; }
 
         //sertifikalar
-        public string CertificateName { get; set; }
-        public string CertificationInstitution { get; set; } //sertifikanın alındığı kurum 
-        public string CertificateDescription { get; set; }
-        public DateTime CertificateStartDate { get; set; }
-        public DateTime CertificateEndDate { get; set; }
-        public DateTime EducationDurationHours { get; set; } //eğitim süresi
+        public string? CertificateName { get; set; }
+        public string? CertificationInstitution { get; set; } //sertifikanın alındığı kurum 
+        public string? CertificateDescription { get; set; }
+        public DateTime? CertificateStartDate { get; set; }
+        public DateTime? CertificateEndDate { get; set; }
+        public DateTime? EducationDurationHours { get; set; } //eğitim süresi
 
         //referanslar
-        public string TestimonialsName { get; set; }
-        public string TestimonialsJobTitle { get; set; }
-        public string TestimonialsDescription { get; set; }
+        public string? TestimonialsName { get; set; }
+        public string? TestimonialsJobTitle { get; set; }
+        public string? TestimonialsDescription { get; set; }
 
         //hakkımızda ilişkilendirildi
         public List<About> Abouts { get; set; }
