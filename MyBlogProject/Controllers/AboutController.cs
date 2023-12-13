@@ -10,7 +10,7 @@ namespace MyBlogProject.Controllers
         AboutManager abm = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
-            var values = abm.GetList();
+            var values = abm.GetBlogListWithPortfolio();
             return View(values);
 
         }

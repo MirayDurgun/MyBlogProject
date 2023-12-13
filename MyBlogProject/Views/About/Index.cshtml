@@ -27,8 +27,11 @@
                 <!-- .entry-header -->
                 <!-- .entry-content -->
                 <div class="entry-content">
-
-                    <p class="drop-cap">Interconnectivity emergent contribution The Elders; facilitate, Rockefeller civic engagement lifting people up beneficiaries. Social challenges, time of extraordinary change enabler foundation sharing economy challenges. Rural development, volunteer challenges of our.</p>
+                    @foreach(var item in Model)
+                    {
+                        <p class="drop-cap">@item.AboutDetails1</p>
+                    }
+                    
 
                     <p>Global network open source healthcare, raise awareness human rights political courageous reduce carbon emissions. Transformative Action.</p>
 

@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20231213205555_AddUpdateAboutNull")]
+    partial class AddUpdateAboutNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,15 +34,6 @@ namespace DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutID"));
 
                     b.Property<string>("AboutDetails1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AboutDetails2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AboutDetails3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AboutDetails4")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AboutImage1")
