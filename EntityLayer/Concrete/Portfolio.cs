@@ -12,14 +12,14 @@ namespace EntityLayer.Concrete
         public string NameTitle { get; set; }
 
         //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
-        public DateTime StartDate { get; set; } //işe giriş
+        public DateTime? StartDate { get; set; } //işe giriş
         public DateTime? EndDate { get; set; } //işten çıkış
         public string? JobTitle { get; set; }
         public string? CompanyName { get; set; }
         public string? Description { get; set; }
 
         //EĞİTİM
-        public DateTime EducationStartDate { get; set; } //işe giriş
+        public DateTime? EducationStartDate { get; set; } //işe giriş
         public DateTime? EducationEndDate { get; set; } //işten çıkış
         public string? EducationTitle { get; set; }
         public string? EducationName { get; set; }
@@ -31,9 +31,9 @@ namespace EntityLayer.Concrete
         public string? SoftwareUsed { get; set; } //kullandığım programlar
 
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
         public Project Project { get; set; }
-        public int ProjectCompletion { get; set; }
+        public int? ProjectCompletion { get; set; }
 
         //sertifikalar
         public string? CertificateName { get; set; }
