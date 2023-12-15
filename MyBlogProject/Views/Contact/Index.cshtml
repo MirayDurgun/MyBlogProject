@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<div id="page" class="hfeed site">
+
+    <div id="main" class="site-main">
+        <!-- primary -->
+        <div id="primary" class="content-area">
+
+            <!-- site-content -->
+            <div id="content" class="site-content" role="main">
+                <!-- layout-fixed -->
+                <div class="layout-fixed">
+                    <!-- .hentry -->
+                    <article class="hentry page">
+                        <header class="entry-header">
+                            <h1 class="entry-title">İletişim</h1>
+                        </header>
+
+                        <!-- .entry-content -->
+                        <div class="entry-content">
+
+                            <!-- .contact-form -->
+                            <div class="contact-form">
+
+                                <form id="contact-form" class="validate-form" method="post" action="send-mail.php">
+
+                                    <!-- enter mail subject here -->
+                                    <input type="hidden" name="subject" id="subject" value="You have a new message from Editor!">
+                                    <div class="form-row" style="display:flex;">
+                                        <p style="margin-right: 60px;  width:100%;">
+                                            <label for="name">NAME</label>
+                                            <input type="text" name="ContactUserName" id="name" class="required">
+                                        </p>
+
+                                        <p style="width:100%;">
+                                            <label for="email">EMAIL</label>
+                                            <input type="text" name="ContactMail" id="email" class="required email">
+                                        </p>
+                                    </div>
+
+                                    <p class="antispam">
+                                        Leave this empty if you are a human :
+                                        <br /><input name="url" />
+                                    </p>
+
+                                    <p>
+                                        <label for="message">MESSAGE</label>
+                                        <textarea name="ContactMessage" id="message" class="required"></textarea>
+                                    </p>
+
+                                    <p>
+                                        <button class="submit button"><span class="submit-label">Submit</span><span class="submit-status"></span></button>
+                                    </p>
+
+                                </form>
+                                <div class="contact-map inner-sec">
+
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d770859.6821684174!2d27.765051662962353!3d40.99963830956285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVsLCBUw7xya2l5ZQ!5e0!3m2!1str!2sus!4v1702663032161!5m2!1str!2sus" width="600" height="300" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+
+                            </div>
+                            <!-- .contact-form -->
+
+                        </div>
+                        <!-- .entry-content -->
+
+                    </article>
+                    <!-- .hentry -->
+
+
+                </div>
+                <!-- layout-fixed -->
+
+
+            </div>
+            <!-- site-content -->
+
+        </div>
+        <!-- primary -->
+
+    </div>
+    <!-- site-main -->
+</div>
+<!-- page -->
