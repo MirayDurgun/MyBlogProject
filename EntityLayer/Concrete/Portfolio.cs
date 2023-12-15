@@ -27,6 +27,8 @@ namespace EntityLayer.Concrete
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
         public List<Project> Projects { get; set; }
 
+        public int ProjectCompletion { get; set; }
+
         //sertifikalar
         public string? CertificateName { get; set; }
         public string? CertificationInstitution { get; set; } //sertifikanın alındığı kurum 
@@ -40,7 +42,7 @@ namespace EntityLayer.Concrete
         public string? TestimonialsJobTitle { get; set; }
         public string? TestimonialsDescription { get; set; }
 
-        //hakkımızda ilişkilendirildi
+        //hakkımızda ilişkilendirildi kaldırılabilir belki
         public List<About> Abouts { get; set; }
     }
 }
