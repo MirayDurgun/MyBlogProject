@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     {
         public int PortfolioId { get; set; }
         public string NameTitle { get; set; }
-        
+
         //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
         public DateTime StartDate { get; set; } //işe giriş
         public DateTime? EndDate { get; set; } //işten çıkış
@@ -25,17 +25,14 @@ namespace EntityLayer.Concrete
         public string? EducationName { get; set; }
         public string? EducationDescription { get; set; }
 
-
-
-
         //yetkinlikler
         public string SkillName { get; set; }
         public string? SkillScore { get; set; }
         public string? SoftwareUsed { get; set; } //kullandığım programlar
 
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
-        public List<Project> Projects { get; set; }
-
+        public int ProjectId { get; set; }
+        public Project Project { get; set; }
         public int ProjectCompletion { get; set; }
 
         //sertifikalar
@@ -51,7 +48,7 @@ namespace EntityLayer.Concrete
         public string? TestimonialsJobTitle { get; set; }
         public string? TestimonialsDescription { get; set; }
 
-        //hakkımızda ilişkilendirildi kaldırılabilir belki
+        //hakkımızda ilişkilendirildi
         public List<About> Abouts { get; set; }
     }
 }

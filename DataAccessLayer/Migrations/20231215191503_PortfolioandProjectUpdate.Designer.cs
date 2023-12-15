@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20231215191503_PortfolioandProjectUpdate")]
+    partial class PortfolioandProjectUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +58,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("PortfolioId");
 
-                    b.ToTable("Abouts", (string)null);
+                    b.ToTable("Abouts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
@@ -91,7 +94,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Blogs", (string)null);
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -115,7 +118,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
@@ -152,7 +155,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BlogID");
 
-                    b.ToTable("Comments", (string)null);
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -183,7 +186,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
@@ -246,9 +249,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("ProjectCompletion")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SkillName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -273,9 +273,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("PortfolioId");
 
-                    b.HasIndex("ProjectId");
-
-                    b.ToTable("Portfolios", (string)null);
+                    b.ToTable("Portfolios");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
@@ -300,7 +298,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.About", b =>
@@ -334,17 +332,6 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Blog");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Project", "Project")
-                        .WithMany("Portfolios")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Project");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
                 {
                     b.Navigation("Comments");
@@ -358,11 +345,6 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
                 {
                     b.Navigation("Abouts");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
-                {
-                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }
