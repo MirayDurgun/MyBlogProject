@@ -17,7 +17,16 @@ namespace EntityLayer.Concrete
         public string? JobTitle { get; set; }
         public string? CompanyName { get; set; }
         public string? Description { get; set; }
-        public string? PortfolioTitle { get; set; }
+
+        //EĞİTİM
+        public DateTime EducationStartDate { get; set; } //işe giriş
+        public DateTime? EducationEndDate { get; set; } //işten çıkış
+        public string? EducationTitle { get; set; }
+        public string? EducationName { get; set; }
+        public string? EducationDescription { get; set; }
+
+
+
 
         //yetkinlikler
         public string SkillName { get; set; }
