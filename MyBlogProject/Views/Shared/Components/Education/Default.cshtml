@@ -1,0 +1,25 @@
+﻿@model List<Education>
+
+
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+
+        <div class="event">
+            <span class="date">
+                @(((DateTime)item.EducationStartDate).ToString("MMMM yyyy")) -
+                @if (item.EducationEndDate != null)
+                {
+                    @(((DateTime)item.EducationEndDate).ToString("MMMM yyyy"))
+                }
+                @item.ContinuingEducation
+                </span>
+            <h4>@item.EducationTitle</h4>
+            <h5>@item.EducationName</h5>
+            <p>@item.EducationDescription</p>
+        </div>
+        
+    }
+
+}
