@@ -11,41 +11,34 @@ namespace EntityLayer.Concrete
         public int PortfolioId { get; set; }
         public string NameTitle { get; set; }
 
-        //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
-
-        //İŞ
-
-        public string? ContinuingJob { get; set; }
-        public string? JobTitle { get; set; }
-        public string? CompanyName { get; set; }
-        public string? Description { get; set; }
-        public DateTime? StartDate { get; set; } //işe giriş
-        public DateTime? EndDate { get; set; } //işten çıkış
+        ////İŞ
+        //public int? JobId { get; set; }
+        //public Job Job { get; set; }
 
 
-        //EĞİTİM
-        public int? EducationId { get; set; }
-        public Education Education { get; set; }
+        ////EĞİTİM
+        //public int? EducationId { get; set; }
+        //public Education Education { get; set; }
 
 
-        //yetkinlikler
-        public int? SkillId { get; set; }
-        public Skill Skill { get; set; }
+        ////yetkinlikler
+        //public int? SkillId { get; set; }
+        //public Skill Skill { get; set; }
 
 
-        // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
-        public int? ProjectId { get; set; }
-        public Project Project { get; set; }
+        //// projeler sayfasından gelsin özet açıklama ve proje adını çekersin
+        //public int? ProjectId { get; set; }
+        //public Project Project { get; set; }
 
 
-        //sertifikalar
-       
+        ////sertifikalar
+        //public int? CertificateId { get; set; }
+        //public Certificate Certificate { get; set; }
 
 
-        //referanslar
-        public string? TestimonialsName { get; set; }
-        public string? TestimonialsJobTitle { get; set; }
-        public string? TestimonialsDescription { get; set; }
+        ////referanslar
+        //public int? TestimonialId { get; set; }
+        //public Testimonial Testimonial { get; set; }
 
     }
 }
