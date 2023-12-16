@@ -17,7 +17,6 @@ namespace EntityLayer.Concrete
         public string? ContinuingJob { get; set; } //iş devam ediyor mu?
 
 
-        //portfolio
-        public List<Portfolio> Portfolios { get; set; }
+        
     }
 }

@@ -13,12 +13,6 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfProjectRepository : GenericRepository<Project>, IProjectDal
     {
-        public List<Project> GetListWithPortfolio()
-        {
-           using (var c = new Context())
-            {
-                return c.Projects.Include(c => c.Portfolios).ToList();
-            }
-        }
+        
     }
 }

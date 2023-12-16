@@ -17,7 +17,5 @@ namespace EntityLayer.Concrete
         public DateTime? EducationDurationHours { get; set; } //eğitim süresi
 
 
-        //portfolio
-        public List<Portfolio> Portfolios { get; set; }
     }
 }

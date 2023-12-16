@@ -13,7 +13,5 @@ namespace EntityLayer.Concrete
         public string? SkillScore { get; set; }
         public string? SoftwareUsed { get; set; } //kullandığım programlar
 
-        //portfolio
-        public List<Portfolio> Portfolios { get; set; }
     }
 }

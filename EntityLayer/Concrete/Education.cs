@@ -17,8 +17,6 @@ namespace EntityLayer.Concrete
         public string? ContinuingEducation { get; set; } //okula devam ediyorsa indexe checkbox ile tercih seçeneği çıkarılabilir
 
 
-        //portfolio
-        public List<Portfolio> Portfolios { get; set; }
 
     }
 }

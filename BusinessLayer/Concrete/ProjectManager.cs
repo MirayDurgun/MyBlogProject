@@ -17,11 +17,7 @@ namespace BusinessLayer.Concrete
             _projectDal = projectDal;
         }
 
-        public List<Project> GetBlogListWithPortfolio()
-        {
-            return _projectDal.GetListWithPortfolio();
-        }
-
+       
         public Project GetById(int id)
         {
             return _projectDal.GetById(id);
