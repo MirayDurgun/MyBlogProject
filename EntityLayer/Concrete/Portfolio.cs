@@ -39,12 +39,7 @@ namespace EntityLayer.Concrete
 
 
         //sertifikalar
-        public string? CertificateName { get; set; }
-        public string? CertificationInstitution { get; set; } //sertifikanın alındığı kurum 
-        public string? CertificateDescription { get; set; }
-        public DateTime? CertificateStartDate { get; set; }
-        public DateTime? CertificateEndDate { get; set; }
-        public DateTime? EducationDurationHours { get; set; } //eğitim süresi
+       
 
 
         //referanslar
