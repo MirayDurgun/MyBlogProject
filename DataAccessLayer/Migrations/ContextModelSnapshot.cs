@@ -31,6 +31,7 @@ namespace DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutID"));
 
                     b.Property<string>("AboutDetails1")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AboutDetails2")
@@ -84,7 +85,7 @@ namespace DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("int");
 
                     b.HasKey("BlogID");
@@ -118,6 +119,39 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Certificate", b =>
+                {
+                    b.Property<int>("CertificateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CertificateId"));
+
+                    b.Property<string>("CertificateDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CertificateEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CertificateName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CertificateStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CertificationInstitution")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EducationDurationHours")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CertificateId");
+
+                    b.ToTable("Certificates");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
                 {
                     b.Property<int>("CommentID")
@@ -126,7 +160,7 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"));
 
-                    b.Property<int>("BlogID")
+                    b.Property<int?>("BlogID")
                         .HasColumnType("int");
 
                     b.Property<string>("CommentContent")
@@ -186,6 +220,72 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Education", b =>
+                {
+                    b.Property<int>("EducationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EducationId"));
+
+                    b.Property<string>("ContinuingEducation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EducationDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EducationEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EducationName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EducationStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EducationTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EducationId");
+
+                    b.ToTable("Educations");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
+                {
+                    b.Property<int>("JobId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JobId"));
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContinuingJob")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("JobId");
+
+                    b.ToTable("Jobs");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
                 {
                     b.Property<int>("PortfolioId")
@@ -194,86 +294,41 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PortfolioId"));
 
-                    b.Property<string>("CertificateDescription")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("CertificateId")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime?>("CertificateEndDate")
-                        .HasColumnType("datetime2");
+                    b.Property<int?>("EducationId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("CertificateName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CertificateStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CertificationInstitution")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CompanyName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EducationDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("EducationDurationHours")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("EducationEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EducationName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("EducationStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EducationTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("JobTitle")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("JobId")
+                        .HasColumnType("int");
 
                     b.Property<string>("NameTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProjectCompletion")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SkillName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("SkillId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SkillScore")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SoftwareUsed")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TestimonialsDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TestimonialsJobTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TestimonialsName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("TestimonialId")
+                        .HasColumnType("int");
 
                     b.HasKey("PortfolioId");
 
+                    b.HasIndex("CertificateId");
+
+                    b.HasIndex("EducationId");
+
+                    b.HasIndex("JobId");
+
                     b.HasIndex("ProjectId");
+
+                    b.HasIndex("SkillId");
+
+                    b.HasIndex("TestimonialId");
 
                     b.ToTable("Portfolios");
                 });
@@ -286,8 +341,10 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectId"));
 
+                    b.Property<int>("ProjectCompletion")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProjectDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectName")
@@ -295,12 +352,58 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectSummary")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Skill", b =>
+                {
+                    b.Property<int>("SkillId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SkillId"));
+
+                    b.Property<string>("SkillName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkillScore")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SoftwareUsed")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SkillId");
+
+                    b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>
+                {
+                    b.Property<int>("TestimonialId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestimonialId"));
+
+                    b.Property<string>("TestimonialsDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TestimonialsJobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TestimonialsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TestimonialId");
+
+                    b.ToTable("Testimonials");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.About", b =>
@@ -316,9 +419,7 @@ namespace DataAccessLayer.Migrations
                 {
                     b.HasOne("EntityLayer.Concrete.Category", "Category")
                         .WithMany("Blogs")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryID");
 
                     b.Navigation("Category");
                 });
@@ -327,20 +428,36 @@ namespace DataAccessLayer.Migrations
                 {
                     b.HasOne("EntityLayer.Concrete.Blog", "Blog")
                         .WithMany("Comments")
-                        .HasForeignKey("BlogID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BlogID");
 
                     b.Navigation("Blog");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.Project", "Project")
+                    b.HasOne("EntityLayer.Concrete.Certificate", null)
+                        .WithMany("Portfolios")
+                        .HasForeignKey("CertificateId");
+
+                    b.HasOne("EntityLayer.Concrete.Education", null)
+                        .WithMany("Portfolios")
+                        .HasForeignKey("EducationId");
+
+                    b.HasOne("EntityLayer.Concrete.Job", null)
+                        .WithMany("Portfolios")
+                        .HasForeignKey("JobId");
+
+                    b.HasOne("EntityLayer.Concrete.Project", null)
                         .WithMany("Portfolios")
                         .HasForeignKey("ProjectId");
 
-                    b.Navigation("Project");
+                    b.HasOne("EntityLayer.Concrete.Skill", null)
+                        .WithMany("Portfolios")
+                        .HasForeignKey("SkillId");
+
+                    b.HasOne("EntityLayer.Concrete.Testimonial", null)
+                        .WithMany("Portfolios")
+                        .HasForeignKey("TestimonialId");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
@@ -353,12 +470,37 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Blogs");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Certificate", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Education", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Portfolio", b =>
                 {
                     b.Navigation("Abouts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Skill", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>
                 {
                     b.Navigation("Portfolios");
                 });
