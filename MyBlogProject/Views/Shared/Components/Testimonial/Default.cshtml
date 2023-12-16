@@ -1,0 +1,25 @@
+﻿@model List<Testimonial>
+
+
+@if (Model != null)
+{
+    <h2 class="section-title">REFERANSLAR</h2>
+
+
+
+    @foreach (var item in Model)
+    {
+          <div class="testo-group">
+              
+            <div class="testo">
+                <h4>
+                    @item.TestimonialsName
+                    <span style="color:#d9c5b5;">@item.TestimonialsJobTitle</span>
+                    <span>@item.TestimonialsCompanyName</span>
+                </h4>
+                <p>@item.TestimonialsDescription</p>
+            </div>
+        </div>
+    }  
+}
+

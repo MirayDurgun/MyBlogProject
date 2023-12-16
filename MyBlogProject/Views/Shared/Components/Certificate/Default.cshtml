@@ -1,0 +1,30 @@
+﻿@model List<Certificate>
+
+
+@if (Model != null)
+{
+
+    <div class="event">
+        <h2>SERTİFİKALAR</h2>
+        <i class="pw-icon-bookmark-empty"></i>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="event current">
+            <span class="date">
+                @(((DateTime)item.CertificateStartDate).ToString("MMMM yyyy")) -
+                @if (item.CertificateEndDate != null)
+                {
+                    @(((DateTime)item.CertificateEndDate).ToString("MMMM yyyy"))
+                }
+                @item.EducationDurationHours
+            </span>
+
+            <h4>@item.CertificateName</h4>
+            <h5>@item.CertificationInstitution</h5>
+            <p>@item.CertificateDescription</p>
+        </div>
+    }
+
+}

@@ -1,17 +1,13 @@
 ﻿@model List<Skill>
 
 <style>
-    .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
     .skill-name {
-        background-color: #ecdcd4;
+        width: 100%;
+        height: 100%;
+        background-color: #f8f8f6;
         padding: 10px;
         border-radius: 5px;
-        opacity: 0.5;
+        margin-bottom: 2%;
     }
 </style>
 
@@ -20,27 +16,27 @@
 {
     <h2 class="section-title">YETKİNLİKLER</h2>
     <div class="skillset">
-        <div class="skills-container">
-            @foreach (var item in Model)
-            {
-                <div class="skill-unit skill-name">
-                    <h4>@item.SkillName</h4>
-                </div>
-            }
-        </div>
+        @foreach (var item in Model)
+        {
+            <div class="skill-unit skill-name">
+                <h4>@item.SkillName</h4>
+            </div>
+        }
     </div>
 
-    <h2 class="section-title">PROGRAMLAR</h2>
 
+    <h2 class="section-title">PROGRAMLAR</h2>
     <div class="skillset">
-        <div class="skills-container">
-            @foreach (var item in Model)
+        @foreach (var item in Model)
+        {
+            @if (item.SoftwareUsed != null)
             {
-                <div class="skill-unit" style="margin-right:10px;">
+                <div class="skill-name">
                     <h4>@item.SoftwareUsed</h4>
                 </div>
             }
-        </div>
+
+        }
     </div>
 
 }

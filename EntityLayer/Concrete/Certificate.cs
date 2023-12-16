@@ -14,7 +14,7 @@ namespace EntityLayer.Concrete
         public string? CertificateDescription { get; set; } //eğitim açıklaması mesela eğitim süresi yazılabilir
         public DateTime? CertificateStartDate { get; set; }
         public DateTime? CertificateEndDate { get; set; }
-        public DateTime? EducationDurationHours { get; set; } //eğitim süresi
+        public string EducationDurationHours { get; set; } //eğitim süresi
 
 
     }
