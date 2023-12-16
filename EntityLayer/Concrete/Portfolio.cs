@@ -11,6 +11,10 @@ namespace EntityLayer.Concrete
         public int PortfolioId { get; set; }
         public string NameTitle { get; set; }
 
+
+        //about
+        public List<About> Abouts { get; set; }
+
         ////İŞ
         //public int? JobId { get; set; }
         //public Job Job { get; set; }
