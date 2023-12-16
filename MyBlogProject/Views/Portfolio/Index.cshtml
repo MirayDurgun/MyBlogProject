@@ -35,17 +35,13 @@
                                 <!-- timeline -->
                                 <div class="timeline">
 
+                                    @* iş *@
+
                                     <div class="event">
                                         <h2>ÇALIŞMA GEÇMİŞİ</h2>
                                         <i class="pw-icon-bookmark-empty"></i>
                                     </div>
-
-                                    <div class="event current">
-                                        <span class="date">Dec 2013 - Current</span>
-                                        <h4>Front End Web Developer</h4>
-                                        <h5>Pixelwars Inc.</h5>
-                                        <p>I currently work for Pixelwars creative studio. I create usable web interfaces, front end coding stuff and almost anything. But i love what i do.</p>
-                                    </div>
+                                    @await Component.InvokeAsync("Job")
 
 
                                     @* eğitim *@

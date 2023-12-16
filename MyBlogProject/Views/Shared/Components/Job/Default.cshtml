@@ -1,0 +1,24 @@
+﻿@model List<Job>
+
+
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <div class="event current">
+            <span class="date">
+                @(((DateTime)item.StartDate).ToString("MMMM yyyy")) -
+                @if (item.EndDate != null)
+                {
+                    @(((DateTime)item.EndDate).ToString("MMMM yyyy"))
+                }
+                @item.ContinuingJob
+            </span>
+
+            <h4>@item.JobTitle</h4>
+            <h5>@item.CompanyName</h5>
+            <p>@item.Description</p>
+        </div>
+    }
+
+}
