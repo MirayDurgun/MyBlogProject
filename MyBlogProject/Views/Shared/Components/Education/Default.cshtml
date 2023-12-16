@@ -3,6 +3,11 @@
 
 @if (Model != null)
 {
+    <div class="event">
+        <h2>EĞİTİM</h2>
+        <i class="pw-icon-graduation-cap"></i>
+    </div>
+
     @foreach (var item in Model)
     {
 
@@ -14,12 +19,12 @@
                     @(((DateTime)item.EducationEndDate).ToString("MMMM yyyy"))
                 }
                 @item.ContinuingEducation
-                </span>
+            </span>
             <h4>@item.EducationTitle</h4>
             <h5>@item.EducationName</h5>
             <p>@item.EducationDescription</p>
         </div>
-        
+
     }
 
 }

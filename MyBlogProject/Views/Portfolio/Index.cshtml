@@ -22,66 +22,30 @@
                         <h1 class="entry-title">ÖZGEÇMİŞ</h1>
                     </header>
 
-                    <!-- .entry-content -->
                     <div class="entry-content">
-
-                        <!-- row -->
                         <div class="row">
-
-
-                            <!-- col 6/12 -->
                             <div class="col-sm-7">
-
-                                <!-- timeline -->
                                 <div class="timeline">
 
                                     @* iş *@
-
-                                    <div class="event">
-                                        <h2>ÇALIŞMA GEÇMİŞİ</h2>
-                                        <i class="pw-icon-bookmark-empty"></i>
-                                    </div>
                                     @await Component.InvokeAsync("Job")
 
-
                                     @* eğitim *@
-
-                                    <div class="event">
-                                        <h2>EĞİTİM</h2>
-                                        <i class="pw-icon-graduation-cap"></i>
-                                    </div>
-
                                     @await Component.InvokeAsync("Education")
 
-                                   
-
                                 </div>
-                                <!-- timeline -->
-
                                 <p><a href="https://www.linkedin.com/in/miraydurgun/" class="button"><i class="pw-icon-linkedin-squared"></i>LinkedIn Profilim </a></p>
-
                             </div>
-                            <!-- col 6/12 -->
-                            <!-- col 6/12 -->
+
                             <div class="col-sm-5">
-
-                                <h2 class="section-title">YETKİNLİKLER</h2>
-
-                                <!-- DEV SKILLS -->
-                                <div class="skillset">
-
-                                    <!-- .skill-unit -->
-                                    <div class="skill-unit">
-                                        <h4>HTML5</h4>
-                                    </div>
-                                </div>
-                                <!-- DEV SKILLS -->
+                                @* skill *@
+                                @await Component.InvokeAsync("Skill")
 
                                 @* projeler *@
                                 <h2 class="section-title">PROJELER</h2>
 
                                 <!-- DESIGN SKILLS -->
-                               
+
                                 <div class="skillset">
                                     <div class="skill-unit">
                                         <h4>Fireworks</h4>
@@ -90,10 +54,9 @@
                                             <div class="progress"></div>
                                         </div>
                                     </div>
-
                                 </div>
-                                
-                                
+
+
                                 <!-- DESIGN SKILLS -->
 
                                 <h2 class="section-title">SERTİFİKALAR</h2>
