@@ -12,28 +12,31 @@ namespace EntityLayer.Concrete
         public string NameTitle { get; set; }
 
         //  public string FieldTitle { get; set; } // okul iş kısımlarını ayıran büyük başlık kısmı
-        public DateTime? StartDate { get; set; } //işe giriş
-        public DateTime? EndDate { get; set; } //işten çıkış
+
+        //İŞ
+
+        public string? ContinuingJob { get; set; }
         public string? JobTitle { get; set; }
         public string? CompanyName { get; set; }
         public string? Description { get; set; }
+        public DateTime? StartDate { get; set; } //işe giriş
+        public DateTime? EndDate { get; set; } //işten çıkış
+
 
         //EĞİTİM
-        public DateTime? EducationStartDate { get; set; } //işe giriş
-        public DateTime? EducationEndDate { get; set; } //işten çıkış
-        public string? EducationTitle { get; set; }
-        public string? EducationName { get; set; }
-        public string? EducationDescription { get; set; }
+        public int? EducationId { get; set; }
+        public Education Education { get; set; }
+
 
         //yetkinlikler
-        public string SkillName { get; set; }
-        public string? SkillScore { get; set; }
-        public string? SoftwareUsed { get; set; } //kullandığım programlar
+        public int? SkillId { get; set; }
+        public Skill Skill { get; set; }
+
 
         // projeler sayfasından gelsin özet açıklama ve proje adını çekersin
         public int? ProjectId { get; set; }
         public Project Project { get; set; }
-        public int? ProjectCompletion { get; set; }
+
 
         //sertifikalar
         public string? CertificateName { get; set; }
@@ -43,12 +46,11 @@ namespace EntityLayer.Concrete
         public DateTime? CertificateEndDate { get; set; }
         public DateTime? EducationDurationHours { get; set; } //eğitim süresi
 
+
         //referanslar
         public string? TestimonialsName { get; set; }
         public string? TestimonialsJobTitle { get; set; }
         public string? TestimonialsDescription { get; set; }
 
-        //hakkımızda ilişkilendirildi
-        public List<About> Abouts { get; set; }
     }
 }

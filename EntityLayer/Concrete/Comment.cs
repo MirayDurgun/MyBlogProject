@@ -16,7 +16,7 @@ namespace EntityLayer.Concrete
         public DateTime CommentDate { get; set; } = DateTime.Now;
 
         //blog
-        public int BlogID { get; set; }
+        public int? BlogID { get; set; }
         public Blog Blog { get; set; }
     }
 }
