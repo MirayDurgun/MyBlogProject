@@ -1,0 +1,22 @@
+﻿@model List<Project>
+
+
+@if (Model != null)
+{
+    <h2 class="section-title">PROJELER</h2>
+    <div class="skillset">
+        <div class="skill-unit">
+
+            @foreach (var item in Model)
+            {
+                <h4>@item.ProjectName</h4>
+                <p>@item.ProjectSummary</p>
+                <span style="color:#c9b69b; font-size:13px;">Tamamlanma Yüzdesi</span>
+                <div class="bar" data-percent="@item.ProjectCompletion">
+                    <div class="progress"></div>
+                </div>
+            }
+
+        </div>
+    </div>
+}
