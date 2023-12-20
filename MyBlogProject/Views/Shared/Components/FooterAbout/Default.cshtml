@@ -1,0 +1,20 @@
+﻿@model List<About>
+
+
+<aside class="widget widget_text">
+    <h3 class="widget-title">Hakkımda</h3>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+
+        {
+            if (item.AboutDetails1 != null)
+            {
+                <div class="textwidget">
+                    <img src="@item.AboutImage1" alt="avatar">
+                    <p>@item.AboutDetails1.Substring(0,item.AboutDetails1.Substring(0,100).LastIndexOf(" "))....</p>
+                </div>
+            }
+        }
+    }
+</aside>

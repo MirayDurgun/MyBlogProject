@@ -5,76 +5,49 @@
 }
 
 
-<!-- primary -->
 <div id="primary" class="content-area">
-
-        <!-- site-content -->
-        <div id="content" class="site-content" role="main">
-            <!-- layout-fixed -->
-            <div class="layout-fixed">
-                <!-- .hentry -->
-                <article class="hentry post">
+    <div id="content" class="site-content" role="main">
+        <div class="layout-fixed">
+            <article class="hentry post">
 
 
-                    <!-- .entry-header -->
-                    <header class="entry-header">
+                <header class="entry-header">
 
-                        @foreach (var item in Model)
+                    @foreach (var item in Model)
+                    {
+                        <h1 class="entry-title">@item.Portfolio.NameTitle</h1>
+                    }
+
+                </header>
+                <div class="entry-content">
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
                         {
-                            <h1 class="entry-title">@item.Portfolio.NameTitle</h1>
-                        }
-
-                    </header>
-                    <!-- .entry-header -->
-                    <!-- .entry-content -->
-                    <div class="entry-content">
-                        @if (Model != null)
-                        {
-                            foreach (var item in Model)
-                            {
-                                <p class="drop-cap">@item.AboutDetails1</p>
-                            }
-
-
-                            <!-- blockquote -->
-                            <blockquote>
-                                When writing code, you speak the language of the computer; when writing perfect code, you speak in a language understandable by humans.”
-                            </blockquote>
-                            <!-- blockquote -->
-                            foreach (var item in Model)
-                            {
-
-                                if (item.AboutDetails2 != null || item.AboutDetails3 != null || item.AboutDetails4 != null)
-                                {
-                                    <blockquote class="alignleft" style="font-size:30px;">
-                                        The beauty of code is like a brush in the hands of a programmer; when used wisely, it turns into works of art.
-                                    </blockquote>
-                                    <p>@item.AboutDetails2</p>
-                                    <p>@item.AboutDetails3</p>
-                                    <p>@item.AboutDetails4</p>
-                                }
-                            }
+                            <p class="drop-cap">@item.AboutDetails1</p>
                         }
 
 
-                    </div>
-                    <!-- .entry-content -->
+                        <blockquote>
+                            When writing code, you speak the language of the computer; when writing perfect code, you speak in a language understandable by humans.”
+                        </blockquote>
+                        foreach (var item in Model)
+                        {
 
-
-                </article>
-                <!-- .hentry -->
-
-
-
-            </div>
-            <!-- layout-fixed -->
-
-
-
-
+                            if (item.AboutDetails2 != null || item.AboutDetails3 != null || item.AboutDetails4 != null)
+                            {
+                                <blockquote class="alignleft" style="font-size:30px;">
+                                    The beauty of code is like a brush in the hands of a programmer; when used wisely, it turns into works of art.
+                                </blockquote>
+                                <p>@item.AboutDetails2</p>
+                                <p>@item.AboutDetails3</p>
+                                <p>@item.AboutDetails4</p>
+                            }
+                        }
+                    }
+                </div>
+            </article>
         </div>
-        <!-- site-content -->
-
     </div>
-    <!-- primary -->
+</div>
 
