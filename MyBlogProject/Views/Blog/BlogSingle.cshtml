@@ -21,7 +21,7 @@
                                 <h1 class="entry-title">@item.BlogTitle</h1>
                                 <div class="entry-meta">
                                     <span class="entry-date">
-                                        <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
+                                        <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</time>
                                     </span>
                                     <span class="cat-links">
                                         @if (item.Category != null)
@@ -45,21 +45,30 @@
                             foreach (var item in Model)
                             {
                                 <p>@item.BlogContent</p>
-                                <nav class="nav-single row">
 
-                                    <div class="nav-previous col-sm-6">
-                                        <h4>ÖNCEKİ POST</h4>
-                                        <a href="/Blog/BlogSingle/@item.BlogID-1/" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
-                                    </div>
+                                @* <nav class="nav-single row">
 
-                                    <div class="nav-next col-sm-6">
-                                        <h4>SONRAKİ POST</h4>
-                                        <a href="/Blog/BlogSingle/@item.BlogID+1/" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
-                                    </div>
-                                </nav>
+                        <div class="nav-previous col-sm-6">
+                        <h4>ÖNCEKİ POST</h4>
+                        <a href="/Blog/BlogSingle/@item.BlogID/" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
+                        </div>
+
+                        <div class="nav-next col-sm-6">
+                        <h4>SONRAKİ POST</h4>
+                        <a href="/Blog/BlogSingle/@item.BlogID/" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
+                        </div>
+                        </nav> *@
                             }
                         }
+                        <nav class="nav-single row">
 
+                            <div class="nav-previous col-sm-6">
+                                <h4>Geri Dön</h4>
+                                <a href="/Blog/index/" rel="prev"><span class="meta-nav">←</span>Bloglar </a>
+                            </div>
+
+
+                        </nav>
 
 
                     </div>
