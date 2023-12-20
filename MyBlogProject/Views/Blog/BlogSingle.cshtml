@@ -17,13 +17,13 @@
 
             <div id="content" class="site-content" role="main">
                 <article class="hentry post">
+                    @if (Model != null)
+                    {
 
-                    <header class="entry-header">
-                        @if (Model != null)
+                        foreach (var item in Model)
                         {
+                            <header class="entry-header">
 
-                            foreach (var item in Model)
-                            {
                                 <h1 class="entry-title">@item.BlogTitle</h1>
 
                                 <div class="entry-meta">
@@ -35,32 +35,30 @@
                                     </span>
 
                                 </div>
-                            }
+
+
+                            </header>
+
+                            <div class="featured-image">
+                                <img src="@item.BlogImage">
+                            </div>
                         }
-
-
-
-                    </header>
-
-                    <div class="featured-image">
-                        <img src="images/blog/04.jpg" alt="blog-image">
-                    </div>
-
+                    }
                     <div class="entry-content">
 
                         <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
-                        <p class="drop-cap">And we circled for some time without doing much damage on either side; the long, straight, needle-like swords flashing in the sunlight, and ringing out upon the stillness as they crashed together with each effective parry.</p>
+                        @if (Model != null)
+                        {
 
-                        <p>I was only partially successful, as a sharp pain in my left shoulder attested, but in the sweep of my glance as I sought to again locate my adversary, a sight met my astonished gaze which paid me well for the wound the temporary blindness had caused me.</p>
+                            foreach (var item in Model)
+                            {
 
-                        <p>Social responsibility local, network prevention disrupt evolution fight against oppression. Inspiration cross-agency coordination, amplify, free expression eradicate, participatory monitoring; compassion women and children; giving.</p>
+                                <p>@item.BlogContent</p>
+                            }
+                        }
 
-
-
-
-                        <p>Him fowl divided. Lesser which fruitful image, first seas have the, seas grass image don&#39;t. Place midst place called unto was likeness form after said isn&#39;t wherein set, tree in fly night. One green. Created waters. Created saying created also you&#39;ll Divide.</p>
 
                         <nav class="nav-single row">
 
