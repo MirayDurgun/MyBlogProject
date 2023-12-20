@@ -153,72 +153,30 @@
                         </caption>
 
                         <tbody>
-                            @if ((DateTime.Now).Month == 30)
-                            {
-                                @for (int i = 1; 30 >= i; i++)
-                                {
-                                    if (i == (DateTime.Now).Day)
-                                    {
-                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
-                                    }
 
-                                    else
-                                    {
-                                    <td>@i</td>
-                                    }
-
-                                    if (i % 7 == 0)
-                                    {
-                                        // Alt satıra geç
-                                    <tr> </tr>
-                                    }
-                                }
-                            }
-                            else if ((DateTime.Now).Month == 29)
-                            {
-                                @for (int i = 1; 29 >= i; i++)
-                                {
-                                    if (i == (DateTime.Now).Day)
-                                    {
-                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
-                                    }
-
-                                    else
-                                    {
-                                    <td>@i</td>
-                                    }
-
-                                    if (i % 7 == 0)
-                                    {
-                                        // Alt satıra geç
-                                    <tr> </tr>
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                @for (int i = 1; 31 >= i; i++)
-                                {
-
-                                    if (i == (DateTime.Now).Day)
-                                    {
-                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
-                                    }
-
-                                    else
-                                    {
-                                    <td>@i</td>
-                                    }
-
-                                    if (i % 7 == 0)
-                                    {
-                                        // Alt satıra geç
-                                    <tr> </tr>
-                                    }
-                                }
+                            @{
+                                DateTime now = DateTime.Now; //bugünün tarihi
+                                int year = now.Year; // yılı
+                                int month = now.Month; //ayı
+                                int days = DateTime.DaysInMonth(year, month); //bulunduğumuz ayın kaç gün içerdiğini bulmak için DaysInMonth ifadesi yıl ve ayı ister
                             }
 
-
+                            @for (int i = 1; days >= i; i++)
+                            {
+                                if (i == (DateTime.Now).Day)
+                                {
+                                <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
+                                }
+                                else
+                                {
+                                <td>@i</td>
+                                }
+                                if (i % 7 == 0)
+                                {
+                                    // Alt satıra geç
+                                <tr> </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>
