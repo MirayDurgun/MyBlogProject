@@ -31,7 +31,11 @@
                                         <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
                                     </span>
                                     <span class="cat-links">
-                                        <a href="#" title="View all posts in Travel" rel="category tag">@item.Category.CategoryName</a>
+                                        @if (item.Category != null)
+                                        {
+                                            <a href="#" rel="category tag">@item.Category.CategoryName</a>
+                                        }
+
                                     </span>
 
                                 </div>
@@ -250,25 +254,47 @@
             </aside>
 
             <aside class="widget widget_rss">
-                <h3 class="widget-title"><a class="rsswidget" href="#">RSS Feed</a></h3>
+                <h3 class="widget-title"><a class="rsswidget">Yazılımcılardan İlham Verici Sözler</a></h3>
                 <ul>
                     <li>
-                        <a class="rsswidget" href="#">Thinking About Good Design</a> <span class="rss-date">May 2, 2012</span>
-                        <div class="rssSummary">Vivamus et aliquet ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Curabitur vitae ornare erat. Fusce mollis dolor sed justo iaculis feugiat. Suspendisse potenti. Aenean rutrum ligula nec eros gravida et cursus sapien mollis. In laoreet tempus purus sed dictum. Cras pellentesque interdum u […]</div>
-                        <cite>Albert Einstein</cite>
+                        <div class="rssSummary"></div>
                     </li>
                 </ul>
             </aside>
 
-
-
         </div>
-
-
     </div>
-
 </div>
 
+
+
+<script>
+    let dizi = [
+        "Bilgisayar programlama, hayal gücünüzün sınırlarıyla sınırlıdır. - Edsger Dijkstra",
+        "Bilgisayar programlama, dünyanın en güçlü araçlarından biridir.Onu iyilik için veya kötülük için kullanabilirsiniz. - Grace Hopper",
+        "Bilgisayarların amacı insanları daha yaratıcı ve üretken kılmaktır. - Steve Jobs",
+        "Teknoloji, insanlığın hayatını iyileştirmek için kullanılmalıdır. - Bill Gates",
+        "Hayatınızı değiştirecek şey, sahip olduğunuz şeyler değil, sahip olduğunuz fikirlerdir. - Steve Jobs",
+        "Bilgisayar, insan düşüncesinin bir uzantısıdır. - Douglas Hofstadter",
+        "Matematik, evrende bulunan düzeni anlamanın bir yoludur. - Albert Einstein",
+        "Hayattaki en önemli şey, tutkularınızı takip etmektir. - Steve Jobs",
+        "Bilgisayar programlama, mantık ve yaratıcılığın bir karışımıdır. - Donald Knuth",
+        "Bilgisayarların, insanların daha iyi kararlar vermelerine yardımcı olacak şekilde kullanılması gerekir. - Tim Berners - Lee",
+        "Açık kaynak, işbirliğinin gücüdür. - Richard Stallman",
+        "Bilgisayar yazılımı, herkesin erişebileceği ve kullanabileceği bir şey olmalıdır. - Richard Stallman",
+        "Özgür yazılım, özgürlüktür. - Richard Stallman",
+        "Bilgisayar yazılımı, herkesin sahip olması ve kontrol etmesi gereken bir şeydir. - Richard Stallman",
+    ];
+
+    function rastgeleElemanGetir() {
+        return dizi[Math.floor(Math.random() * dizi.length)];
+    }
+
+    let rastgeleEleman = rastgeleElemanGetir();
+
+    // Rastgele elemanı HTML'ye yansıt
+    document.querySelector(".rssSummary").textContent = rastgeleEleman;
+</script>
 
 
 
