@@ -3,12 +3,10 @@
 @*  2 tablo birbirine bağlıysa ve 2 tablodanda veri gelicekse
 İlişkili tablolarda kullanılıyor *@
 
-
 @{
     ViewData["Title"] = "BlogSingle";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
-
 
 <div id="main" class="site-main">
     <div class="layout-medium">
@@ -17,7 +15,6 @@
                 <article class="hentry post">
                     @if (Model != null)
                     {
-
                         foreach (var item in Model)
                         {
                             <header class="entry-header">
@@ -34,39 +31,37 @@
                                     </span>
                                 </div>
                             </header>
-
                             <div class="featured-image">
                                 <img src="@item.BlogImage">
                             </div>
                         }
                     }
                     <div class="entry-content">
-
                         <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 
                         @if (Model != null)
                         {
 
                             foreach (var item in Model)
                             {
-
                                 <p>@item.BlogContent</p>
+                                <nav class="nav-single row">
+
+                                    <div class="nav-previous col-sm-6">
+                                        <h4>ÖNCEKİ POST</h4>
+                                        <a href="/Blog/BlogSingle/@item.BlogID-1/" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
+                                    </div>
+
+                                    <div class="nav-next col-sm-6">
+                                        <h4>SONRAKİ POST</h4>
+                                        <a href="/Blog/BlogSingle/@item.BlogID+1/" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
+                                    </div>
+                                </nav>
                             }
                         }
 
-                        <nav class="nav-single row">
 
-                            <div class="nav-previous col-sm-6">
-                                <h4>ÖNCEKİ POST</h4>
-                                <a href="#" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
-                            </div>
 
-                            <div class="nav-next col-sm-6">
-                                <h4>SONRAKİ POST</h4>
-                                <a href="#" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
-                            </div>
-                        </nav>
                     </div>
                 </article>
                 <div id="comments" class="comments-area">
@@ -171,6 +166,7 @@
                                 {
                                 <td>@i</td>
                                 }
+
                                 if (i % 7 == 0)
                                 {
                                     // Alt satıra geç
@@ -182,10 +178,6 @@
                 </div>
             </aside>
 
-
-
-
-
             <aside class="widget widget_rss">
                 <h3 class="widget-title"><a class="rsswidget">Yazılımcılardan İlham Verici Sözler</a></h3>
                 <ul>
@@ -195,11 +187,9 @@
                 </ul>
             </aside>
 
-
         </div>
     </div>
 </div>
-
 
 
 <script>
