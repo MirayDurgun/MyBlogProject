@@ -11,6 +11,7 @@ namespace EntityLayer.Concrete
         public int PortfolioId { get; set; }
         public string NameTitle { get; set; }
 
+        //tablo kalkabilir 
 
         //about
         public List<About> Abouts { get; set; }

@@ -1,0 +1,32 @@
+﻿@model List<Blog>
+
+
+<aside class="widget widget_widget_tptn_pop">
+    <h3 class="widget-title">Son Postlar</h3>
+    <div class="tptn_posts tptn_posts_widget">
+
+        @if (Model != null)
+        {
+            <ul>
+                @foreach (var item in Model)
+                {
+                    @if (item.BlogImage != null)
+                    {
+                        <li>
+                            <a href="#" class="tptn_link">
+                                <img src="@item.BlogImage" alt="fotoğraf" class="tptn_thumb">
+                            </a>
+                            <span class="tptn_after_thumb">
+                                <a href="#" class="tptn_link"><span class="tptn_title">@item.BlogTitle</span></a>
+                                <span class="tptn_date"> @(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</span>
+                            </span>
+                        </li>
+                    }
+
+
+                }
+            </ul>
+        }
+
+    </div>
+</aside>

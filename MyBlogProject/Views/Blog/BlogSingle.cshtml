@@ -1,0 +1,279 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+
+@*  2 tablo birbirine bağlıysa ve 2 tablodanda veri gelicekse
+İlişkili tablolarda kullanılıyor *@
+
+
+@{
+    ViewData["Title"] = "BlogSingle";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+<div id="main" class="site-main">
+    <div class="layout-medium">
+
+        <div id="primary" class="content-area with-sidebar">
+
+            <div id="content" class="site-content" role="main">
+                <article class="hentry post">
+
+                    <header class="entry-header">
+                        @if (Model != null)
+                        {
+
+                            foreach (var item in Model)
+                            {
+                                <h1 class="entry-title">@item.BlogTitle</h1>
+
+                                <div class="entry-meta">
+                                    <span class="entry-date">
+                                        <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
+                                    </span>
+                                    <span class="cat-links">
+                                        <a href="#" title="View all posts in Travel" rel="category tag">@item.Category.CategoryName</a>
+                                    </span>
+
+                                </div>
+                            }
+                        }
+
+
+
+                    </header>
+
+                    <div class="featured-image">
+                        <img src="images/blog/04.jpg" alt="blog-image">
+                    </div>
+
+                    <div class="entry-content">
+
+                        <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+                        <p class="drop-cap">And we circled for some time without doing much damage on either side; the long, straight, needle-like swords flashing in the sunlight, and ringing out upon the stillness as they crashed together with each effective parry.</p>
+
+                        <p>I was only partially successful, as a sharp pain in my left shoulder attested, but in the sweep of my glance as I sought to again locate my adversary, a sight met my astonished gaze which paid me well for the wound the temporary blindness had caused me.</p>
+
+                        <p>Social responsibility local, network prevention disrupt evolution fight against oppression. Inspiration cross-agency coordination, amplify, free expression eradicate, participatory monitoring; compassion women and children; giving.</p>
+
+
+
+
+                        <p>Him fowl divided. Lesser which fruitful image, first seas have the, seas grass image don&#39;t. Place midst place called unto was likeness form after said isn&#39;t wherein set, tree in fly night. One green. Created waters. Created saying created also you&#39;ll Divide.</p>
+
+                        <nav class="nav-single row">
+
+                            <div class="nav-previous col-sm-6">
+                                <h4>ÖNCEKİ POST</h4>
+                                <a href="#" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
+                            </div>
+
+                            <div class="nav-next col-sm-6">
+                                <h4>SONRAKİ POST</h4>
+                                <a href="#" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
+                            </div>
+
+                        </nav>
+
+                    </div>
+
+
+                </article>
+                <div id="comments" class="comments-area">
+
+                    <h3 class="section-title">YORUMLAR</h3>
+
+                    <ol class="commentlist">
+                        <li class="comment even thread-even depth-1">
+
+                            <article class="comment">
+
+                                <header class="comment-meta comment-author vcard">
+                                    <img alt="" src="images/site/testo-01.jpg" class="avatar" height="75" width="75">
+                                    <cite class="fn"><a href="#" rel="external nofollow" class="url">Phillip Austin</a></cite>
+                                    <span class="comment-date">October 17, 2013 at 2:16 PM</span>
+                                </header>
+                                <section class="comment-content comment">
+                                    <p>Hi, this is a very useful article. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                </section>
+                                <div class="reply">
+                                    <a class="comment-reply-link" href="#">Reply <span>↓</span></a>
+                                </div>
+
+                            </article>
+                            <ol class="children">
+
+                                <li class="comment odd alt depth-2 bypostauthor">
+
+                                    <article class="comment">
+
+                                        <header class="comment-meta comment-author vcard">
+                                            <img alt="" src="images/site/author-1.jpg" class="avatar photo" height="75" width="75">
+                                            <cite class="fn"><a href="#" rel="external nofollow" class="url">Johnny Doe</a></cite>
+                                            <span class="comment-date">October 17, 2013 at 2:16 PM</span>
+                                        </header>
+                                        <section class="comment-content comment">
+                                            <p>Thanks Phillip, glad you liked it. Nice to see you around.</p>
+                                        </section>
+                                        <div class="reply">
+                                            <a class="comment-reply-link" href="#">Reply <span>↓</span></a>
+                                        </div>
+
+                                    </article>
+
+                                </li>
+                            </ol>
+
+                        </li>
+
+                    </ol>
+                    <div id="respond">
+
+                        <h3 id="reply-title">YORUM YAP<small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Cancel reply</a></small></h3>
+
+                        <form action="#" method="post" id="commentform">
+
+                            <p class="comment-form-comment">
+                                <label for="comment">YORUM </label>
+                                <textarea id="comment" name="comment" rows="8" aria-required="true"></textarea>
+                            </p>
+
+                            <p class="comment-form-author">
+                                <label for="author">İSİM <span class="required">*</span></label>
+                                <input id="author" name="author" type="text" size="30" aria-required="true">
+                            </p>
+
+                            <p class="comment-form-email">
+                                <label for="email">E-MAİL <span class="required">*</span></label>
+                                <input id="email" name="email" type="text" size="30" aria-required="true">
+                            </p>
+
+
+
+                            <p class="form-submit">
+                                <input type="submit" name="submit" id="submit" class="button primary" value="YORUMU GÖNDER">
+                                <input type="hidden" name="comment_post_ID" value="16" id="comment_post_ID">
+                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="secondary" class="widget-area sidebar" role="complementary">
+
+
+
+
+            @await Component.InvokeAsync("BlogLast5Post")
+
+
+
+
+            <aside id="calendar-2" class="widget widget_calendar">
+                <h3 class="widget-title">Calendar</h3>
+                <div id="calendar_wrap">
+                    <table id="wp-calendar">
+                        <caption>
+                            July 2014
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" title="Monday">M</th>
+                                <th scope="col" title="Tuesday">T</th>
+                                <th scope="col" title="Wednesday">W</th>
+                                <th scope="col" title="Thursday">T</th>
+                                <th scope="col" title="Friday">F</th>
+                                <th scope="col" title="Saturday">S</th>
+
+                                <th scope="col" title="Sunday">S</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" id="prev"><a href="http://themes.pixelwars.org/test-wp/?m=201406" title="View posts for June 2014">« Jun</a></td>
+                                <td class="pad">&nbsp;</td>
+                                <td colspan="3" id="next" class="pad">&nbsp;</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" class="pad">&nbsp;</td>
+                                <td>1</td>
+                                <td><a href="http://themes.pixelwars.org/test-wp/?m=20140702" title="test">2</a></td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td id="today">15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>31</td>
+                                <td class="pad" colspan="3">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+
+            <aside class="widget widget_rss">
+                <h3 class="widget-title"><a class="rsswidget" href="#">RSS Feed</a></h3>
+                <ul>
+                    <li>
+                        <a class="rsswidget" href="#">Thinking About Good Design</a> <span class="rss-date">May 2, 2012</span>
+                        <div class="rssSummary">Vivamus et aliquet ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Curabitur vitae ornare erat. Fusce mollis dolor sed justo iaculis feugiat. Suspendisse potenti. Aenean rutrum ligula nec eros gravida et cursus sapien mollis. In laoreet tempus purus sed dictum. Cras pellentesque interdum u […]</div>
+                        <cite>Albert Einstein</cite>
+                    </li>
+                </ul>
+            </aside>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+

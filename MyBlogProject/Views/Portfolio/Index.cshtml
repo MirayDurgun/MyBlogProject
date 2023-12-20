@@ -20,6 +20,15 @@
 
                     <header class="entry-header">
                         <h1 class="entry-title">ÖZGEÇMİŞ</h1>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <h3 class="entry-title">@item.NameTitle</h3>
+                            }
+                        }
+
+
                     </header>
 
                     <div class="entry-content">
@@ -67,4 +76,3 @@
     </div>
 
 </div>
-  

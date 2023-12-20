@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetListWithCategory(); //daldan geliyor
             //categoryi listeleyebilmek için
         }
+        public List<Blog> GetBlogById(int id)
+        {
+            return _blogDal.GetListAll(x => x.BlogID == id);
+            //idye eşit olan değerleri ister
+        }
 
         public Blog GetById(int id)
         {
@@ -52,10 +57,20 @@ namespace BusinessLayer.Concrete
         public List<Blog> GetLast4Blog()
         {
             return _blogDal.GetListAll().Take(4).ToList();
-            //koleksiyondan sadece ilk 5 öğeyi seçer.
+            //koleksiyondan sadece ilk 4 öğeyi seçer.
 
 
             //footerda son postların hepsini yansıtmak yerine sadece 
+            //4 tane getirmesini sağladım
+        }
+
+        public List<Blog> GetLast5Blog()
+        {
+            return _blogDal.GetListAll().Take(5).ToList();
+            //koleksiyondan sadece ilk 5 öğeyi seçer.
+
+
+            //blog single son postların hepsini yansıtmak yerine sadece 
             //5 tane getirmesini sağladım
         }
     }
