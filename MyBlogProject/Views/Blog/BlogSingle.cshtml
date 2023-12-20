@@ -12,9 +12,7 @@
 
 <div id="main" class="site-main">
     <div class="layout-medium">
-
         <div id="primary" class="content-area with-sidebar">
-
             <div id="content" class="site-content" role="main">
                 <article class="hentry post">
                     @if (Model != null)
@@ -23,9 +21,7 @@
                         foreach (var item in Model)
                         {
                             <header class="entry-header">
-
                                 <h1 class="entry-title">@item.BlogTitle</h1>
-
                                 <div class="entry-meta">
                                     <span class="entry-date">
                                         <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
@@ -35,12 +31,8 @@
                                         {
                                             <a href="#" rel="category tag">@item.Category.CategoryName</a>
                                         }
-
                                     </span>
-
                                 </div>
-
-
                             </header>
 
                             <div class="featured-image">
@@ -63,7 +55,6 @@
                             }
                         }
 
-
                         <nav class="nav-single row">
 
                             <div class="nav-previous col-sm-6">
@@ -75,12 +66,8 @@
                                 <h4>SONRAKİ POST</h4>
                                 <a href="#" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
                             </div>
-
                         </nav>
-
                     </div>
-
-
                 </article>
                 <div id="comments" class="comments-area">
 
@@ -88,9 +75,7 @@
 
                     <ol class="commentlist">
                         <li class="comment even thread-even depth-1">
-
                             <article class="comment">
-
                                 <header class="comment-meta comment-author vcard">
                                     <img alt="" src="images/site/testo-01.jpg" class="avatar" height="75" width="75">
                                     <cite class="fn"><a href="#" rel="external nofollow" class="url">Phillip Austin</a></cite>
@@ -105,9 +90,7 @@
 
                             </article>
                             <ol class="children">
-
                                 <li class="comment odd alt depth-2 bypostauthor">
-
                                     <article class="comment">
 
                                         <header class="comment-meta comment-author vcard">
@@ -121,14 +104,10 @@
                                         <div class="reply">
                                             <a class="comment-reply-link" href="#">Reply <span>↓</span></a>
                                         </div>
-
                                     </article>
-
                                 </li>
                             </ol>
-
                         </li>
-
                     </ol>
                     <div id="respond">
 
@@ -151,107 +130,103 @@
                                 <input id="email" name="email" type="text" size="30" aria-required="true">
                             </p>
 
-
-
                             <p class="form-submit">
                                 <input type="submit" name="submit" id="submit" class="button primary" value="YORUMU GÖNDER">
                                 <input type="hidden" name="comment_post_ID" value="16" id="comment_post_ID">
                                 <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                             </p>
-
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
         <div id="secondary" class="widget-area sidebar" role="complementary">
 
-
-
-
             @await Component.InvokeAsync("BlogLast5Post")
 
-
-
-
             <aside id="calendar-2" class="widget widget_calendar">
-                <h3 class="widget-title">Calendar</h3>
+                <h3 class="widget-title">Takvim</h3>
                 <div id="calendar_wrap">
                     <table id="wp-calendar">
                         <caption>
-                            July 2014
+                            @(((DateTime.Now)).ToString("MMMM yyyy"))
                         </caption>
-                        <thead>
-                            <tr>
-                                <th scope="col" title="Monday">M</th>
-                                <th scope="col" title="Tuesday">T</th>
-                                <th scope="col" title="Wednesday">W</th>
-                                <th scope="col" title="Thursday">T</th>
-                                <th scope="col" title="Friday">F</th>
-                                <th scope="col" title="Saturday">S</th>
 
-                                <th scope="col" title="Sunday">S</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <td colspan="3" id="prev"><a href="http://themes.pixelwars.org/test-wp/?m=201406" title="View posts for June 2014">« Jun</a></td>
-                                <td class="pad">&nbsp;</td>
-                                <td colspan="3" id="next" class="pad">&nbsp;</td>
-                            </tr>
-                        </tfoot>
                         <tbody>
-                            <tr>
-                                <td colspan="1" class="pad">&nbsp;</td>
-                                <td>1</td>
-                                <td><a href="http://themes.pixelwars.org/test-wp/?m=20140702" title="test">2</a></td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td id="today">15</td>
-                                <td>16</td>
-                                <td>17</td>
-                                <td>18</td>
-                                <td>19</td>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>21</td>
-                                <td>22</td>
-                                <td>23</td>
-                                <td>24</td>
-                                <td>25</td>
-                                <td>26</td>
-                                <td>27</td>
-                            </tr>
-                            <tr>
-                                <td>28</td>
-                                <td>29</td>
-                                <td>30</td>
-                                <td>31</td>
-                                <td class="pad" colspan="3">&nbsp;</td>
-                            </tr>
+                            @if ((DateTime.Now).Month == 30)
+                            {
+                                @for (int i = 1; 30 >= i; i++)
+                                {
+                                    if (i == (DateTime.Now).Day)
+                                    {
+                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
+                                    }
+
+                                    else
+                                    {
+                                    <td>@i</td>
+                                    }
+
+                                    if (i % 7 == 0)
+                                    {
+                                        // Alt satıra geç
+                                    <tr> </tr>
+                                    }
+                                }
+                            }
+                            else if ((DateTime.Now).Month == 29)
+                            {
+                                @for (int i = 1; 29 >= i; i++)
+                                {
+                                    if (i == (DateTime.Now).Day)
+                                    {
+                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
+                                    }
+
+                                    else
+                                    {
+                                    <td>@i</td>
+                                    }
+
+                                    if (i % 7 == 0)
+                                    {
+                                        // Alt satıra geç
+                                    <tr> </tr>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                @for (int i = 1; 31 >= i; i++)
+                                {
+
+                                    if (i == (DateTime.Now).Day)
+                                    {
+                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
+                                    }
+
+                                    else
+                                    {
+                                    <td>@i</td>
+                                    }
+
+                                    if (i % 7 == 0)
+                                    {
+                                        // Alt satıra geç
+                                    <tr> </tr>
+                                    }
+                                }
+                            }
+
+
                         </tbody>
                     </table>
                 </div>
             </aside>
+
+
+
+
 
             <aside class="widget widget_rss">
                 <h3 class="widget-title"><a class="rsswidget">Yazılımcılardan İlham Verici Sözler</a></h3>
@@ -261,6 +236,7 @@
                     </li>
                 </ul>
             </aside>
+
 
         </div>
     </div>
