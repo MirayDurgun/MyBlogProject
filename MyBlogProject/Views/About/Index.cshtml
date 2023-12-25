@@ -10,15 +10,8 @@
         <div class="layout-fixed">
             <article class="hentry post">
 
+                @await Component.InvokeAsync("AboutforPortfolio")
 
-                <header class="entry-header">
-
-                    @foreach (var item in Model)
-                    {
-                        <h1 class="entry-title">@item.Portfolio.NameTitle</h1>
-                    }
-
-                </header>
                 <div class="entry-content">
                     @if (Model != null)
                     {

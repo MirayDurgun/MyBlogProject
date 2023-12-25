@@ -13,14 +13,7 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfAboutRepository : GenericRepository<About>, IAboutDal
     {
-        public List<About> GetListWithPortfolio()
-        {
-            using (var c = new Context()) //Contexti c 
-            {
-                return c.Abouts.Include(x => x.Portfolio).ToList();
-              
-            }
-        }
+       
     }
 
 }

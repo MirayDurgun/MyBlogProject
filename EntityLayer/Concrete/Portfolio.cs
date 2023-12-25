@@ -13,9 +13,6 @@ namespace EntityLayer.Concrete
 
         //tablo kalkabilir 
 
-        //about
-        public List<About> Abouts { get; set; }
-
        
     }
 }
