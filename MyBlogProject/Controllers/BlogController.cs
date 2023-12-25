@@ -22,7 +22,6 @@ namespace MyBlogProject.Controllers
             ViewBag.i = id; //yorum için
             var values = bm.GetBlogById(id);
             return View(values);
-
         }
 
 
