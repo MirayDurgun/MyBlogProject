@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Testimonial
+namespace MyBlogProject.ViewComponents.Testimonial
 {
 	public class Testimonial : ViewComponent
 	{

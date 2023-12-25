@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CorePortfolio.ViewComponents.Portfolio
+namespace MyBlogProject.ViewComponents.Portfolio
 {
     public class AboutforPortfolio : ViewComponent
     {

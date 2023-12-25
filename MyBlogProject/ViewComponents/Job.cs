@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Job
+namespace MyBlogProject.ViewComponents.Job
 {
 	public class Job : ViewComponent
 	{

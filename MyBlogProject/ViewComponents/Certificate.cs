@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Certificate
+namespace MyBlogProject.ViewComponents.Certificate
 {
 	public class Certificate : ViewComponent
 	{

@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Category
+namespace MyBlogProject.ViewComponents.Category
 {
 	public class FooterCategory : ViewComponent
 	{

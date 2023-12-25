@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Skill
+namespace MyBlogProject.ViewComponents.Skill
 {
 	public class Skill : ViewComponent
 	{

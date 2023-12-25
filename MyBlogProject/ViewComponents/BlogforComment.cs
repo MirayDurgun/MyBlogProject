@@ -2,11 +2,11 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyBlogProject.ViewComponents.Project
+namespace MyBlogProject.ViewComponents.Comment
 {
-	public class Project : ViewComponent
-	{
-        ProjectManager pm = new ProjectManager(new EfProjectRepository());
+    public class AboutforPortfolio : ViewComponent
+    {
+        PortfolioManager pm = new PortfolioManager(new EfPortfolioRepository());
         public IViewComponentResult Invoke(int id)
         {
             var values = pm.GetList();

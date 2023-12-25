@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.ViewComponents.Education
+namespace MyBlogProject.ViewComponents.Education
 {
 	public class Education : ViewComponent
 	{
