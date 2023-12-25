@@ -1,0 +1,43 @@
+﻿@model List<Project>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+<div id="primary" class="content-area">
+
+    <div id="content" class="site-content" role="main">
+        <div class="layout-medium">
+            <header class="entry-header">
+
+                <h1 class="entry-title">PROJECT</h1>
+
+            </header>
+
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="media-grid-wrap">
+                        <div class="r-gallery masonry media-grid" data-layout="masonry" data-item-width="420">
+                            <div class="media-cell hentry">
+                                <div class="media-box">
+                                    <img src="@item.Image" alt="gallery-post">
+                                    <div class="mask">
+                                        <div class="media-cell-desc">
+                                            <h3>@item.ProjectName</h3>
+                                            <h4>@item.ProjectSummary</h4>
+                                        </div>
+                                    </div>
+                                    <a href="gallery-single.html"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

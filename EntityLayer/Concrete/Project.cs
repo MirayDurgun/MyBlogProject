@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public string? ProjectSummary { get; set; } //proje özet açıklama
         public string? ProjectDescription { get; set; } //hangi teknolojiler kullanıldı
         public int ProjectCompletion { get; set; } //tamamlanma yüzdesi
+        public string Image { get; set; } 
 
     }
 }
