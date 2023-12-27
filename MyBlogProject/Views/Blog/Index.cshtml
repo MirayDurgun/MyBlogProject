@@ -6,22 +6,14 @@
 }
 
 
-<div id="page" class="hfeed site">
-
     <div id="main" class="site-main">
-
-        <!-- primary -->
         <div id="primary" class="content-area">
 
-            <!-- site-content -->
             <div id="content" class="site-content" role="main">
-                <!-- layout-medium -->
                 <div class="layout-medium">
-                    <!-- entry-header -->
                     <header class="entry-header">
                         <h1 class="entry-title">BLOGLAR</h1>
 
-                        <!--FILTERS-->
                         <ul id="filters" class="filters">
                             <li><a href="#" data-filter=".tumu">Tümü</a></li>
                             @foreach (var item in Model.Select(m => m.Category.CategoryName).Distinct())
@@ -47,11 +39,7 @@
 
 
 
-                        <!--FILTERS-->
-
                     </header>
-                    <!-- entry-header -->
-                    <!-- BLOG MASONRY -->
                     <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
 
                         @if (Model != null)
@@ -62,19 +50,13 @@
                                 
                                 <article class="hentry post" data-kategori="@item.Category.CategoryName">
 
-                                    <!-- .featured-image -->
                                     <div class="featured-image">
                                         <a href="blog-single.html"><img src="@item.BlogImage"></a>
                                     </div>
-                                    <!-- .featured-image -->
-                                    <!-- .entry-header -->
                                     <header class="entry-header">
 
-                                        <!-- .entry-title -->
                                         <h1 class="entry-title"><a href="blog-single.html">@item.BlogTitle</a></h1>
 
-
-                                        <!-- .entry-meta -->
                                         <div class="entry-meta">
                                             <span class="entry-date">
                                                 <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
@@ -89,8 +71,6 @@
                                                 </a>
                                             </span>
                                         </div>
-                                        <!-- .entry-meta -->
-
 
                                     </header>
                                     <div class="entry-content">
@@ -100,24 +80,14 @@
                                         </p>
                                         <a href="/Blog/BlogSingle/@item.BlogID/" class="button">Devamını Oku</a>
                                     </div>
-                                    <!-- .entry-content -->
-
                                 </article>
                             }
                         }
-
                     </div>
-                    <!-- layout-medium -->
                 </div>
             </div>
-            <!-- site-content -->
-
         </div>
-        <!-- primary -->
-
     </div>
-
-</div>
 
 
 
