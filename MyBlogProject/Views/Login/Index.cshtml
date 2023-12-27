@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<div id="page" class="hfeed site">
+
+    <div id="primary" class="content-area">
+        
+        <div id="content" class="site-content" role="main">
+            <div class="layout-fixed">
+                <article class="hentry page">
+                    <header class="entry-header">
+                        <h1 class="entry-title">Login</h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <div class="contact-form">
+
+                            <form id="contact-form" class="validate-form" method="post" action="send-mail.php">
+                                <div class="form-row" style="margin-left:25%;">
+                                    <p style="width:100%;">
+                                        <label for="email">EMAIL</label>
+                                        <input type="text" name="email" id="email" class="required email">
+                                    </p>
+                                    <p style="width:100%;">
+                                        <label for="password">PASSWORD</label>
+                                        <input type="password" name="password" id="password" class="required">
+                                    </p>
+                                    <p>
+                                        <button class="submit button"><span class="submit-label">Submit</span><span class="submit-status"></span></button>
+                                    </p>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
