@@ -6,6 +6,8 @@ namespace MyBlogProject.Controllers
 {
     public class LoginController : Controller
     {
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();

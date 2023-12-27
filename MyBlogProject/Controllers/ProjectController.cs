@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyProjectProject.Controllers
@@ -8,6 +9,8 @@ namespace MyProjectProject.Controllers
     {
         ProjectManager pm = new ProjectManager(new EfProjectRepository());
 
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
