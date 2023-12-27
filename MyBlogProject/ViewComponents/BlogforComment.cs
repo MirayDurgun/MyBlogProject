@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.ViewComponents.Comment
 {
-    public class AboutforPortfolio : ViewComponent
+    public class BlogforComment : ViewComponent
     {
         PortfolioManager pm = new PortfolioManager(new EfPortfolioRepository());
         public IViewComponentResult Invoke(int id)
