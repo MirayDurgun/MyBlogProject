@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Adminto - Responsive Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Admin/assets/images/favicon.ico">
+    <link href="~/Admin/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="~/Admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="loading" data-layout-color="light" data-layout-mode="default" data-layout-size="fluid" data-topbar-color="light" data-leftbar-position="fixed" data-leftbar-color="light" data-leftbar-size='default' data-sidebar-user='true'>
+
+    <div id="wrapper">
+
+        @await Html.PartialAsync("AdminPartial/AdminHeader")
+
+        @await Html.PartialAsync("AdminPartial/AdminRightBar")
+
+
+        @RenderBody()
+
+
+    </div>
+    @await Html.PartialAsync("AdminPartial/AdminRightBar")
+
+    <div class="rightbar-overlay"></div>
+
+    @await Html.PartialAsync("AdminPartial/AdminScript")
+
+</body>
+</html>
