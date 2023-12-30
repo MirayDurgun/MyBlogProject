@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "JobIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content-page">
+    <div class="content">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mb-4">Portfolio</h4>
+
+                    <ul class="nav nav-tabs nav-bordered nav-justified">
+                        <li class="nav-item">
+                            <a href="#job" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Kariyer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#education" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
+                                Eğitim
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#certificate" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Sertifikalar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skill" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Yetkinlikler
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#softwareUsed" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Programlar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#project" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Projeler
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#testimonial" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Referanslar
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="job">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h5 class="mt-0">Çalışma Geçmişi Tablosu</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-centered mb-0" id="btn-editable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Start date</th>
+                                                        <th>Düzenle</th>
+                                                        <th>Sil</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-info rounded-pill waves-effect waves-light">
+
+                                                                <i class="mdi mdi-pencil"></i>
+
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-danger rounded-pill waves-effect waves-light">
+
+                                                                <i class="mdi mdi-close-outline"></i>
+
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="tab-pane active" id="education">
+                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                            <p class="mb-0">Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                        </div>
+                        <div class="tab-pane" id="certificate">
+                            <p>Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                            <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

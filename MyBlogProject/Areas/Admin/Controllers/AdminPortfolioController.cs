@@ -2,9 +2,9 @@
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class AdminBlogController : Controller
+    public class AdminPortfolioController : Controller
     {
+        [Area("Admin")]
         public IActionResult Index()
         {
             return View();
