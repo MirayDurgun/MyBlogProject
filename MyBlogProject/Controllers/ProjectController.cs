@@ -3,7 +3,7 @@ using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyProjectProject.Controllers
+namespace MyBlogProject.Controllers
 {
     public class ProjectController : Controller
     {
@@ -13,12 +13,14 @@ namespace MyProjectProject.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            return View();
+            var values = pm.GetList();
+            return View(values);
         }
         public IActionResult ProjectSingle()
         {
             var values = pm.GetList();
             return View(values);
         }
+
     }
 }

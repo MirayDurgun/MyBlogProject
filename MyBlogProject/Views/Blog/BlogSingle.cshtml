@@ -1,4 +1,4 @@
-﻿@model EntityLayer.Concrete.Blog
+﻿@model List<Blog>
 
 @{
     ViewData["Title"] = "BlogSingle";
@@ -12,35 +12,36 @@
                 <article class="hentry post">
                     @if (Model != null)
                     {
-                        
+                        foreach (var item in Model)
+                        {
                             <header class="entry-header">
-                                <h1 class="entry-title">@Model.BlogTitle</h1>
+                                <h1 class="entry-title">@item.BlogTitle</h1>
                                 <div class="entry-meta">
                                     <span class="entry-date">
-                                        <time class="entry-date">@(((DateTime)Model.BlogCreateDate).ToString("dd MMMM yyyy"))</time>
+                                        <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</time>
                                     </span>
                                     <span class="cat-links">
-                                        @if (Model.Category != null)
+                                        @if (item.Category != null)
                                         {
-                                            <a href="#" rel="category tag">@Model.Category.CategoryName</a>
+                                            <a href="#" rel="category tag">@item.Category.CategoryName</a>
                                         }
                                     </span>
                                 </div>
                             </header>
                             <div class="featured-image">
-                                <img src="@Model.BlogImage">
+                                <img src="@item.BlogImage">
                             </div>
-                        
+                        }
                     }
                     <div class="entry-content">
                         <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-                        @if (Model != null)
+                       @if (Model != null)
                         {
 
-                          
-                                <p>@Model.BlogContent</p>
-
+                            foreach (var item in Model)
+                            {
+                                <p>@item.BlogContent</p>
                                 @* <nav class="nav-single row">
 
                         <div class="nav-previous col-sm-6">
@@ -53,7 +54,7 @@
                         <a href="/Blog/BlogSingle/@item.BlogID/" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
                         </div>
                         </nav> *@
-                            
+                            }
                         }
                         <nav class="nav-single row">
 
@@ -110,23 +111,23 @@
                                 <tr> </tr>
                                 }
                             }
-
-                            @foreach(var item in Model.Comments)
+@* 
+                            @foreach(var item in Model)
                             {
-                                if(item.ParentCommentId==null)
+                                if(item.Comments.pa==null)
                                 {
                                     <p>@item.CommentContent</p>
                                 }
                                 else if(item.ParentCommentId!=null && item.ParentCommentId==item.CommentID)
                                 {
-                                <p>@item.CommentContent</p>
+                                <p>@item.Comments.con</p>
                                     @foreach(var item2 in Model.Comments.Where(c=>c.CommentID==item.ParentCommentId).ToList())
                                     {
                                         <p>@item2.CommentContent</p>
                                     }
                                 }
 
-                            }
+                            }  *@
                         </tbody>
                     </table>
                 </div>

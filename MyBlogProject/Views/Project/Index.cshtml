@@ -5,24 +5,21 @@
 }
 
 
-<div id="primary" class="content-area">
 
+<div id="primary" class="content-area">
     <div id="content" class="site-content" role="main">
         <div class="layout-medium">
             <header class="entry-header">
-
-                <h1 class="entry-title">PROJECT</h1>
-
+                <h1 class="entry-title">PROJELERİM</h1>
             </header>
-
 
             @if (Model != null)
             {
-                foreach (var item in Model)
-                {
-                    <div class="media-grid-wrap">
-                        <div class="r-gallery masonry media-grid" data-layout="masonry" data-item-width="420">
-                            <div class="media-cell hentry">
+                <div class="media-grid-wrap">
+                    <div class="r-gallery masonry media-grid" data-layout="masonry" data-item-width="420" style="display: flex; flex-wrap: wrap;">
+                        @foreach (var item in Model)
+                        {
+                            <div class="media-cell hentry" style="flex: 0 0 33.33%; box-sizing: border-box; padding: 10px;">
                                 <div class="media-box">
                                     <img src="@item.Image" alt="gallery-post">
                                     <div class="mask">
@@ -31,13 +28,14 @@
                                             <h4>@item.ProjectSummary</h4>
                                         </div>
                                     </div>
-                                    <a href="gallery-single.html"></a>
+                                    <a href="/Project/ProjectSingle/@item.ProjectId/"></a>
                                 </div>
                             </div>
-                        </div>
+                        }
                     </div>
-                }
+                </div>
             }
         </div>
     </div>
 </div>
+
