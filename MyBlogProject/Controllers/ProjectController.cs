@@ -16,10 +16,13 @@ namespace MyBlogProject.Controllers
             var values = pm.GetList();
             return View(values);
         }
-        public IActionResult ProjectSingle()
+
+        public IActionResult ProjectSingle(int id)
         {
-            var values = pm.GetList();
+            //idye göre detayları getirecek
+            var values = pm.GetProjectById(id);
             return View(values);
+
         }
 
     }

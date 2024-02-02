@@ -17,7 +17,11 @@ namespace BusinessLayer.Concrete
             _projectDal = projectDal;
         }
 
-       
+        public List<Project> GetProjectById(int id)
+        {
+            return _projectDal.GetListAll(x => x.ProjectId == id);
+            //idye eşit olan değerleri ister
+        }
         public Project GetById(int id)
         {
             return _projectDal.GetById(id);

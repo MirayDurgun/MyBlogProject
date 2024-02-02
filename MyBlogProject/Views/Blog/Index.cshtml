@@ -12,7 +12,7 @@
             <div id="content" class="site-content" role="main">
                 <div class="layout-medium">
                     <header class="entry-header">
-                        <h1 class="entry-title">BLOGLAR</h1>
+                        <h1 class="entry-title">BLOGLARIM</h1>
 
                         <ul id="filters" class="filters">
                             <li><a href="#" data-filter="*">Tümü</a></li>
@@ -35,18 +35,17 @@
                             <article class="hentry post @item.Category.CategoryName" data-kategori="@item.Category.CategoryName">
 
                                     <div class="featured-image">
-                                        <a href="blog-single.html"><img src="@item.BlogImage"></a>
+                                    <a href="/Blog/BlogSingle/@item.BlogID/"><img src="@item.BlogImage"></a>
                                     </div>
                                     <header class="entry-header">
 
-                                        <h1 class="entry-title"><a href="blog-single.html">@item.BlogTitle</a></h1>
+                                    <h1 class="entry-title"><a href="/Blog/BlogSingle/@item.BlogID/">@item.BlogTitle</a></h1>
 
                                         <div class="entry-meta">
                                             <span class="entry-date">
                                                 <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</time>
                                             </span>
                                             <span class="comment-link">
-                                                <a href="blog-single.html#comments">124 Comments</a>
                                             </span>
                                             <span class="read-time"><span class="eta"></span> read</span>
                                             <span class="cat-links">
