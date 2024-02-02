@@ -11,19 +11,22 @@
     }
 </style>
 
-
 @if (Model != null)
 {
+
     <h2 class="section-title">YETKİNLİKLER</h2>
     <div class="skillset">
-        @foreach (var item in Model)
-        {
-            <div class="skill-unit skill-name">
-                <h4>@item.SkillName</h4>
-            </div>
-        }
-    </div>
+               @foreach (var item in Model)
+            {
+                <div class="skill-unit skill-name">
+                    <h4>@item.SkillName</h4>
+                    <div style="margin-bottom:5%;" class="bar" data-percent="@item.SkillScore">
 
+                        <div class="progress"></div>
+                    </div>
+                    </div>
+            }
+    </div>
 
     <h2 class="section-title">PROGRAMLAR</h2>
     <div class="skillset">
@@ -37,6 +40,5 @@
             }
 
         }
-    </div>
-
+    </div> 
 }
