@@ -21,6 +21,6 @@ namespace EntityLayer.Concrete
         public Category Category { get; set; }
 
         //bir bloga birden fazla yprum yapılabilir
-        public List<Comment> Comments { get; set; }
+        public virtual List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

@@ -17,6 +17,7 @@ namespace EntityLayer.Concrete
 
         //blog
         public int? BlogID { get; set; }
-        public Blog Blog { get; set; }
+        public int? ParentCommentId { get; set; }
+      //  public Blog? Blog { get; set; }
     }
 }

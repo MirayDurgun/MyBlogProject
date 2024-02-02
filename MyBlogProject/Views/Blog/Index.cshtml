@@ -15,7 +15,7 @@
                         <h1 class="entry-title">BLOGLAR</h1>
 
                         <ul id="filters" class="filters">
-                            <li><a href="#" data-filter=".tumu">Tümü</a></li>
+                            <li><a href="#" data-filter="*">Tümü</a></li>
                             @foreach (var item in Model.Select(m => m.Category.CategoryName).Distinct())
                             //sayfada yer alan kategorileri filter kısmına bir kez yazdırır
                             {
@@ -47,8 +47,8 @@
 
                             foreach (var item in Model)
                             {
-                                
-                                <article class="hentry post" data-kategori="@item.Category.CategoryName">
+
+                            <article class="hentry post @item.Category.CategoryName" data-kategori="@item.Category.CategoryName">
 
                                     <div class="featured-image">
                                         <a href="blog-single.html"><img src="@item.BlogImage"></a>
