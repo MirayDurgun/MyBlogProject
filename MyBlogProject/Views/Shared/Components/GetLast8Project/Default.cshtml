@@ -1,0 +1,34 @@
+﻿@model List<Project>
+
+
+<aside class="widget widget_widget_tptn_pop">
+    <h3 class="widget-title">Son Projeler</h3>
+    <div class="tptn_posts tptn_posts_widget">
+
+        @if (Model != null)
+        {
+            <ul>
+                @foreach (var item in Model)
+                {
+                    @if (item.Image != null)
+                    {
+                        <li>
+                            <a href="#" class="tptn_link">
+                                <img src="@item.Image" alt="fotoğraf" class="tptn_thumb">
+                            </a>
+                            <span class="tptn_after_thumb">
+                                <a href="#" class="tptn_link"><span class="tptn_title">@item.ProjectName</span></a>
+                            </span>
+                            <p> @item.ProjectSummary.Substring(0,item.ProjectSummary.Substring(0,55).LastIndexOf(" "))....</p>
+                           
+
+                        </li>
+                    }
+
+
+                }
+            </ul>
+        }
+
+    </div>
+</aside>

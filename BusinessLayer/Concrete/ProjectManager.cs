@@ -46,5 +46,15 @@ namespace BusinessLayer.Concrete
         {
             _projectDal.Update(t);
         }
+
+        public List<Project> GetLast8Project()
+        {
+            return _projectDal.GetListAll().Take(8).ToList();
+            //koleksiyondan sadece ilk 8 öğeyi seçer.
+
+
+            //project single son projelerin hepsini yansıtmak yerine sadece 
+            //8 tane getirmesini sağladım
+        }
     }
 }

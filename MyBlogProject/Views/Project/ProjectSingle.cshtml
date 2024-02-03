@@ -5,11 +5,21 @@
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
+<style>
+    .post-slider .owl-item img {
+        width: 100%; /* İstenen genişlik */
+        height: 10%; /* İstenen yükseklik */
+        object-fit: cover; /* Resmin oranını koruyarak sığdırma */
+    }
+
+</style>
+
+
 @if (Model != null)
 {
     foreach (var item in Model)
     {
-        <div class="entry-header">
+        @* <div class="entry-header">
             <h1 class="entry-title">@item.ProjectName</h1>
 
         </div>
@@ -18,7 +28,7 @@
         <div id="rg-gallery" class="rg-gallery">
             <ul id="carousel" class="elastislide-list">
                 <li>
-                    <a href="~/blogtema/images/gallery-images/20.jpg">
+                    <a href="~/blogtema/images/blog/01.jpg">
                         <img src="@item.Image" />
                     </a>
                 </li>
@@ -39,10 +49,139 @@
             </div>
 
 
+        </div> *@
+
+
+        <div class="entry-header">
+            <h1 class="entry-title">@item.ProjectName</h1>
+        </div>
+        <br /><br />
+
+        <div id="main" class="site-main">
+
+          <div class="post-slider owl-carousel ratio-wide" data-items="1" data-loop="true" data-dots="true" data-nav="true" data-nav-prev-text="prev" data-nav-next-text="next">
+
+                <img src="@item.Image" class="" />
+                <img src="~/blogtema/images/blog/01.jpg" />
+                <img src="~/blogtema/images/blog/01.jpg" class="" />
+                <img src="~/blogtema/images/blog/01.jpg" class="" />
+
+            </div> 
+
+
+
+            <div class="layout-medium">
+
+                <div id="primary" class="content-area with-sidebar">
+
+                    <div id="content" class="site-content" role="main">
+                        <div class="blog-regular">
+
+                            <article class="hentry post sticky">
+
+                                <header class="entry-header">
+                                    <h1 class="entry-title"><a href="blog-single-with-sidebar.html">All In Our Head</a></h1>
+
+
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span>
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">64 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Adventure" rel="category tag">Adventure</a>
+                                        </span>
+                                    </div>
+
+                                </header>
+                                <div class="featured-image">
+                                    <a href="blog-single.html">
+                                        <div class="entry-content">
+                                            <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="entry-content">
+
+                                    <p>
+                                        @item.ProjectDescription
+
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="secondary" class="widget-area sidebar" role="complementary">
+
+                @await Component.InvokeAsync("GetLast8Project")
+
+                <aside id="calendar-2" class="widget widget_calendar">
+                    <h3 class="widget-title">Takvim</h3>
+                    <div id="calendar_wrap">
+                        <table id="wp-calendar">
+                            <caption>
+                                @(((DateTime.Now)).ToString("MMMM yyyy"))
+                            </caption>
+
+                            <tbody>
+
+                                @{
+                                    DateTime now = DateTime.Now; //bugünün tarihi
+                                    int year = now.Year; // yılı
+                                    int month = now.Month; //ayı
+                                    int days = DateTime.DaysInMonth(year, month); //bulunduğumuz ayın kaç gün içerdiğini bulmak için DaysInMonth ifadesi yıl ve ayı ister
+                                }
+
+                                @for (int i = 1; days >= i; i++)
+                                {
+                                    if (i == (DateTime.Now).Day)
+                                    {
+                                    <td style=" background-color: #f0f0f0; font-weight: bold;">@i</td>
+                                    }
+                                    else
+                                    {
+                                    <td>@i</td>
+                                    }
+
+                                    if (i % 7 == 0)
+                                    {
+                                        // Alt satıra geç
+                                    <tr> </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </aside>
+
+                <aside class="widget widget_rss">
+                    <h3 class="widget-title"><a class="rsswidget">Yazılımcılardan İlham Verici Sözler</a></h3>
+                    <ul>
+                        <li>
+                            <div class="rssSummary"></div>
+                        </li>
+                    </ul>
+                </aside>
+
+            </div>
         </div>
 
     }
 }
+
 
 
 <div class="header-links">
@@ -51,4 +190,31 @@
 
 
 
+<script>
+    let dizi = [
+        "Bilgisayar programlama, hayal gücünüzün sınırlarıyla sınırlıdır. - Edsger Dijkstra",
+        "Bilgisayar programlama, dünyanın en güçlü araçlarından biridir.Onu iyilik için veya kötülük için kullanabilirsiniz. - Grace Hopper",
+        "Bilgisayarların amacı insanları daha yaratıcı ve üretken kılmaktır. - Steve Jobs",
+        "Teknoloji, insanlığın hayatını iyileştirmek için kullanılmalıdır. - Bill Gates",
+        "Hayatınızı değiştirecek şey, sahip olduğunuz şeyler değil, sahip olduğunuz fikirlerdir. - Steve Jobs",
+        "Bilgisayar, insan düşüncesinin bir uzantısıdır. - Douglas Hofstadter",
+        "Matematik, evrende bulunan düzeni anlamanın bir yoludur. - Albert Einstein",
+        "Hayattaki en önemli şey, tutkularınızı takip etmektir. - Steve Jobs",
+        "Bilgisayar programlama, mantık ve yaratıcılığın bir karışımıdır. - Donald Knuth",
+        "Bilgisayarların, insanların daha iyi kararlar vermelerine yardımcı olacak şekilde kullanılması gerekir. - Tim Berners - Lee",
+        "Açık kaynak, işbirliğinin gücüdür. - Richard Stallman",
+        "Bilgisayar yazılımı, herkesin erişebileceği ve kullanabileceği bir şey olmalıdır. - Richard Stallman",
+        "Özgür yazılım, özgürlüktür. - Richard Stallman",
+        "Bilgisayar yazılımı, herkesin sahip olması ve kontrol etmesi gereken bir şeydir. - Richard Stallman",
+    ];
+
+    function rastgeleElemanGetir() {
+        return dizi[Math.floor(Math.random() * dizi.length)];
+    }
+
+    let rastgeleEleman = rastgeleElemanGetir();
+
+    // Rastgele elemanı HTML'ye yansıt
+    document.querySelector(".rssSummary").textContent = rastgeleEleman;
+</script>
 
