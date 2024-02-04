@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public string TestimonialsJobTitle { get; set; }
         public string TestimonialsCompanyName { get; set; }
         public string? TestimonialsDescription { get; set; }
+        public string? Image { get; set; }
 
 
     }

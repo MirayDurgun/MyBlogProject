@@ -4,15 +4,10 @@
 
 <style>
 
-        .testimonial-img-container img {
-            width: 80px;
-            height: 170px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            object-fit: cover;
-            display: block;
-        }
+    .testimonial-img-container {
+        margin: 0 auto;
+    }
+
 </style>
 
 @if (Model != null)
@@ -23,21 +18,25 @@
 
     @foreach (var item in Model)
     {
-        @* <div class="testo-group"> *@
+        <div class="testo-group">
 
-        <div class="testo">
-            <div class="testimonial-img-container mx-auto">
-                <img src="~/blogtema/images/blog/02.jpg" />
+            <div class="testo" style="box-shadow:#d9c5b5 0 0 6px 0 ">
+                @if (item.Image != null)
+                {
+                    <div class="testimonial-img-container mx-auto">
+                        <img src="@item.Image" />
+                    </div>
+                }
+
+                <h4>
+
+                    @item.TestimonialsName
+                    <span style="color:#d9c5b5;">@item.TestimonialsJobTitle</span>
+                    <span>@item.TestimonialsCompanyName</span>
+                </h4>
+                <p>@item.TestimonialsDescription</p>
             </div>
-            <h4>
-
-                @item.TestimonialsName
-                <span style="color:#d9c5b5;">@item.TestimonialsJobTitle</span>
-                <span>@item.TestimonialsCompanyName</span>
-            </h4>
-            <p>@item.TestimonialsDescription</p>
         </div>
-        @* </div> *@
     }
 }
 
