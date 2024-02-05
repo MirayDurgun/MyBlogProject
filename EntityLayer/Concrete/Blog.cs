@@ -17,7 +17,7 @@ namespace EntityLayer.Concrete
         public bool BlogStatus { get; set; }
 
         //blog resminin altına category tablosundan hangi kategoriye ait olduğu çekilecek
-        public int? CategoryID { get; set; }
+        public int CategoryID { get; set; }
         public Category Category { get; set; }
 
         //bir bloga birden fazla yprum yapılabilir

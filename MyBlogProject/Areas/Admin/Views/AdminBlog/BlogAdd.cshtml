@@ -1,0 +1,114 @@
+﻿@model EntityLayer.Concrete.Blog
+
+
+
+
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #80baf9;
+        }
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-primary">Blog Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+
+
+
+                                        @using (Html.BeginForm("BlogAdd", "AdminBlog", FormMethod.Post))
+                                        {
+                                            @Html.Label("Blog Başlığı")
+                                            @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.BlogTitle)
+                                            <br />
+                                            @Html.Label("Blog Görseli")
+                                            @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.BlogImage)
+                                            <br />
+
+                                            @Html.Label("Kategori")
+                                            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+                //dropdown list olarak yaptık viewbagten gelen değeri yansıttık
+                                            <br />
+                                            @Html.Label("Blog İçeriği")
+                                            @Html.TextAreaFor(x => x.BlogContent, 3, 10, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.BlogContent)
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info">Yazıyı Kaydet</button>
+                                        }
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@* <form method="post" asp-action="BlogAdd" asp-controller="AdminBlog">
+
+    <div class="mb-3">
+        <label for="BlogTitle" class="form-label">Name</label>
+        <input type="text" id="BlogTitle" class="form-control" asp-for="BlogTitle" name="BlogTitle">
+    </div>
+
+    <div class="mb-3">
+        <label for="BlogContent" class="form-label">İçerik</label>
+        <textarea class="form-control" id="BlogContent" rows="5" asp-for="BlogContent" name="BlogContent"></textarea>
+    </div>
+
+      <div class="mb-3">
+    <label for="SelectedCategoryID" class="form-label">Kategori</label>
+    <select class="form-select" id="SelectedCategoryID" asp-for="SelectedCategoryID" name="SelectedCategoryID">
+    @foreach (var category in ViewBag.cv)
+    {
+    <option value="@category.Value">@category.Text</option>
+    }
+    </select>
+    </div> 
+
+
+<div class="mb-3">
+    <label for="BlogImage" class="form-label">Görsel</label>
+    <input type="file" id="example-fileinput" class="form-control" name="BlogImage" asp-for="BlogImage">
+</div>
+
+<button type="submit" class="btn btn-primary waves-effect waves-light">Ekle</button>
+
+<a href="/Admin/Blog/Index/"><button type="reset" class="btn btn-danger waves-effect waves-light">İptal Et</button></a>
+
+</form> *@
