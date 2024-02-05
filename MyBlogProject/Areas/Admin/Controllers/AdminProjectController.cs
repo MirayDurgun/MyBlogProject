@@ -39,17 +39,25 @@ namespace MyBlogProject.Areas.Admin.Controllers
         {
             var projectvalue = pm.GetById(id);
 
-            if (projectvalue != null)
-            {
-                pm.TDelete(projectvalue);
-                return RedirectToAction("Index", "AdminProject");
-            }
-            else
-            {
-                // Handle the case where the project is not found
-                // For example, show an error message or redirect to an error page
-                return NotFound("Project not found");
-            }
+            pm.TDelete(projectvalue);
+            return RedirectToAction("Index", "AdminProject");
+
+        }
+
+        [HttpGet]
+        public IActionResult ProjectUpdate(int id)
+        {
+            var projectvalue = pm.GetById(id);
+            return View(projectvalue);
+        }
+
+        [HttpPost]
+        public IActionResult ProjectUpdate(Project p)
+        {
+            var projectvalue = pm.GetById(p.ProjectId);
+            p.ProjectStatus = true;
+            pm.TUpdate(p);
+            return RedirectToAction("Index", "AdminProject");
         }
 
     }

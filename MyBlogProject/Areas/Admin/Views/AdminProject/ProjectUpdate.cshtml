@@ -2,7 +2,7 @@
 
 
 @{
-    ViewData["Title"] = "ProjectAdd";
+    ViewData["Title"] = "ProjectUpdate";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -29,13 +29,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="header-title text-center text-primary">Proje Ekleme Sayfası</h2>
+                                <h2 class="header-title text-center text-primary">Proje Güncelleme Sayfası</h2>
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("ProjectAdd", "AdminProject", FormMethod.Post))
+                                        @using (Html.BeginForm("ProjectUpdate", "AdminProject", FormMethod.Post))
                                         {
+                                            @Html.Label("Blog ID")
+                                            @Html.TextBoxFor(x => x.ProjectId, new { @class = "form-control" })
+                                            <br />
                                             @Html.Label("Proje Başlığı")
                                             @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.ProjectName)
@@ -67,17 +70,13 @@
                                             @Html.LabelFor(x => x.Image1)
                                             @Html.TextBoxFor(x => x.Image1, new { type = "file", @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.Image1)
-                                            <br />
 
                                             <br />
 
-                                            <button class="btn btn-info">Ekle</button>
+                                            <br />
+                                            <button class="btn btn-info">Güncelle</button>
                                             <a href="/Admin/AdminProject/index/" class="btn btn-danger">İptal Et</a>
                                         }
-
-
-
-
 
                                     </div>
                                 </div>
