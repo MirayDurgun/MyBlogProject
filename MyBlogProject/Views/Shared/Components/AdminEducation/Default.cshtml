@@ -1,0 +1,73 @@
+﻿@using EntityLayer.Concrete
+@model List<Education>
+
+<style>
+    .card-education {
+        border-top: 2px solid #6600CC;
+        border-right: 2px solid #6633CC;
+        border-bottom: 2px solid #6666CC;
+        border-left: 2px solid #6699CC;
+    }
+
+
+    .edu-name {
+        color: #6633CC;
+    }
+
+    .edu-title {
+        color: #6650CC;
+    }
+
+    .date {
+        color: #6660CC;
+    }
+
+    .btn-success {
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        margin-right: 10px;
+    }
+</style>
+
+<div class="tab-pane" id="education">
+    <div class="row">
+        @if (Model != null)
+        {
+
+
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6">
+                    <div class="card card-body card-education">
+                        <h4 class="card-title edu-name">@item.EducationName</h4>
+                        <h5 class="card-title edu-title">@item.EducationTitle</h5>
+                        <div class="date">
+                            @(((DateTime)item.EducationStartDate).ToString("MMMM yyyy")) -
+
+                            @if (item.EducationEndDate.HasValue)
+                            {
+                                @item.EducationEndDate.Value.ToString("MMMM yyyy")
+                            }
+                            else
+                            {
+                                <text> Devam Ediyor </text>
+                            }
+                        </div>
+
+
+                        <p class="card-text">
+                            @(item.EducationDescription.Length > 150 ? item.EducationDescription.Substring(0, 200).TrimEnd() + "..." : item.EducationDescription)
+                        </p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-success">Eğitim Ekle</a>
+                            <a href="#" class="btn btn-primary">Güncelle</a>
+                            <a href="#" class="btn btn-danger">Sil</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
