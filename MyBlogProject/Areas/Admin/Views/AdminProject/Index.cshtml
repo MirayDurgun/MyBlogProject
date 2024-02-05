@@ -6,6 +6,29 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<style>
+    .edit-icon {
+        float: right;
+        margin-left: 10px;
+        padding-left: 5px;
+        color: #91bbf3;
+    }
+
+        .edit-icon:hover {
+            color: #76b7ff;
+        }
+
+    .close-icon {
+        float: right;
+        margin-left: 10px;
+        color: #ec5353;
+    }
+
+        .close-icon:hover {
+            color: #FF3333;
+        }
+</style>
+
 
 
 <div id="wrapper">
@@ -38,6 +61,8 @@
                             {
                             <div class="badge bg-danger float-end">Yayında Değil</div>
                             } *@
+                                    <a href="/Admin/AdminProject/ProjectDelete/" class="close-icon"><i class=" fas fa-window-close"></i></a>
+                                    <a href="/Admin/AdminProject/ProjectUpdate/" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
 
                                     <h4 class="mt-0"><a href="" class="text-dark">@item.ProjectName.ToUpper()</a></h4>
                                     <p class="text-success text-uppercase font-13">Kategorisi</p>

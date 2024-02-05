@@ -1,0 +1,88 @@
+﻿@model EntityLayer.Concrete.Project
+
+
+@{
+    ViewData["Title"] = "ProjectAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #80baf9;
+        }
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-primary">Proje Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+                                        @using (Html.BeginForm("ProjectAdd", "AdminProject", FormMethod.Post))
+                                        {
+                                            @Html.Label("Proje Başlığı")
+                                            @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.ProjectName)
+                                            <br />
+
+                                            @Html.Label("Proje Özeti")
+                                            @Html.TextBoxFor(x => x.ProjectSummary, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.ProjectSummary)
+                                            <br />
+
+                                            @Html.Label("Proje Açıklaması")
+                                            @Html.TextAreaFor(x => x.ProjectDescription, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.ProjectDescription)
+                                            <br />
+
+                                            @Html.Label("Proje Açıklaması 2")
+                                            @Html.TextAreaFor(x => x.ProjectDescription2, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.ProjectDescription2)
+                                            <br />
+                                            @Html.Label("Proje Tamamlanma Yüzdesi")
+                                            @Html.TextBoxFor(x => x.ProjectCompletion, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.ProjectCompletion)
+                                            <br />
+                                            @Html.Label("Proje Görseli")
+                                            @Html.TextBoxFor(x => x.Image1, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Image1)
+                                            <br />
+
+                                            @Html.LabelFor(x => x.Image1)
+                                            @Html.TextBoxFor(x => x.Image1, new { type = "file", @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Image1)
+
+
+                                            <button class="btn btn-info">Ekle</button>
+                                        }
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
