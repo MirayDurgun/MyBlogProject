@@ -10,10 +10,6 @@
                 <h5 class="mt-0">Çalışma Geçmişi Tablosu</h5>
                 <div class="table-responsive">
                     <table class="table table-centered mb-0" id="btn-editable">
-                        @foreach (var item in Model)
-                        {
-
-                        }
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -34,7 +30,7 @@
                                     <td>@item.JobId</td>
                                     <td>@item.CompanyName</td>
                                     <td>@item.JobTitle</td>
-                                    <td>@(item.Description.Length > 150 ? item.Description.Substring(0, 120).TrimEnd() + "..." : item.Description)</td>
+                                    <td>@(item.Description.Length > 150 ? item.Description.Substring(0, 100).TrimEnd() + "..." : item.Description)</td>
                                     @* Açıklama 150 karakterden uzunsa, ilk 150 karakteri alır, boşlukları temizler ve üç nokta ekler.*@
 
                                     <td>@(((DateTime)item.StartDate).ToString("MMMM yyyy")) </td>
@@ -72,9 +68,10 @@
 
                     </table>
                     <br />
-                     <a href="/Admin/AdminJob/JobAdd" class="btn btn-success rounded-pill waves-effect waves-light">
+                    <a href="/Admin/AdminJob/JobAdd" class="btn btn-success rounded-pill waves-effect waves-light">
                         <i class="mdi mdi-briefcase"></i> Yeni İş Ekle
                     </a>
+                    <br /><br />
                 </div>
             </div>
         </div>

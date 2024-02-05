@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -26,8 +28,23 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult JobAdd(Job j)
         {
-            jm.TAdd(j);
-            return RedirectToAction("Index", "AdminPortfolio");
+
+            JobValidator jv = new JobValidator();
+            ValidationResult results = jv.Validate(j);
+
+            if (results.IsValid)
+            {
+                jm.TAdd(j);
+                return RedirectToAction("Index", "AdminPortfolio");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+                return View();
+            }
         }
 
         public IActionResult JobDelete(int id)
@@ -47,11 +64,26 @@ namespace MyBlogProject.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult JobUpdate(Job p)
+        public IActionResult JobUpdate(Job j)
         {
-            var jobvalue = jm.GetById(p.JobId);
-            jm.TUpdate(p);
-            return RedirectToAction("Index", "AdminPortfolio");
+            JobValidator jv = new JobValidator();
+            ValidationResult results = jv.Validate(j);
+
+            if (results.IsValid)
+            {
+                var jobvalue = jm.GetById(j.JobId);
+                jm.TUpdate(j);
+                return RedirectToAction("Index", "AdminPortfolio");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+                return View();
+            }
+
         }
     }
 }

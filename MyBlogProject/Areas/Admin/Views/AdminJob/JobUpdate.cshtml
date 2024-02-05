@@ -1,8 +1,7 @@
 ﻿@model EntityLayer.Concrete.Job
 
-
 @{
-    ViewData["Title"] = "JobAdd";
+    ViewData["Title"] = "JobUpdate";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -29,13 +28,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="header-title text-center text-primary">İş Ekleme Sayfası</h2>
+                                <h2 class="header-title text-center text-primary">İş Düzenleme Sayfası</h2>
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("JobAdd", "AdminJob", FormMethod.Post))
+                                        @using (Html.BeginForm("JobUpdate", "AdminJob", FormMethod.Post))
                                         {
+                                            @Html.Label("İş ID")
+                                            @Html.TextBoxFor(x => x.JobId, new { @class = "form-control" })
+                                            <br />
                                             @Html.Label("Firma Adı")
                                             @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.CompanyName)
@@ -44,6 +46,7 @@
                                             @Html.Label("İş Ünvanı")
                                             @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.JobTitle)
+                                                                    
                                             <br />
 
                                             @Html.Label("İş Açıklaması")
@@ -61,7 +64,7 @@
                                             @Html.ValidationMessageFor(x => x.EndDate)
                                             <br />
                                             <br />
-                                            <button class="btn btn-info">Ekle</button>
+                                            <button class="btn btn-info">Güncelle</button>
                                             <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
                                         }
 
