@@ -9,6 +9,7 @@ namespace EntityLayer.Concrete
     public class Testimonial
     {
         public int TestimonialId { get; set; }
+       
         public string TestimonialsName { get; set; }
         public string TestimonialsJobTitle { get; set; }
         public string TestimonialsCompanyName { get; set; }
