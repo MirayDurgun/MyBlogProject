@@ -14,7 +14,7 @@ namespace EntityLayer.Concrete
         public string? Description { get; set; }
         public DateTime? StartDate { get; set; } //işe giriş
         public DateTime? EndDate { get; set; } //işten çıkış
-        public string? ContinuingJob { get; set; } //iş devam ediyor mu?
+        public bool ContinuingJob { get; set; } //iş devam ediyor mu?
 
 
         

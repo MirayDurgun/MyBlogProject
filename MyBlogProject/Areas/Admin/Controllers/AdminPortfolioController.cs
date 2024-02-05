@@ -1,13 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class AdminPortfolioController : Controller
     {
-        [Area("Admin")]
+        PortfolioManager pm = new PortfolioManager(new EfPortfolioRepository());
+        
         public IActionResult Index()
         {
-            return View();
+            var values = pm.GetList();
+            return View(values);
         }
+
     }
 }
