@@ -1,23 +1,24 @@
 ﻿@using EntityLayer.Concrete
-@model List<Job>
+@model List<Certificate>
 
 
-<div class="tab-pane active" id="job">
+<div class="tab-pane active" id="certificate">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
 
-                <h3 class="mt-0" style="color:#66CCCC;">Çalışma Geçmişi Tablosu</h3>
+                <h3 class="mt-0" style="color:#FF6699;">Sertifika Tablosu</h3>
                 <div class="table-responsive">
                     <table class="table table-centered mb-0" id="btn-editable">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Firma Adı</th>
-                                <th>Ünvan</th>
+                                <th>Sertifika Adı</th>
+                                <th>Alınan Kurum</th>
                                 <th>Açıklama</th>
                                 <th>Başlama Tarihi</th>
                                 <th>Bitiş Tarihi</th>
+                                <th>Süresi</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
 
@@ -27,33 +28,32 @@
                         {
                             <tbody>
                                 <tr>
-                                    <td>@item.JobId</td>
-                                    <td style="color:#66CCCC;">@item.CompanyName</td>
-                                    <td>@item.JobTitle</td>
-                                    <td>@(item.Description.Length > 150 ? item.Description.Substring(0, 100).TrimEnd() + "..." : item.Description)</td>
-                                    @* Açıklama 150 karakterden uzunsa, ilk 150 karakteri alır, boşlukları temizler ve üç nokta ekler.*@
-
-                                    <td>@(((DateTime)item.StartDate).ToString("MMMM yyyy")) </td>
+                                    <td>@item.CertificateId</td>
+                                    <td>@item.CertificateName</td>
+                                    <td style="color:#FF6699;">@item.CertificationInstitution</td>
+                                    <td>@item.CertificateDescription
+                                    <td>@(((DateTime)item.CertificateStartDate).ToString("MMMM yyyy")) </td>
                                     <td>
-                                        @if (item.EndDate.HasValue)
-                                        {
-                                            <text>@item.EndDate.Value.ToString("MMMM yyyy")</text>
-                                        }
-                                        else
-                                        {
-                                            <p class="text-success">Devam Ediyor</p>
-                                        }
+                                            @if (item.CertificateEndDate.HasValue)
+                                            {
+                                                <text>@item.CertificateEndDate.Value.ToString("MMMM yyyy")</text>
+                                            }
+                                            else
+                                            {
+                                            <p class="text-success">Süresiz</p>
+                                            }
                                     </td>
+                                    <td>@item.EducationDurationHours</td>
 
                                     <td>
-                                        <a href="/Admin/AdminJob/JobUpdate/@item.JobId" class="btn btn-info rounded-pill waves-effect waves-light">
+                                        <a href="/Admin/AdminJob/JobUpdate/@item.CertificateId" class="btn btn-info rounded-pill waves-effect waves-light">
 
                                             <i class="mdi mdi-pencil"></i>
 
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/Admin/AdminJob/JobDelete/@item.JobId" class="btn btn-danger rounded-pill waves-effect waves-light">
+                                        <a href="/Admin/AdminJob/JobDelete/@item.CertificateId" class="btn btn-danger rounded-pill waves-effect waves-light">
 
                                             <i class="mdi mdi-close-outline"></i>
 
@@ -65,11 +65,10 @@
 
 
 
-
                     </table>
                     <br />
                     <a href="/Admin/AdminJob/JobAdd" class="btn btn-success rounded-pill waves-effect waves-light">
-                        <i class="mdi mdi-briefcase"></i> Yeni İş Ekle
+                        <i class="mdi mdi-seal"></i> Yeni Sertifika Ekle
                     </a>
                     <br /><br />
                 </div>
