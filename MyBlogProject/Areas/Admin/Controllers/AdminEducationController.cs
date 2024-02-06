@@ -40,5 +40,44 @@ namespace MyBlogProject.Areas.Admin.Controllers
             //    return View();
             //}
         }
+
+        public IActionResult EducationDelete(int id)
+        {
+            var educationvalue = em.GetById(id);
+
+            em.TDelete(educationvalue);
+            return RedirectToAction("Index", "AdminPortfolio");
+
+        }
+
+        [HttpGet]
+        public IActionResult EducationUpdate(int id)
+        {
+            var educationvalue = em.GetById(id);
+            return View(educationvalue);
+        }
+
+        [HttpPost]
+        public IActionResult EducationUpdate(Education e)
+        {
+            //EducationValidator jv = new EducationValidator();
+            //ValidationResult results = jv.Validate(j);
+
+            //if (results.IsValid)
+            //{
+                var educationvalue = em.GetById(e.EducationId);
+                em.TUpdate(e);
+                return RedirectToAction("Index", "AdminPortfolio");
+            //}
+            //else
+            //{
+            //    foreach (var item in results.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //    return View();
+            //}
+
+        }
     }
 }

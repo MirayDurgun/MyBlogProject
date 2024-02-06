@@ -1,11 +1,9 @@
 ﻿@model EntityLayer.Concrete.Education
 
 @{
-    ViewData["Title"] = "EducationAdd";
+    ViewData["Title"] = "EducationUpdate";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
 
 <style>
     .card {
@@ -15,13 +13,8 @@
     }
 
         .card:hover {
-            box-shadow: 0 0 10px #6600CC;
+            box-shadow: 0 0 10px #80baf9;
         }
-
-    .text-edu {
-        color: #6633CC;
-    }
-
 </style>
 
 
@@ -34,13 +27,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="header-title text-center text-edu">Eğitim Ekleme Sayfası</h2>
+                                <h2 class="header-title text-center text-primary">Eğitim Düzenleme Sayfası</h2>
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("EducationAdd", "AdminEducation", FormMethod.Post))
+                                        @using (Html.BeginForm("EducationUpdate", "AdminEducation", FormMethod.Post))
                                         {
+                                            @Html.Label("Okul ID")
+                                            @Html.TextBoxFor(x => x.EducationId, new { @class = "form-control" })
+                                            <br />
                                             @Html.Label("Okul Adı")
                                             @Html.TextBoxFor(x => x.EducationName, new { @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.EducationName)
@@ -49,6 +45,7 @@
                                             @Html.Label("Bölüm Adı")
                                             @Html.TextBoxFor(x => x.EducationTitle, new { @class = "form-control" })
                                             @Html.ValidationMessageFor(x => x.EducationTitle)
+
                                             <br />
 
                                             @Html.Label("Bölüm Açıklaması")
@@ -66,7 +63,7 @@
                                             @Html.ValidationMessageFor(x => x.EducationEndDate)
                                             <br />
                                             <br />
-                                            <button class="btn btn-info">Ekle</button>
+                                            <button class="btn btn-info">Güncelle</button>
                                             <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
                                         }
 
