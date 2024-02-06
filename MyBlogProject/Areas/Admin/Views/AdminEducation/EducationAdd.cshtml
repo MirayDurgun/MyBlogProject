@@ -1,0 +1,77 @@
+﻿@model EntityLayer.Concrete.Education
+
+@{
+    ViewData["Title"] = "EducationAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #80baf9;
+        }
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-primary">Eğitim Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+                                        @using (Html.BeginForm("EducationAdd", "AdminEducation", FormMethod.Post))
+                                        {
+                                            @Html.Label("Okul Adı")
+                                            @Html.TextBoxFor(x => x.EducationName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.EducationName)
+                                            <br />
+
+                                            @Html.Label("Bölüm Adı")
+                                            @Html.TextBoxFor(x => x.EducationTitle, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.EducationTitle)
+                                            <br />
+
+                                            @Html.Label("Bölüm Açıklaması")
+                                            @Html.TextAreaFor(x => x.EducationDescription, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.EducationDescription)
+                                            <br />
+
+                                            @Html.Label("Başlama Tarihi")
+                                            @Html.TextBoxFor(x => x.EducationStartDate, new { @class = "form-control", @type = "date" })
+                                            @Html.ValidationMessageFor(x => x.EducationStartDate)
+
+                                            <br />
+                                            @Html.Label("Bitiş Tarihi")
+                                            @Html.TextBoxFor(x => x.EducationEndDate, new { @class = "form-control", @type = "date" })
+                                            @Html.ValidationMessageFor(x => x.EducationEndDate)
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info">Ekle</button>
+                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
