@@ -2,7 +2,7 @@
 @model List<Certificate>
 
 
-<div class="tab-pane active" id="certificate">
+<div class="tab-pane" id="certificate">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -40,20 +40,29 @@
                                             }
                                             else
                                             {
+                                            <i class="fas fa-calendar-times"></i>
+                                            }
+                                    </td>
+                                    <td>
+                                            @if (item.EducationDurationHours != null)
+                                            {
+                                                @item.EducationDurationHours
+                                            }
+                                            else
+                                            {
                                             <p class="text-success">Süresiz</p>
                                             }
                                     </td>
-                                    <td>@item.EducationDurationHours</td>
 
                                     <td>
-                                        <a href="/Admin/AdminJob/JobUpdate/@item.CertificateId" class="btn btn-info rounded-pill waves-effect waves-light">
+                                        <a href="/Admin/AdminCertificate/CertificateUpdate/@item.CertificateId" class="btn btn-info rounded-pill waves-effect waves-light">
 
                                             <i class="mdi mdi-pencil"></i>
 
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/Admin/AdminJob/JobDelete/@item.CertificateId" class="btn btn-danger rounded-pill waves-effect waves-light">
+                                        <a href="/Admin/AdminCertificate/CertificateDelete/@item.CertificateId" class="btn btn-danger rounded-pill waves-effect waves-light">
 
                                             <i class="mdi mdi-close-outline"></i>
 
@@ -67,7 +76,7 @@
 
                     </table>
                     <br />
-                    <a href="/Admin/AdminJob/JobAdd" class="btn btn-success rounded-pill waves-effect waves-light">
+                    <a href="/Admin/AdminCertificate/CertificateAdd" class="btn btn-success rounded-pill waves-effect waves-light">
                         <i class="mdi mdi-seal"></i> Yeni Sertifika Ekle
                     </a>
                     <br /><br />

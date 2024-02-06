@@ -1,0 +1,85 @@
+﻿@model EntityLayer.Concrete.Certificate
+
+@{
+    ViewData["Title"] = "CertificateAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #FF6699;
+        }
+
+    .text-cert {
+        color: #FF6699;
+    }
+
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-cert">Sertifika Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+                                        @using (Html.BeginForm("CertificateAdd", "AdminCertificate", FormMethod.Post))
+                                        {
+                                            @Html.Label("Sertifika Adı")
+                                            @Html.TextBoxFor(x => x.CertificateName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.CertificateName)
+                                            <br />
+
+                                            @Html.Label("Alınan Kurum")
+                                            @Html.TextBoxFor(x => x.CertificationInstitution, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.CertificationInstitution)
+                                            <br />
+
+                                            @Html.Label("Açıklama")
+                                            @Html.TextAreaFor(x => x.CertificateDescription, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.CertificateDescription)
+                                            <br />
+
+                                            @Html.Label("Başlama Tarihi")
+                                            @Html.TextBoxFor(x => x.CertificateStartDate, new { @class = "form-control", @type = "date" })
+                                            @Html.ValidationMessageFor(x => x.CertificateStartDate)
+
+                                            <br />
+                                            @Html.Label("Bitiş Tarihi")
+                                            @Html.TextBoxFor(x => x.CertificateEndDate, new { @class = "form-control", @type = "date" })
+                                            @Html.ValidationMessageFor(x => x.CertificateEndDate)
+                                            <br />
+
+                                            @Html.Label("Süresi")
+                                            @Html.TextBoxFor(x => x.EducationDurationHours, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.EducationDurationHours)
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info">Ekle</button>
+                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
