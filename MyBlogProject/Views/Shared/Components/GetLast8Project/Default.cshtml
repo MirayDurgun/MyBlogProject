@@ -19,8 +19,16 @@
                             <span class="tptn_after_thumb">
                                 <a href="#" class="tptn_link"><span class="tptn_title">@item.ProjectName</span></a>
                             </span>
-                            <p> @item.ProjectSummary.Substring(0,item.ProjectSummary.Substring(0,55).LastIndexOf(" "))....</p>
-                           
+                            @if (item.ProjectSummary.Length < 55)
+                            {
+                                <p>@item.ProjectSummary</p>
+                            }
+                            else
+                            {
+                                <p> @item.ProjectSummary.Substring(0, item.ProjectSummary.Substring(0, 55).LastIndexOf(" "))....</p>
+                            }
+
+
 
                         </li>
                     }
