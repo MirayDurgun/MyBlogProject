@@ -1,5 +1,4 @@
-﻿@using EntityLayer.Concrete
-@model List<Skill>
+﻿@model List<Skill>
 
 
 <style>
@@ -32,6 +31,9 @@
     <div class="col-12">
         <div class="card">
             <div class="row">
+                 <a href="/admin/adminskill/skilladd/" class="btn btn-warning mb-4"><i class="fas fa-code"></i> Yetkinlik Ekle</a>
+
+
                 @foreach (var item in Model)
                 {
                     <div class="col-md-3">
