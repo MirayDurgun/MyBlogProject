@@ -41,6 +41,14 @@ namespace MyBlogProject.Areas.Admin.Controllers
             //}
         }
 
-      
+        public IActionResult SkillDelete(int id)
+        {
+            var projectvalue = sm.GetById(id);
+
+            sm.TDelete(projectvalue);
+            return RedirectToAction("Index", "AdminProject");
+
+        }
+
     }
 }

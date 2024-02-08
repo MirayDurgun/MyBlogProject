@@ -31,7 +31,7 @@
     <div class="col-12">
         <div class="card">
             <div class="row">
-                 <a href="/admin/adminskill/skilladd/" class="btn btn-warning mb-4"><i class="fas fa-code"></i> Yetkinlik Ekle</a>
+                <a href="/admin/adminskill/skilladd/" class="btn btn-warning mb-4"><i class="fas fa-code"></i> Yetkinlik Ekle</a>
 
 
                 @foreach (var item in Model)
@@ -39,13 +39,12 @@
                     <div class="col-md-3">
                         <div class="card border border-warning">
                             <div class="card-header text-center text-warning">
-                                <h5 class="card-title">@item.SkillName</h5>
+                                <h5 class="card-title mt-2">@item.SkillName</h5>
                                 <button type="button" class="skill-edit fas fa-pencil-alt" aria-label="Düzenle">
                                     <a href="/Admin/AdminSkill/SkillUpdate/@item.SkillId"></a>
                                 </button>
-                                <button type="button" class="skill-close btn-close" aria-label="Sil">
-                                    <a href="/Admin/AdminSkill/SkillDelete/@item.SkillId"></a>
-                                </button>
+                                <button type="button" class="skill-close btn-close" aria-label="Sil" onclick="confirmDelete('@item.SkillId')"></button>
+
                             </div>
                             <div class="card-body">
                                 <div class="progress mb-2">
@@ -62,4 +61,54 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Bu fonksiyon, beceriyi silme işlemini başlatmak için kullanılır
+    function confirmDelete(skillId) {
+        // SweetAlert2 kütüphanesini kullanarak bir onay iletişim kutusu görüntülenir
+        Swal.fire({
+            // İletişim kutusunun başlığı
+            title: 'Silmek istediğine emin misin?',
+            // İletişim kutusunun ikonu (uyarı simgesi)
+            icon: 'warning',
+            // İptal butonunun metni
+            cancelButtonText: "Vazgeç",
+            // İptal butonunu gösterme
+            showCancelButton: true,
+            // Onay butonunun rengi
+            confirmButtonColor: '#3085d6',
+            // İptal butonunun rengi
+            cancelButtonColor: '#d33',
+            // Onay butonunun metni
+            confirmButtonText: 'Evet'
+        }).then((result) => { // Kullanıcı bir eylem gerçekleştirdiğinde işlem devam eder
+            if (result.isConfirmed) { // Kullanıcı onayladıysa
+                // AJAX isteği yapılır
+                $.ajax({
+                    // Silinecek becerinin URL'si
+                    url: '/Admin/AdminSkill/SkillDelete/' + skillId,
+                    // Başarılı bir şekilde tamamlandığında
+                    success: function (response) {
+                        // Başarılı bir iletişim kutusu gösterilir
+                        Swal.fire(
+                            'Silindi!',
+                            'Yetkinlik başarıyla silindi',
+                            'success'
+                        );
+                        // Silinen becerinin HTML öğesi kaldırılır
+                        $('#skill_' + skillId).remove();
+                    },
+                    // Hata oluştuğunda
+                    error: function (xhr, status, error) {
+                        // Hata ile ilgili bir iletişim kutusu gösterilir
+                        Swal.fire(
+                            'Hata!',
+                            'Yetkinlik silinemedi.',
+                            'error'
+                        );
+                    }
+                });
+            }
+        });
+    }
+</script>
