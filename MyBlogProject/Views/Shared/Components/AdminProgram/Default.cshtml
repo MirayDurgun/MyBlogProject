@@ -61,13 +61,14 @@
 <!-- Modeldeki her bir öğe için döngü yapılıyor ve kartlar oluşturuluyor. -->
 <div class="tab-pane" id="programs">
     <div class="col-12">
-        <!-- Buton modalı tetikleyen buton -->
-        <!-- "Program Ekle" adında bir buton oluşturuluyor. -->
-        <a href="#" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addProgramModal"><i class="fas fa-code"></i> Program Ekle</a>
-        @* data-bs-toggle="modal" özelliğine sahip bir düğme veya bağlantıya tıklandığında, bu, ilişkilendirilmiş modalı (pencereyi) açar veya kapatır. *@
 
         <div class="card">
             <div class="row">
+                <!-- Buton modalı tetikleyen buton -->
+                <!-- "Program Ekle" adında bir buton oluşturuluyor. -->
+                <a href="#" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addProgramModal"><i class=" fas fa-file-code"></i> Program Ekle</a>
+                @* data-bs-toggle="modal" özelliğine sahip bir düğme veya bağlantıya tıklandığında, bu, ilişkilendirilmiş modalı (pencereyi) açar veya kapatır. *@
+
                 <!-- Modeldeki her bir öğe için kart oluşturuluyor -->
                 @foreach (var item in Model)
                 {
@@ -97,17 +98,17 @@
     @* Sayfanın yeniden yüklenmesini engelle *@
                 event.preventDefault();
     @* Formu al *@
-                    var form = event.target;
+                            var form = event.target;
     @* Form verilerini FormData nesnesine dönüştür *@
-                    var formData = new FormData(form);
+                            var formData = new FormData(form);
     @* Yeni bir XMLHttpRequest nesnesi oluştur *@
-                    var xhr = new XMLHttpRequest();
+                            var xhr = new XMLHttpRequest();
     @* İstek türünü belirle ve hedef URL'yi ayarla *@
                 xhr.open("POST", form.action);
     @* İstek tamamlandığında yapılacak işlem *@
                 xhr.onload = function () {
     @* İstek başarılıysa *@
-                        if (xhr.status === 200) {
+                                if (xhr.status === 200) {
     @* Sayfayı yenile *@
                             location.reload();
                     }
@@ -116,6 +117,4 @@
                 xhr.send(formData);
         });
 
-    @* ------------------------------------------------------------------------------ *@
-    @* SİL *@
 </script>

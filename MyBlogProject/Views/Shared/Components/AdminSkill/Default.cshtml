@@ -27,11 +27,53 @@
 
 
 
+<!-- Bir modal (pencere) oluşturuluyor. -->
+<div class="modal fade" id="addSkillModal" tabindex="-1" aria-labelledby="addSkillModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Modal başlığı -->
+                <h5 class="modal-title" id="addSkillModalLabel">Skill Ekle</h5>
+                <!-- Kapatma butonu -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Form alanları -->
+            <form method="post" action="/Admin/AdminSkill/SkillAdd" id="addSkillForm">
+                <div class="modal-body">
+                    <div class="mb-3">
+
+                        <!-- Skill adı giriş alanı -->
+                        <label for="skillName" class="form-label">Yetkinlik Adı</label>
+                        <input type="text" class="form-control" id="skillName" name="SkillName" required>
+                        <label for="skillScore" class="form-label">Yetkinlik Yüzdesi</label>
+                        <input type="text" class="form-control" id="skillScore" name="SkillScore" required>
+                    </div>
+                </div>
+                <!-- Modal alt kısmı -->
+                <div class="modal-footer">
+                    <!-- Kapatma butonu -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <!-- Ekleme butonu -->
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 <div class="tab-pane" id="skill">
     <div class="col-12">
         <div class="card">
             <div class="row">
-                <a href="/admin/adminskill/skilladd/" class="btn btn-warning mb-4"><i class="fas fa-code"></i> Yetkinlik Ekle</a>
+                <!-- Buton modalı tetikleyen buton -->
+                <!-- "Yetkinlik Ekle" adında bir buton oluşturuluyor. -->
+                <a href="#" class="btn btn-warning mb-4" data-bs-toggle="modal" data-bs-target="#addSkillModal"><i class=" fas fa-code"></i> Yetkinlik Ekle</a>
+                @* data-bs-toggle="modal" özelliğine sahip bir düğme veya bağlantıya tıklandığında, bu, ilişkilendirilmiş modalı (pencereyi) açar veya kapatır. *@
 
 
                 @foreach (var item in Model)
@@ -76,7 +118,7 @@
             // İptal butonunu gösterme
             showCancelButton: true,
             // Onay butonunun rengi
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#f9c851',
             // İptal butonunun rengi
             cancelButtonColor: '#d33',
             // Onay butonunun metni
@@ -89,13 +131,7 @@
                     url: '/Admin/AdminSkill/SkillDelete/' + skillId,
                     // Başarılı bir şekilde tamamlandığında
                     success: function (response) {
-                        // Başarılı bir iletişim kutusu gösterilir
-                        Swal.fire(
-                            'Silindi!',
-                            'Yetkinlik başarıyla silindi',
-                            'success'
-                        );
-                        // Silinen becerinin HTML öğesi kaldırılır
+                    // Silinen becerinin HTML öğesi kaldırılır
                         $('#skill_' + skillId).remove();
                         location.reload();
                     },
@@ -112,4 +148,31 @@
             }
         });
     }
+
+
+    // *****************************************************
+    // EKLE
+    @*JavaScript kodu: Form verilerini AJAX isteğiyle gönderme *@
+        document.getElementById("addSkillForm").addEventListener("submit", function (event) {
+    @* Sayfanın yeniden yüklenmesini engelle *@
+                event.preventDefault();
+    @* Formu al *@
+           var form = event.target;
+    @* Form verilerini FormData nesnesine dönüştür *@
+          var formData = new FormData(form);
+    @* Yeni bir XMLHttpRequest nesnesi oluştur *@
+         var xhr = new XMLHttpRequest();
+    @* İstek türünü belirle ve hedef URL'yi ayarla *@
+          xhr.open("POST", form.action);
+    @* İstek tamamlandığında yapılacak işlem *@
+         xhr.onload = function () {
+    @* İstek başarılıysa *@
+         if (xhr.status === 200) {
+    @* Sayfayı yenile *@
+          location.reload();
+                    }
+                };
+    @* Form verilerini istekle birlikte gönder *@
+                xhr.send(formData);
+        });
 </script>
