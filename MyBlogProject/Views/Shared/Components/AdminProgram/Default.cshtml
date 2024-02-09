@@ -78,7 +78,7 @@
                                 <h5 class="card-title mt-2">@item.ProgramName</h5>
                                 <!-- Düzenleme ve silme butonları -->
                                 <a href="/Admin/AdminProgram/ProgramUpdate/@item.Id" class="program-edit fas fa-pencil-alt"></a>
-                                <a href="/Admin/AdminProgram/ProgramUpdate/@item.Id" class="program-close btn-close" aria-label="Sil"></a>
+                                <a href="/Admin/AdminProgram/ProgramDelete/@item.Id" class="program-close btn-close" aria-label="Sil"></a>
                             </div>
                         </div>
                     </div>
@@ -97,17 +97,17 @@
     @* Sayfanın yeniden yüklenmesini engelle *@
                 event.preventDefault();
     @* Formu al *@
-                var form = event.target;
+                    var form = event.target;
     @* Form verilerini FormData nesnesine dönüştür *@
-                var formData = new FormData(form);
+                    var formData = new FormData(form);
     @* Yeni bir XMLHttpRequest nesnesi oluştur *@
-                var xhr = new XMLHttpRequest();
+                    var xhr = new XMLHttpRequest();
     @* İstek türünü belirle ve hedef URL'yi ayarla *@
                 xhr.open("POST", form.action);
     @* İstek tamamlandığında yapılacak işlem *@
                 xhr.onload = function () {
     @* İstek başarılıysa *@
-                    if (xhr.status === 200) {
+                        if (xhr.status === 200) {
     @* Sayfayı yenile *@
                             location.reload();
                     }

@@ -39,5 +39,14 @@ namespace MyBlogProject.Areas.Admin.Controllers
             //}
         }
 
+        public IActionResult ProgramDelete(int id)
+        {
+            var programvalue = pm.GetById(id);
+
+            pm.TDelete(programvalue);
+            return RedirectToAction("Index", "AdminPortfolio");
+
+        }
+
     }
 }
