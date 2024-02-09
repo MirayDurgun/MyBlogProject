@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Skill
+    public class Program
     {
-        public int SkillId { get; set; }
-        public string SkillName { get; set; }
-        public string? SkillScore { get; set; }
+        public int Id { get; set; }
+        public string ProgramName { get; set; }
     }
 }

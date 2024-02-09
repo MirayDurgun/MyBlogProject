@@ -1,0 +1,30 @@
+﻿@model List<Program>
+
+
+<style>
+    .prog-name {
+        width: 100%;
+        height: 100%;
+        background-color: #f8f8f6;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 2%;
+    }
+</style>
+
+@if (Model != null)
+{
+ <h2 class="section-title">PROGRAMLAR</h2>
+    <div class="skillset">
+        @foreach (var item in Model)
+        {
+            @if (item.ProgramName!= null)
+            {
+                <div class="prog-name">
+                    <h4>@item.ProgramName</h4>
+                </div>
+            }
+
+        } 
+    </div> 
+}

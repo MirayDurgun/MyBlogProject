@@ -1,5 +1,6 @@
 ﻿@model List<Skill>
 
+
 <style>
     .skill-name {
         width: 100%;
@@ -28,17 +29,4 @@
             }
     </div>
 
-    <h2 class="section-title">PROGRAMLAR</h2>
-    <div class="skillset">
-        @foreach (var item in Model)
-        {
-            @if (item.SoftwareUsed != null)
-            {
-                <div class="skill-name">
-                    <h4>@item.SoftwareUsed</h4>
-                </div>
-            }
-
-        }
-    </div> 
 }
