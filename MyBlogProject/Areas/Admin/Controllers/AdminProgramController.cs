@@ -48,5 +48,34 @@ namespace MyBlogProject.Areas.Admin.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult ProgramUpdate(int id)
+        {
+            var programvalue = pm.GetById(id);
+            return View(programvalue);
+        }
+
+        [HttpPost]
+        public IActionResult ProgramUpdate(EntityLayer.Concrete.Program p)
+        {
+            //ProgramValidator jv = new ProgramValidator();
+            //ValidationResult results = jv.Validate(j);
+
+            //if (results.IsValid)
+            //{
+            var programvalue = pm.GetById(p.Id);
+            pm.TUpdate(p);
+            return RedirectToAction("Index", "AdminPortfolio");
+            //}
+            //else
+            //{
+            //    foreach (var item in results.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //    return View();
+            //}
+        }
+
     }
 }
