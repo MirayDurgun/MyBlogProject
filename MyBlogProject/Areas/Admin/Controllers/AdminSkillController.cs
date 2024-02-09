@@ -50,5 +50,35 @@ namespace MyBlogProject.Areas.Admin.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult SkillUpdate(int id)
+        {
+            var skillvalue = sm.GetById(id);
+            return View(skillvalue);
+        }
+
+        [HttpPost]
+        public IActionResult SkillUpdate(Skill s)
+        {
+            //SkillValidator jv = new SkillValidator();
+            //ValidationResult results = jv.Validate(j);
+
+            //if (results.IsValid)
+            //{
+            var skillvalue = sm.GetById(s.SkillId);
+            sm.TUpdate(s);
+            return RedirectToAction("Index", "AdminPortfolio");
+            //}
+            //else
+            //{
+            //    foreach (var item in results.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //    return View();
+            //}
+
+        }
+
     }
 }
