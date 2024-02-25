@@ -14,15 +14,16 @@
         <div class="event current">
             <span class="date">
                 @(((DateTime)item.StartDate).ToString("MMMM yyyy")) -
-                @if (item.EndDate != null)
+
+                @if (item.EndDate.HasValue)
                 {
-                    @(((DateTime)item.EndDate).ToString("MMMM yyyy"))
+                    <text>@item.EndDate.Value.ToString("MMMM yyyy")</text>
                 }
                 else
                 {
-                      @item.ContinuingJob
+                    <text>Devam Ediyor</text>
                 }
-              
+
             </span>
 
             <h4>@item.JobTitle</h4>
