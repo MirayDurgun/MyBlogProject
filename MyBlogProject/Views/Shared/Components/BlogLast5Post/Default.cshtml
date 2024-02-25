@@ -13,11 +13,11 @@
                     @if (item.BlogImage != null)
                     {
                         <li>
-                            <a href="/Blog/Index/" class="tptn_link">
+                            <a href="/Blog/BlogSingle/@item.BlogID/" class="tptn_link">
                                 <img src="@item.BlogImage" alt="fotoğraf" class="tptn_thumb">
                             </a>
                             <span class="tptn_after_thumb">
-                                <a href="#" class="tptn_link"><span class="tptn_title">@item.BlogTitle</span></a>
+                                <a href="/Blog/BlogSingle/@item.BlogID/" class="tptn_link"><span class="tptn_title">@item.BlogTitle</span></a>
                                 <span class="tptn_date"> @(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</span>
                             </span>
                         </li>
