@@ -95,10 +95,12 @@
                                 </div>
                                 <div class="entry-content">
 
-                                    <p>
-                                        @item.ProjectDescription
+                                    <p>@item.ProjectDescription</p>
 
-                                    </p>
+                                    @if (item.ProjectDescription2 != null)
+                                    {
+                                        <p>@item.ProjectDescription2</p>
+                                    }
 
                                 </div>
 
