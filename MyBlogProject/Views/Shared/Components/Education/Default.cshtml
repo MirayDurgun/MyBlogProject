@@ -18,7 +18,11 @@
                 {
                     @(((DateTime)item.EducationEndDate).ToString("MMMM yyyy"))
                 }
-                @item.ContinuingEducation
+                else
+                {
+                     @item.ContinuingEducation
+                }
+               
             </span>
             <h4>@item.EducationTitle</h4>
             <h5>@item.EducationName</h5>

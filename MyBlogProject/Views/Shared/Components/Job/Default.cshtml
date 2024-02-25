@@ -18,7 +18,11 @@
                 {
                     @(((DateTime)item.EndDate).ToString("MMMM yyyy"))
                 }
-                @item.ContinuingJob
+                else
+                {
+                      @item.ContinuingJob
+                }
+              
             </span>
 
             <h4>@item.JobTitle</h4>
