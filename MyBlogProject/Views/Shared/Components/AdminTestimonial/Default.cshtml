@@ -43,7 +43,7 @@
 
 
                         <p class="card-text">
-                            @(item.TestimonialsDescription.Length > 150 ? item.TestimonialsDescription.Substring(0, 200).TrimEnd() + "..." : item.TestimonialsDescription)
+                            @item.TestimonialsDescription
                         </p>
                         <div class="d-flex">
                             <a href="/admin/admintestimonial/testimonialadd/" class="btn btn-success"><i class="fas fa-graduation-cap"></i> Referans Ekle</a>

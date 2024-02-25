@@ -1,0 +1,85 @@
+﻿@model EntityLayer.Concrete.Testimonial
+
+@{
+    ViewData["Title"] = "TestimonialAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #FF9966;
+        }
+
+    .text-test {
+        color: #FF9999;
+    }
+
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-test">Referans Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+                                        @using (Html.BeginForm("TestimonialAdd", "AdminTestimonial", FormMethod.Post))
+                                        {
+                                            @Html.Label("Referans Adı")
+                                            @Html.TextBoxFor(x => x.TestimonialsName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.TestimonialsName)
+                                            <br />
+
+                                            @Html.Label("Şirket Adı")
+                                            @Html.TextBoxFor(x => x.TestimonialsCompanyName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.TestimonialsCompanyName)
+                                            <br />
+
+                                            @Html.Label("Ünvan")
+                                            @Html.TextBoxFor(x => x.TestimonialsJobTitle, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.TestimonialsJobTitle)
+                                            <br />
+
+                                            @Html.Label("Açıklama")
+                                            @Html.TextAreaFor(x => x.TestimonialsDescription, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.TestimonialsDescription)
+                                            <br />
+
+                                            @Html.Label("Referans Fotoğrafı")
+                                            @Html.TextBoxFor(x => x.Image, new { type = "file", @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Image)
+                                            <br />
+                                            <br />
+
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info">Ekle</button>
+                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
