@@ -10,7 +10,7 @@
             @foreach (var item in Model)
             {
                 <li>
-                    <a href="#">@item.BlogTitle</a>
+                    <a href="/Blog/Index/">@item.BlogTitle</a>
                     <br>@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))
                 </li>
             }
