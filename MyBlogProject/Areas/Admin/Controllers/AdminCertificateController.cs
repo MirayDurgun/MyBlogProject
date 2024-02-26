@@ -24,20 +24,14 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CertificateAdd(Certificate c)
         {
-
-            //if (results.IsValid)
-            //{
-            cm.TAdd(c);
-            return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
+            if (ModelState.IsValid)
+            {
+              
+                cm.TAdd(c);
+                return RedirectToAction("Index", "AdminPortfolio");
+            }
+            
+            return View(c);
         }
 
         public IActionResult CertificateDelete(int id)
