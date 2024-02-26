@@ -1,0 +1,21 @@
+﻿@model List<Project>
+
+
+<div class="col-xl-3 col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title mt-0 mb-4">Projeler</h4>
+
+            @foreach (var item in Model)
+            {
+                <h5 class="mt-0">@item.ProjectName <span class="float-end">@item.ProjectCompletion</span></h5>
+                <div class="progress progress-bar-alt progress-sm mt-0 mb-3">
+                    <div class="progress-bar progress-animated wow animated animated" role="progressbar" aria-valuenow="@item.ProjectCompletion" aria-valuemin="0" aria-valuemax="100" style="width:@item.ProjectCompletion%; visibility: visible; animation-name: animationProgress;">
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>

@@ -22,7 +22,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Education> Educations { get; set; }
         public DbSet<Job> Jobs { get; set; }
-        public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Program> Programs { get; set; }

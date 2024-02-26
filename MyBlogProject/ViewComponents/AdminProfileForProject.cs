@@ -2,11 +2,11 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyBlogProject.ViewComponents.Comment
+namespace MyBlogProject.ViewComponents.Portolio
 {
-    public class BlogforComment : ViewComponent
+    public class AdminProfileForProject : ViewComponent
     {
-        AdminManager pm = new AdminManager(new EfAdminRepositoy());
+        ProjectManager pm = new ProjectManager(new EfProjectRepository());
         public IViewComponentResult Invoke(int id)
         {
             var values = pm.GetList();

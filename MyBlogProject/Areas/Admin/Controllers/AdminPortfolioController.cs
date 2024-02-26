@@ -7,7 +7,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
     [Area("Admin")]
     public class AdminPortfolioController : Controller
     {
-        PortfolioManager pm = new PortfolioManager(new EfPortfolioRepository());
+        AdminManager pm = new AdminManager(new EfAdminRepositoy());
         
         public IActionResult Index()
         {
