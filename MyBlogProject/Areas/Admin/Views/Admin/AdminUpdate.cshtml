@@ -26,7 +26,7 @@
                                             <br />
 
                                             @Html.Label("Fotoğraf")
-                                            @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+                                            <input type="file" id="ImageURL" name="ImageURL" class="form-control" />
                                             @Html.ValidationMessageFor(x => x.ImageURL)
                                             <br />
 
