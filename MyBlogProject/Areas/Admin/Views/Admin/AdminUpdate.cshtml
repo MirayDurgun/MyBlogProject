@@ -1,0 +1,74 @@
+﻿@model EntityLayer.Concrete.Admin
+
+@{
+    ViewData["Title"] = "AdminUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center" style=" color:#c9b69b;">Profil Düzenleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+
+                                        @using (Html.BeginForm("AdminUpdate", "Admin", FormMethod.Post))
+                                        {
+                                            @Html.Label("Profil ID")
+                                            @Html.TextBoxFor(x => x.AdminID, new { @class = "form-control" })
+                                            <br />
+
+                                            @Html.Label("Fotoğraf")
+                                            @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.ImageURL)
+                                            <br />
+
+                                            @Html.Label("Ad Soyad")
+                                            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.NameSurname)
+                                            <br />
+
+                                            @Html.Label("Şifre")
+                                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Password)
+                                            <br />
+
+                                            @Html.Label("Rol")
+                                            @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Role)
+
+                                            <br />
+
+                                            @Html.Label("Mail")
+                                            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.Mail)
+                                            <br />
+
+                                            @Html.Label("Açıklama")
+                                            @Html.TextAreaFor(x => x.ShortDescription, new { @class = "form-control", @rows = 5 })
+                                            @Html.ValidationMessageFor(x => x.ShortDescription)
+                                            <br />
+
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info">Güncelle</button>
+                                            <a href="/Admin/Admin/Profile/" class="btn btn-danger">İptal Et</a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

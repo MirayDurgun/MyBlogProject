@@ -10,21 +10,29 @@
     strong {
         color: #c9b69b;
     }
- </style>
 
+    .profil {
+        background-color: #c9b69b;
+        color: white;
+    }
+</style>
 
 <div id="wrapper">
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+
                     @foreach (var item in Model)
                     {
+                        <a href="/Admin/Admin/AdminUpdate/@item.AdminID" class="btn profil mb-4">Profil Düzenle</a>
                         <div class="col-xl-9 col-md-6">
                             <div class="card">
                                 <div class="text-center card-body">
                                     <div>
-                                        <img src="@item.ImageURL" class="rounded-circle" style="width:25%; height:25%;">
+                                        <img src="@item.ImageURL" class="rounded-circle" style="width:25%; height:25%;" alt="Resim">
+                                        <div class="edit-icon"></div>
+
                                         <br /> <br />
                                         <p class="text-muted font-13 mb-4 des">
                                             @item.ShortDescription
@@ -50,9 +58,14 @@
 
                     @await Component.InvokeAsync("AdminProfileForProject")
 
-
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
