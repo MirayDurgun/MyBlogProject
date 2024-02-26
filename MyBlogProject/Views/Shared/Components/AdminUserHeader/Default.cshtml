@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+
+<div class="user-box text-center">
+
+    @foreach (var item in Model)
+    {
+        <img src="@item.ImageURL" alt="user-img" class="rounded-circle avatar-xl">
+
+        <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-bs-toggle="dropdown" aria-expanded="false">@item.UserName</a>
+    }
+
+
+    <p class="text-muted left-user-info">Admin Head</p>
+
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <a href="#" class="text-muted left-user-info">
+                <i class="mdi mdi-cog"></i>
+            </a>
+        </li>
+
+        <li class="list-inline-item">
+            <a href="#">
+                <i class="mdi mdi-power"></i>
+            </a>
+        </li>
+    </ul>
+</div>

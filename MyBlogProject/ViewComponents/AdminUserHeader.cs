@@ -1,16 +1,13 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyBlogProject.Controllers
+namespace MyBlogProject.ViewComponents.Admin
 {
-    public class PortfolioController : Controller
+    public class AdminUserHeader : ViewComponent
     {
         AdminManager adm = new AdminManager(new EfAdminRepositoy());
-
-        [AllowAnonymous]
-        public IActionResult Index()
+        public IViewComponentResult Invoke(int id)
         {
             var values = adm.GetList();
             return View(values);

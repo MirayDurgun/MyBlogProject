@@ -1,4 +1,4 @@
-﻿@model List<Portfolio>
+﻿@model List<Admin>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
@@ -27,14 +27,14 @@
 
                     <header class="entry-header">
                         <h1 class="entry-title">ÖZGEÇMİŞ</h1>
+                        <br />
                         @if (Model != null)
                         {
                             foreach (var item in Model)
                             {
-                                <h3 class="entry-title">@item.NameTitle</h3>
+                                <h2 class="entry-title" style="color:#c9b69b;">@item.UserName</h2>
                             }
                         }
-
 
                     </header>
 
@@ -57,10 +57,15 @@
                             </div>
 
                             <div class="col-sm-5">
-
-                                <div class="portolio-img mx-auto">
-                                    <img src="~/blogtema/images/blog/02.jpg" />
-                                </div>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <div class="portolio-img mx-auto">
+                                            <img src="@item.ImageURL" />
+                                        </div>
+                                    }
+                                }
                                 @* skill *@
                                 @await Component.InvokeAsync("Skill")
 
