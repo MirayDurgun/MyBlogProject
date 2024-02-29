@@ -18,6 +18,10 @@
         .card:hover {
             box-shadow: 0 0 10px #80baf9;
         }
+
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -56,10 +60,8 @@
                                                 <textarea asp-for="BlogContent" class="form-control" rows="3" cols="10"></textarea>
                                                 <span asp-validation-for="BlogContent" class="text-danger"></span>
                                             </div>
-                                            <button type="submit" class="btn btn-info">Yazıyı Kaydet</button>
+                                            <button type="submit" class="btn btn-primary">Yazıyı Kaydet</button>
                                         </form>
-
-
                                     </div>
                                 </div>
                             </div>

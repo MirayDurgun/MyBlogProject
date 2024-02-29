@@ -15,6 +15,9 @@
             box-shadow: 0 0 10px #fde910;
         }
 
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -33,24 +36,28 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("SkillUpdate", "AdminSkill", FormMethod.Post))
-                                        {
-                                            @Html.Label("Yetkinlik ID")
-                                            @Html.TextBoxFor(x => x.SkillId, new { @class = "form-control" })
-                                            <br />
-                                            @Html.Label("Yetkinlik Adı")
-                                            @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.SkillName)
-                                            <br />
-                                            @Html.Label("Yetkinlik Yüzdesi")
-                                            @Html.TextBoxFor(x => x.SkillScore, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.SkillScore)
+                                        <form asp-action="SkillUpdate" asp-area="Admin" asp-controller="AdminSkill" method="post">
+                                            <div class="form-group">
+                                                <label>Id</label>
+                                                <input asp-for="SkillId" class="form-control" />
+                                            </div>
 
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-info">Güncelle</button>
-                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
-                                        }
+                                            <div class="form-group">
+                                                <label>Yetkinlik Adı</label>
+                                                <input asp-for="SkillName" class="form-control" />
+                                                <span asp-validation-for="SkillName" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Yüzde</label>
+                                                <input asp-for="SkillScore" class="form-control" />
+                                                <span asp-validation-for="SkillScore" class="text-danger"></span>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-info">Güncelle</button>
+                                            <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                        </form>
+
 
                                     </div>
                                 </div>

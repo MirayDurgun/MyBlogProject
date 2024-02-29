@@ -22,6 +22,9 @@
         color: #FF9999;
     }
 
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -39,42 +42,47 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("TestimonialUpdate", "AdminTestimonial", FormMethod.Post))
-                                        {
-                                            @Html.Label("Referans ID")
-                                            @Html.TextBoxFor(x => x.TestimonialId, new { @class = "form-control" })
-                                            <br />
+                                        <form asp-action="TestimonialUpdate" asp-controller="AdminTestimonial" method="post" enctype="multipart/form-data" asp-area="Admin">
+                                            <div class="form-group">
+                                                <label>Id</label>
+                                                <input asp-for="TestimonialId" class="form-control" />
+                                            </div>
 
-                                            @Html.Label("Referans Adı")
-                                            @Html.TextBoxFor(x => x.TestimonialsName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.TestimonialsName)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Referans Adı</label>
+                                                <input asp-for="TestimonialsName" class="form-control" />
+                                                <span asp-validation-for="TestimonialsName" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Şirket Adı")
-                                            @Html.TextBoxFor(x => x.TestimonialsCompanyName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.TestimonialsCompanyName)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Şirket Adı</label>
+                                                <input asp-for="TestimonialsCompanyName" class="form-control" />
+                                                <span asp-validation-for="TestimonialsCompanyName" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Ünvan")
-                                            @Html.TextBoxFor(x => x.TestimonialsJobTitle, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.TestimonialsJobTitle)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Ünvan</label>
+                                                <input asp-for="TestimonialsJobTitle" class="form-control" />
+                                                <span asp-validation-for="TestimonialsJobTitle" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Açıklama")
-                                            @Html.TextAreaFor(x => x.TestimonialsDescription, new { @class = "form-control", @rows = 5 })
-                                            @Html.ValidationMessageFor(x => x.TestimonialsDescription)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Referans Yazısı</label>
+                                                <textarea asp-for="TestimonialsDescription" class="form-control" rows="5"></textarea>
+                                                <span asp-validation-for="TestimonialsDescription" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Referans Fotoğrafı")
-                                            @Html.TextBoxFor(x => x.Image, new { type = "file", @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.Image)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Fotoğraf</label>
+                                                <input asp-for="Image" type="file" class="form-control" />
+                                                <span asp-validation-for="Image" class="text-danger"></span>
+                                            </div>
 
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-info">Güncelle</button>
-                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
-                                        }
+
+                                            <button type="submit" class="btn btn-info">Güncelle</button>
+                                            <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                        </form>
+
 
                                     </div>
                                 </div>

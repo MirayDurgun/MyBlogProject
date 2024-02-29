@@ -16,6 +16,9 @@
             box-shadow: 0 0 10px lightblue;
         }
 
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -34,19 +37,22 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("ProgramUpdate", "AdminProgram", FormMethod.Post))
-                                        {
-                                            @Html.Label("Program ID")
-                                            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
-                                            <br />
-                                            @Html.Label("Program Adı")
-                                            @Html.TextBoxFor(x => x.ProgramName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.ProgramName)
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-info">Güncelle</button>
-                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
-                                        }
+                                        <form asp-action="ProgramUpdate" asp-controller="AdminProgram" asp-area="Admin" method="post">
+                                            <div class="form-group">
+                                                <label>Id</label>
+                                                <input asp-for="Id" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Program Adı</label>
+                                                <input asp-for="ProgramName" class="form-control" />
+                                                <span asp-validation-for="ProgramName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-info">Güncelle</button>
+                                                <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                            </div>
+                                        </form>
+
 
                                     </div>
                                 </div>

@@ -20,6 +20,10 @@
         color: #FF6699;
     }
 
+    form div {
+        margin-bottom: 3%;
+    }
+   
 </style>
 
 
@@ -37,7 +41,7 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        <form asp-controller="AdminCertificate" asp-action="CertificateAdd" method="post">
+                                        <form asp-controller="AdminCertificate" asp-area="Admin" asp-action="CertificateAdd" method="post">
 
                                             <div class="form-group">
                                                 <label>Sertifika Adı</label>
@@ -63,7 +67,6 @@
                                                 <label>Eğitim Süresi</label>
                                                 <input asp-for="EducationDurationHours" class="form-control" />
                                             </div>
-                                            <br />
                                             <button type="submit" class="btn btn-info">Ekle</button>
                                             <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
                                         </form>

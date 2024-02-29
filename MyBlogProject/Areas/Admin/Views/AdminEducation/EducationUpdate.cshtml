@@ -13,14 +13,17 @@
         box-shadow: 0 0 8px grey;
     }
 
-    .card:hover {
-        box-shadow: 0 0 10px #6600CC;
-    }
+        .card:hover {
+            box-shadow: 0 0 10px #6600CC;
+        }
 
     .text-edu {
         color: #6633CC;
     }
 
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -39,40 +42,42 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("EducationUpdate", "AdminEducation", FormMethod.Post))
-                                        {
-                                            @Html.Label("Okul ID")
-                                            @Html.TextBoxFor(x => x.EducationId, new { @class = "form-control" })
-                                            <br />
-                                            @Html.Label("Okul Adı")
-                                            @Html.TextBoxFor(x => x.EducationName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.EducationName)
-                                            <br />
+                                        <form asp-action="EducationUpdate" asp-controller="AdminEducation" asp-area="Admin" method="post">
+                                            <div class="form-group">
+                                                <label>Id</label>
+                                                <input asp-for="EducationId" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Okul Adı</label>
+                                                <input asp-for="EducationName" class="form-control" />
+                                                <span asp-validation-for="EducationName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bölüm Adı</label>
+                                                <input asp-for="EducationTitle" class="form-control" />
+                                                <span asp-validation-for="EducationTitle" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Açıklama</label>
+                                                <textarea asp-for="EducationDescription" class="form-control" rows="5"></textarea>
+                                                <span asp-validation-for="EducationDescription" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Başlangıç Tarihi</label>
+                                                <input asp-for="EducationStartDate" class="form-control" type="date" />
+                                                <span asp-validation-for="EducationStartDate" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bitiş Tarihi</label>
+                                                <input asp-for="EducationEndDate" class="form-control" type="date" />
+                                                <span asp-validation-for="EducationEndDate" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-info">Güncelle</button>
+                                                <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                            </div>
+                                        </form>
 
-                                            @Html.Label("Bölüm Adı")
-                                            @Html.TextBoxFor(x => x.EducationTitle, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.EducationTitle)
-
-                                            <br />
-
-                                            @Html.Label("Bölüm Açıklaması")
-                                            @Html.TextAreaFor(x => x.EducationDescription, new { @class = "form-control", @rows = 5 })
-                                            @Html.ValidationMessageFor(x => x.EducationDescription)
-                                            <br />
-
-                                            @Html.Label("Başlama Tarihi")
-                                            @Html.TextBoxFor(x => x.EducationStartDate, new { @class = "form-control", @type = "date" })
-                                            @Html.ValidationMessageFor(x => x.EducationStartDate)
-
-                                            <br />
-                                            @Html.Label("Bitiş Tarihi")
-                                            @Html.TextBoxFor(x => x.EducationEndDate, new { @class = "form-control", @type = "date" })
-                                            @Html.ValidationMessageFor(x => x.EducationEndDate)
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-info">Güncelle</button>
-                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
-                                        }
 
                                     </div>
                                 </div>

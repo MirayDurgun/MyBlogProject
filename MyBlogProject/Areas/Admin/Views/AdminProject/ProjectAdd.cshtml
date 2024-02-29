@@ -17,6 +17,10 @@
         .card:hover {
             box-shadow: 0 0 10px #80baf9;
         }
+
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -34,49 +38,46 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("ProjectAdd", "AdminProject", FormMethod.Post))
-                                        {
-                                            @Html.Label("Proje Başlığı")
-                                            @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.ProjectName)
-                                            <br />
+                                        <form asp-action="ProjectAdd" asp-controller="AdminProject" asp-area="Admin" method="post" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label>Proje Adı</label>
+                                                <input asp-for="ProjectName" class="form-control" />
+                                                <span asp-validation-for="ProjectName" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Proje Özeti")
-                                            @Html.TextAreaFor(x => x.ProjectSummary, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.ProjectSummary)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Özet Bilgi</label>
+                                                <textarea asp-for="ProjectSummary" class="form-control" rows="3"></textarea>
+                                                <span asp-validation-for="ProjectSummary" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Proje Açıklaması")
-                                            @Html.TextAreaFor(x => x.ProjectDescription, new { @class = "form-control", @rows = 5 })
-                                            @Html.ValidationMessageFor(x => x.ProjectDescription)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>1. Açıklama </label>
+                                                <textarea asp-for="ProjectDescription" class="form-control" rows="5"></textarea>
+                                                <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.Label("Proje Açıklaması 2")
-                                            @Html.TextAreaFor(x => x.ProjectDescription2, new { @class = "form-control", @rows = 5 })
-                                            @Html.ValidationMessageFor(x => x.ProjectDescription2)
-                                            <br />
-                                            @Html.Label("Proje Tamamlanma Yüzdesi")
-                                            @Html.TextBoxFor(x => x.ProjectCompletion, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.ProjectCompletion)
-                                            <br />
-                                            @Html.Label("Proje Görseli")
-                                            @Html.TextBoxFor(x => x.Image1, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.Image1)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>2. Açıklama</label>
+                                                <textarea asp-for="ProjectDescription2" class="form-control" rows="5"></textarea>
+                                                <span asp-validation-for="ProjectDescription2" class="text-danger"></span>
+                                            </div>
 
-                                            @Html.LabelFor(x => x.Image1)
-                                            @Html.TextBoxFor(x => x.Image1, new { type = "file", @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.Image1)
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Tamamlanma Yüzdesi</label>
+                                                <input asp-for="ProjectCompletion" class="form-control" />
+                                                <span asp-validation-for="ProjectCompletion" class="text-danger"></span>
+                                            </div>
 
-                                            <br />
+                                            <div class="form-group">
+                                                <label>Görsel</label>
+                                                <input asp-for="Image1" type="file" class="form-control" />
+                                                <span asp-validation-for="Image1" class="text-danger"></span>
+                                            </div>
 
-                                            <button class="btn btn-info">Ekle</button>
-                                            <a href="/Admin/AdminProject/index/" class="btn btn-danger">İptal Et</a>
-                                        }
-
-
-
+                                            <button type="submit" class="btn btn-info">Ekle</button>
+                                            <a asp-controller="AdminProject" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                        </form>
 
 
                                     </div>

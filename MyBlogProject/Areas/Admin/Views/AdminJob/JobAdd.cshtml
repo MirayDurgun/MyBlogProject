@@ -17,6 +17,10 @@
         .card:hover {
             box-shadow: 0 0 10px #66CCCC;
         }
+
+    form div {
+        margin-bottom: 3%;
+    }
 </style>
 
 
@@ -34,36 +38,38 @@
                                     <div class="col-lg-5 mx-auto">
 
 
-                                        @using (Html.BeginForm("JobAdd", "AdminJob", FormMethod.Post))
-                                        {
-                                            @Html.Label("Firma Adı")
-                                            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.CompanyName)
-                                            <br />
+                                        <form asp-action="JobAdd" asp-controller="AdminJob" asp-area="Admin" method="post">
+                                            <div class="form-group">
+                                                <label>Şirket Adı</label>
+                                                <input asp-for="CompanyName" class="form-control" />
+                                                <span asp-validation-for="CompanyName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ünvan</label>
+                                                <input asp-for="JobTitle" class="form-control" />
+                                                <span asp-validation-for="JobTitle" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Açıklama</label>
+                                                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                                                <span asp-validation-for="Description" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Başlangıç Tarihi</label>
+                                                <input asp-for="StartDate" class="form-control" type="date" />
+                                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bitiş Tarihi</label>
+                                                <input asp-for="EndDate" class="form-control" type="date" />
+                                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-info">Ekle</button>
+                                                <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                            </div>
+                                        </form>
 
-                                            @Html.Label("İş Ünvanı")
-                                            @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(x => x.JobTitle)
-                                            <br />
-
-                                            @Html.Label("İş Açıklaması")
-                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 5 })
-                                            @Html.ValidationMessageFor(x => x.Description)
-                                            <br />
-
-                                            @Html.Label("Başlama Tarihi")
-                                            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control", @type = "date" })
-                                            @Html.ValidationMessageFor(x => x.StartDate)
-
-                                            <br />
-                                            @Html.Label("Ayrılış Tarihi")
-                                            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", @type = "date" })
-                                            @Html.ValidationMessageFor(x => x.EndDate)
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-info">Ekle</button>
-                                            <a href="/Admin/AdminPortfolio/index/" class="btn btn-danger">İptal Et</a>
-                                        }
 
                                     </div>
                                 </div>
