@@ -1,11 +1,9 @@
 ﻿using BusinessLayer.Concrete;
-using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ValidationResult = FluentValidation.Results.ValidationResult;
 
 
 namespace MyBlogProject.Areas.Admin.Controllers
@@ -44,36 +42,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult BlogAdd(Blog b)
         {
-            BlogValidator bv = new BlogValidator();
-            ValidationResult results = bv.Validate(b);
 
-            if (results.IsValid)
-            {
-                b.BlogStatus = true;
-                b.Category = cm.GetById(b.CategoryID);
-                bm.TAdd(b);
-                return RedirectToAction("Index", "AdminBlog");
-            }
-            else
-            {
-                foreach (var item in results.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
+            b.BlogStatus = true;
+            bm.TAdd(b);
+            return RedirectToAction("Index", "AdminBlog");
 
-                // Hata durumunda, ViewBag.cv'yi set et
-                ViewBag.cv = (from x in cm.GetList()
-                              select new SelectListItem
-                              {
-                                  Text = x.CategoryName,
-                                  Value = x.CategoryID.ToString()
-                              }).ToList();
-
-                return View();
-            }
         }
-
-
-
     }
 }
