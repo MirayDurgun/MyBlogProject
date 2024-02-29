@@ -16,6 +16,42 @@
                     <a href="/Admin/AdminBlog/BlogAdd/" class="btn btn-purple rounded-pill w-md waves-effect waves-light mb-3"><i class="mdi mdi-plus"></i> Yeni Blog Oluştur</a>
                 </div>
             </div>
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a href="#" data-filter="*" class="nav-link active">
+                                Tümü
+                            </a>
+                        </li>
+                        @foreach (var item in Model.Select(m => m.BlogStatus).Distinct())
+                        {
+                            if (item == true)
+                            {
+                                <li class="nav-item">
+                                    <a href="#" data-filter=".@item" class="nav-link">
+                                        Yayında
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a href="#" data-filter=".@item" class="nav-link">
+                                        Yayında Değil
+                                    </a>
+                                </li>
+                            }
+
+
+                        }
+                    </ul>
+                </div>
+            </div>
+
+
+
             <div class="row">
 
                 @if (Model != null)
@@ -23,14 +59,11 @@
 
                     foreach (var item in Model)
                     {
-
-                        <div class="col-xl-4">
+                        <div class="col-xl-4 @item.BlogStatus" id="@item.BlogStatus">
                             <div class="card">
                                 <div class="card-body project-box">
-
                                     @if (item.BlogStatus == true)
                                     {
-
                                         <div class="badge bg-success float-end">Yayında</div>
                                     }
                                     else
@@ -39,7 +72,8 @@
                                     }
 
                                     <h4 class="mt-0"><a href="" class="text-dark">@item.BlogTitle.ToUpper()</a></h4>
-                                    <p class="text-success text-uppercase font-13">Kategorisi</p>
+                                    <p class="text-success text-uppercase font-13">@item.Category.CategoryName</p>
+
                                     <p class="text-muted font-13">
                                         @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 350).LastIndexOf(" "))....
                                         <a href="#" class="text-primary">Devamını Oku</a>
@@ -55,8 +89,6 @@
                                             <p class="text-muted">Yorum sayısı</p>
                                         </li>
                                     </ul>
-
-
                                 </div>
                             </div>
 
@@ -68,3 +100,17 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

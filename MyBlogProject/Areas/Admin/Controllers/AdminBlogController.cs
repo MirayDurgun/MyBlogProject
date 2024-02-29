@@ -4,6 +4,8 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using System.Reflection.Metadata;
 
 
 namespace MyBlogProject.Areas.Admin.Controllers
@@ -18,8 +20,15 @@ namespace MyBlogProject.Areas.Admin.Controllers
         public IActionResult Index()
         {
 
-            var values = bm.GetList();
-            return View(values);
+            var blogs = bm.GetList();
+
+            foreach (var blog in blogs)
+            {
+                blog.Category = cm.GetById(blog.CategoryID);
+            }
+
+            return View(blogs);
+
         }
 
 
