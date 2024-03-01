@@ -18,23 +18,27 @@ namespace MyBlogProject.Areas.Admin.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         Context c = new Context();
 
-        public IActionResult Index()
+        public IActionResult Index(string category)
         {
             var blogs = bm.GetList();
             foreach (var blog in blogs)
             {
+                // Her bir blogun kategorisini, CategoryManager sınıfından kategori ID'sine göre alır.
                 blog.Category = cm.GetById(blog.CategoryID);
             }
+            if (!string.IsNullOrEmpty(category))
+            {
+                // Blogları, belirtilen kategoriye göre filtreler ve bir listeye dönüştürür
+                blogs = blogs.Where(b => b.Category.CategoryName == category).ToList();
+            }
+            ViewBag.Category = category; // // Seçilen kategoriyi ViewBag'e atar.
             return View(blogs);
         }
 
         public IActionResult BlogDetail(int id)
         {
             var blog = bm.GetById(id);
-
             blog.Category = cm.GetById(blog.CategoryID); //kategori adını getirdik
-
-
             return View(blog);
         }
 

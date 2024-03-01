@@ -40,38 +40,27 @@
                 </div>
             </div>
 
+
             <div class="col-xl-12">
                 <div class="card">
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item">
-                            <a href="#" data-filter="*" class="nav-link active">
+                            <a href="/Admin/AdminBlog/Index" class="nav-link @(ViewBag.Category == null ? "active" : "")">
                                 Tümü
                             </a>
                         </li>
-                        @foreach (var item in Model.Select(m => m.BlogStatus).Distinct())
+                        @foreach (var category in Model.Select(m => m.Category.CategoryName).Distinct())
                         {
-                            if (item == true)
-                            {
-                                <li class="nav-item">
-                                    <a href="#" data-filter=".@item" class="nav-link">
-                                        Yayında
-                                    </a>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="nav-item">
-                                    <a href="#" data-filter=".@item" class="nav-link">
-                                        Yayında Değil
-                                    </a>
-                                </li>
-                            }
-
-
+                            <li class="nav-item">                                
+                                <a href="/Admin/AdminBlog/Index?category=@category" class="nav-link @(ViewBag.Category == category ? "active" : "")">
+                                    @category
+                                </a>
+                            </li>
                         }
                     </ul>
                 </div>
             </div>
+
 
 
 
@@ -82,7 +71,7 @@
 
                     foreach (var item in Model)
                     {
-                        <div class="col-xl-4 @item.BlogStatus" id="@item.BlogStatus">
+                        <div class="col-xl-4">
                             <div class="card">
                                 <div class="card-body project-box">
 
