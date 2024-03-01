@@ -6,40 +6,41 @@
 }
 
 
-    <div id="main" class="site-main">
-        <div id="primary" class="content-area">
+<div id="main" class="site-main">
+    <div id="primary" class="content-area">
 
-            <div id="content" class="site-content" role="main">
-                <div class="layout-medium">
-                    <header class="entry-header">
-                        <h1 class="entry-title">BLOGLARIM</h1>
+        <div id="content" class="site-content" role="main">
+            <div class="layout-medium">
+                <header class="entry-header">
+                    <h1 class="entry-title">BLOGLARIM</h1>
 
-                        <ul id="filters" class="filters">
-                            <li><a href="#" data-filter="*">Tümü</a></li>
-                            @foreach (var item in Model.Select(m => m.Category.CategoryName).Distinct())
-                            //sayfada yer alan kategorileri filter kısmına bir kez yazdırır
-                            {
-                                <li><a href="#" data-filter=".@item">@item</a></li>
-                               
-                            }
-                        </ul>
-                                        </header>
-                    <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
-
-                        @if (Model != null)
+                    <ul id="filters" class="filters">
+                        <li><a href="#" data-filter="*">Tümü</a></li>
+                        @foreach (var item in Model.Select(m => m.Category.CategoryName).Distinct())
+                        //sayfada yer alan kategorileri filter kısmına bir kez yazdırır
                         {
+                            <li><a href="#" data-filter=".@item">@item</a></li>
 
-                            foreach (var item in Model)
+                        }
+                    </ul>
+                </header>
+                <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
+
+                    @if (Model != null)
+                    {
+
+                        foreach (var item in Model)
+                        {
+                            if (item.BlogStatus == true)
                             {
-
-                            <article class="hentry post @item.Category.CategoryName" data-kategori="@item.Category.CategoryName">
+                                <article class="hentry post @item.Category.CategoryName" data-kategori="@item.Category.CategoryName">
 
                                     <div class="featured-image">
-                                    <a href="/Blog/BlogSingle/@item.BlogID/"><img src="@item.BlogImage"></a>
+                                        <a href="/Blog/BlogSingle/@item.BlogID/"><img src="@item.BlogImage"></a>
                                     </div>
                                     <header class="entry-header">
 
-                                    <h1 class="entry-title"><a href="/Blog/BlogSingle/@item.BlogID/">@item.BlogTitle</a></h1>
+                                        <h1 class="entry-title"><a href="/Blog/BlogSingle/@item.BlogID/">@item.BlogTitle</a></h1>
 
                                         <div class="entry-meta">
                                             <span class="entry-date">
@@ -59,18 +60,20 @@
                                     <div class="entry-content">
 
                                         <p>
-                                            @item.BlogContent.Substring(0,item.BlogContent.Substring(0,73).LastIndexOf(" "))....
+                                            @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 73).LastIndexOf(" "))....
                                         </p>
                                         <a href="/Blog/BlogSingle/@item.BlogID/" class="button">Devamını Oku</a>
                                     </div>
                                 </article>
                             }
+
                         }
-                    </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
