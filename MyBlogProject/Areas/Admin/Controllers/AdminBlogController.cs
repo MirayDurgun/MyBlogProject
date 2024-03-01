@@ -93,8 +93,31 @@ namespace MyBlogProject.Areas.Admin.Controllers
         public IActionResult AdminBlogUpdate(int id)
         {
             var adminblogvalue = bm.GetById(id);
+            var categories = cm.GetList();
+
+            // SelectListItem listesi oluşturulur ve kategoriler bu listeye dönüştürülür.
+            var categoryList = categories.Select(x => new SelectListItem
+            {
+                Text = x.CategoryName, // SelectListItem'in metin özelliğine kategori adı atanır.
+                Value = x.CategoryID.ToString() // SelectListItem'in değer özelliğine kategori ID'si atanır.
+            }).ToList(); // Liste olarak dönüştürülür.
+
+            // Seçilen bloğun kategorisini belirler.
+            foreach (var item in categoryList)
+            {
+                if (item.Value == adminblogvalue.CategoryID.ToString())
+                {
+                    item.Selected = true; // Seçilen bloğun kategorisini seçili yapar.
+                    break; 
+                }
+            }
+
+            // ViewBag'e kategori listesini atanır.
+            ViewBag.cv = categoryList;
+
             return View(adminblogvalue);
         }
+
 
         [HttpPost]
         public IActionResult AdminBlogUpdate(Blog b)
@@ -102,7 +125,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
             var adminblogvalue = bm.GetById(b.BlogID);
             b.BlogStatus = true;
             bm.TUpdate(b);
-            return RedirectToAction("Index", "AdminProject");
+            return RedirectToAction("Index", "AdminBlog");
         }
     }
 }

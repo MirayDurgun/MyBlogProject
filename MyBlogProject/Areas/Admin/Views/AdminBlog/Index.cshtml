@@ -51,7 +51,7 @@
                         </li>
                         @foreach (var category in Model.Select(m => m.Category.CategoryName).Distinct())
                         {
-                            <li class="nav-item">                                
+                            <li class="nav-item">
                                 <a href="/Admin/AdminBlog/Index?category=@category" class="nav-link @(ViewBag.Category == category ? "active" : "")">
                                     @category
                                 </a>
@@ -68,8 +68,7 @@
 
                 @if (Model != null)
                 {
-
-                    foreach (var item in Model)
+                    @foreach (var item in Model)
                     {
                         <div class="col-xl-4">
                             <div class="card">
@@ -82,7 +81,7 @@
                                         <input class="form-check-input" type="checkbox" role="switch" id="blogStatus_@item.BlogID" onchange="toggleBlogStatus('@item.BlogID')" @((item.BlogStatus ? "checked" : ""))>
                                     </div>
 
-                                    <h4 class="mt-0"><a href="" class="text-dark">@item.BlogTitle.ToUpper()</a></h4>
+                                    <h4 class="mt-0"><a href="/Admin/AdminBlog/BlogDetail/@item.BlogID" class="text-dark">@item.BlogTitle.ToUpper()</a></h4>
                                     @if (item.BlogStatus == true)
                                     {
                                         <div class="badge bg-success float-end">Yayında</div>
@@ -124,8 +123,9 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     function toggleBlogStatus(blogId) {
@@ -153,6 +153,7 @@
             }
         });
     }
+
 </script>
 
 
