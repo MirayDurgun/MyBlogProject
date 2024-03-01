@@ -52,19 +52,27 @@
                             <div class="card">
                                 <div class="card-body project-box">
 
-                                    @* @if (item.s == true)
-                            {
-
-                            <div class="badge bg-success float-end">Yayında</div>
-                            }
-                            else
-                            {
-                            <div class="badge bg-danger float-end">Yayında Değil</div>
-                            } *@
+                                    
                                     <a href="/Admin/AdminProject/ProjectDelete/@item.ProjectId" class="close-icon"><i class=" fas fa-window-close"></i></a>
                                     <a href="/Admin/AdminProject/ProjectUpdate/@item.ProjectId" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
+                                    
+                                    <div class="form-check form-switch float-end">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="projectStatus_@item.ProjectId" onchange="toggleProjectStatus('@item.ProjectId')" @((item.ProjectStatus ? "checked" : ""))>
+                                    </div>
+
 
                                     <h4 class="mt-0"><a href="" class="text-dark">@item.ProjectName.ToUpper()</a></h4>
+                                 
+
+                                    @if (item.ProjectStatus == true)
+                                    {
+                                        <div class="badge bg-success float-end">Yayında</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="badge bg-danger float-end">Yayında Değil</div>
+                                    }
+
                                     <p class="text-success text-uppercase font-13">Kategorisi</p>
                                     <p class="text-muted font-13">
                                         @item.ProjectSummary
@@ -100,3 +108,37 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+
+<script>
+    function toggleProjectStatus(projectId) {
+        // Anahtarın (switchin) işaretli olup olmadığını kontrol eder
+        var isChecked = $('#projectStatus_' + projectId).prop('checked');
+        $.ajax({
+            url: '/Admin/AdminProject/AdminProjectActive/' + projectId,
+            //Controllera gider
+            type: 'POST',
+            data: { id: projectId, status: isChecked },
+            // isChecked true ise, status true olur; eğer isChecked false ise, status false olur.
+            // Sunucuya gönderilecek veri belirtilir (projenin ID'si ve durumu).
+            success: function (response) {
+                // AJAX isteği başarılı olduğunda
+                if (isChecked) {
+                    alert("Proje yayında"); // Anahtar (switch) işaretliyse
+                } else {
+                    alert("Proje yayında değil"); // Anahtar (switch) işaretli değilse
+                }
+                location.reload(); // Sayfayı yenile
+            },
+            error: function (xhr, status, error) {
+                // AJAX isteği sırasında bir hata oluştuğunda
+                alert("Hata oluştu: " + error); // Hata mesajını kullanıcıya göster
+            }
+        });
+    }
+
+
+</script>
