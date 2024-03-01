@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
@@ -19,19 +20,23 @@ namespace MyBlogProject.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-
             var blogs = bm.GetList();
-
             foreach (var blog in blogs)
             {
                 blog.Category = cm.GetById(blog.CategoryID);
             }
-
             return View(blogs);
-
         }
 
+        public IActionResult BlogDetail(int id)
+        {
+            var blog = bm.GetById(id);
 
+            blog.Category = cm.GetById(blog.CategoryID); //kategori adını getirdik
+
+
+            return View(blog);
+        }
 
         [HttpGet]
         public IActionResult BlogAdd()

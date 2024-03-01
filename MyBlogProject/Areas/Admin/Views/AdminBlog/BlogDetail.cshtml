@@ -1,0 +1,83 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = "BlogDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .yayin {
+        font-size: 14px;
+    }
+
+    .blogdetail {
+        box-shadow: 0 0 30px 2px grey;
+        background-color: white;
+        margin: 2%;
+    }
+
+    .icerik {
+        padding-top: 5%;
+        margin: 1%;
+    }
+</style>
+
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    @if (Model != null)
+                    {
+
+                        <div class="row">
+                            <div class="col-md-9 mx-auto blogdetail">
+                                <div class="col-md-10 mx-auto icerik">
+
+                                    <div class="gorsel col-md-12 mx-auto">
+                                        <img src=" @Model.BlogImage" alt="Resim"
+                                             class="img-fluid rounded" />
+                                    </div>
+                                    <br />
+                                    <br />
+                                    @if (Model.BlogStatus == true)
+                                    {
+                                        <div class="badge bg-success float-end yayin">Yayında</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="badge bg-danger float-end yayin">Yayında Değil</div>
+                                    }
+
+                                    <h4 class="mt-0">@Model.BlogTitle.ToUpper()</h4>
+                                    <p class="text-success text-uppercase font-13">@Model.Category.CategoryName</p>
+
+                                    <a href="/Admin/AdminBlog/index/" class="btn btn-dark float-end ">Geri Dön</a>
+
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item me-4">
+                                            <h4 class="mb-0">56</h4>
+                                            <p class="text-muted">Görüntülenme sayısı</p>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <h4 class="mb-0">452</h4>
+                                            <p class="text-muted">Yorum sayısı</p>
+                                        </li>
+                                    </ul>
+
+                                    <p class="text-muted font-13">
+                                        @Model.BlogContent
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
