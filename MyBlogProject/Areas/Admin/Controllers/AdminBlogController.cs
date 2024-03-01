@@ -62,5 +62,43 @@ namespace MyBlogProject.Areas.Admin.Controllers
             return RedirectToAction("Index", "AdminBlog");
 
         }
+
+        public IActionResult AdminBlogDelete(int id)
+        {
+            var adminblogvalue = bm.GetById(id);
+
+            bm.TDelete(adminblogvalue);
+            return RedirectToAction("Index", "AdminBlog");
+
+        }
+
+        public IActionResult AdminBlogActive(int id, bool status)
+        // İlgili blogun kimliği (id) ve yeni durumu (status) parametre olarak alındı.
+        {
+            var adminblogvalue = bm.GetById(id);
+            // Blogun etkinlik durumunu, gelen 'status' parametresiyle günceller.
+            adminblogvalue.BlogStatus = status;
+            //status değişkeni, bu durumun yeni değerini taşır
+            bm.TUpdate(adminblogvalue);
+
+            return RedirectToAction("Index", "AdminBlog");
+
+        }
+
+        [HttpGet]
+        public IActionResult AdminBlogUpdate(int id)
+        {
+            var adminblogvalue = bm.GetById(id);
+            return View(adminblogvalue);
+        }
+
+        [HttpPost]
+        public IActionResult AdminBlogUpdate(Blog b)
+        {
+            var adminblogvalue = bm.GetById(b.BlogID);
+            b.BlogStatus = true;
+            bm.TUpdate(b);
+            return RedirectToAction("Index", "AdminProject");
+        }
     }
 }

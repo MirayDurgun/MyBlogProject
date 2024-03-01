@@ -7,6 +7,29 @@
 }
 
 
+<style>
+    .edit-icon {
+        float: right;
+        margin-left: 10px;
+        padding-left: 5px;
+        color: #91bbf3;
+    }
+
+        .edit-icon:hover {
+            color: #76b7ff;
+        }
+
+    .close-icon {
+        float: right;
+        margin-left: 10px;
+        color: #ec5353;
+    }
+
+        .close-icon:hover {
+            color: #FF3333;
+        }
+</style>
+
 <div id="wrapper">
     <div class="content-page">
         <div class="content">
@@ -62,6 +85,15 @@
                         <div class="col-xl-4 @item.BlogStatus" id="@item.BlogStatus">
                             <div class="card">
                                 <div class="card-body project-box">
+
+                                    <a href="/Admin/AdminBlog/AdminBlogDelete/@item.BlogID" class="close-icon"><i class=" fas fa-window-close"></i></a>
+                                    <a href="/Admin/AdminBlog/AdminBlogUpdate/@item.BlogID" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
+
+                                    <div class="form-check form-switch float-end">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="blogStatus_@item.BlogID" onchange="toggleBlogStatus('@item.BlogID')" @((item.BlogStatus ? "checked" : ""))>
+                                    </div>
+
+                                    <h4 class="mt-0"><a href="" class="text-dark">@item.BlogTitle.ToUpper()</a></h4>
                                     @if (item.BlogStatus == true)
                                     {
                                         <div class="badge bg-success float-end">Yayında</div>
@@ -70,8 +102,6 @@
                                     {
                                         <div class="badge bg-danger float-end">Yayında Değil</div>
                                     }
-
-                                    <h4 class="mt-0"><a href="" class="text-dark">@item.BlogTitle.ToUpper()</a></h4>
                                     <p class="text-success text-uppercase font-13">@item.Category.CategoryName</p>
 
                                     <p class="text-muted font-13">
@@ -104,5 +134,36 @@
 
 
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    function toggleBlogStatus(blogId) {
+        // Anahtarın (switchin) işaretli olup olmadığını kontrol eder
+        var isChecked = $('#blogStatus_' + blogId).prop('checked');
+        $.ajax({
+            url: '/Admin/AdminBlog/AdminBlogActive/' + blogId,
+            //Controllera gider
+            type: 'POST',
+            data: { id: blogId, status: isChecked },
+            // isChecked true ise, status true olur; eğer isChecked false ise, status false olur.
+            // Sunucuya gönderilecek veri belirtilir (blogun ID'si ve durumu).
+            success: function (response) {
+                // AJAX isteği başarılı olduğunda
+                if (isChecked) {
+                    alert("Blog yayında"); // Anahtar (switch) işaretliyse
+                } else {
+                    alert("Blog yayında değil"); // Anahtar (switch) işaretli değilse
+                }
+                location.reload(); // Sayfayı yenile
+            },
+            error: function (xhr, status, error) {
+                // AJAX isteği sırasında bir hata oluştuğunda
+                alert("Hata oluştu: " + error); // Hata mesajını kullanıcıya göster
+            }
+        });
+    }
+</script>
 
 
