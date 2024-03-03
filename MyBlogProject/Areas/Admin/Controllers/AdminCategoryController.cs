@@ -33,11 +33,28 @@ namespace MyBlogProject.Areas.Admin.Controllers
 
         public IActionResult CategoryDelete(int id)
         {
-            var educationvalue = cm.GetById(id);
+            var categoryvalue = cm.GetById(id);
 
-            cm.TDelete(educationvalue);
+            cm.TDelete(categoryvalue);
             return RedirectToAction("Index", "AdminCategory");
 
+        }
+
+        [HttpGet]
+        public IActionResult CategoryUpdate(int id)
+        {
+            var categoryvalue = cm.GetById(id);
+            return View(categoryvalue);
+        }
+
+        [HttpPost]
+        public IActionResult CategoryUpdate(Category c)
+        {
+            
+            var categoryvalue = cm.GetById(c.CategoryID);
+            cm.TUpdate(c);
+            return RedirectToAction("Index", "AdminCategory");
+            
         }
     }
 }
