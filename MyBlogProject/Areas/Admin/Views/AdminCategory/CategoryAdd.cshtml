@@ -1,0 +1,66 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "CategoryAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<style>
+    .card {
+        margin: 25px;
+        padding: 5px;
+        box-shadow: 0 0 8px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 10px #2d9bbd;
+        }
+
+    .text-edu {
+        color: #2c9cbc;
+    }
+
+    form div {
+        margin-bottom: 3%;
+    }
+</style>
+
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="header-title text-center text-edu">Kategori Ekleme Sayfası</h2>
+                                <div class="row">
+                                    <div class="col-lg-5 mx-auto">
+
+                                        <form asp-action="CategoryAdd" asp-area="Admin" asp-controller="AdminCategory" method="post">
+                                            <div class="form-group">
+                                                <label>Kategori Adı</label>
+                                                <input asp-for="CategoryName" class="form-control" />
+                                                <span asp-validation-for="CategoryName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-info">Ekle</button>
+                                                <a asp-controller="AdminCategory" asp-action="Index" class="btn btn-danger">İptal Et</a>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,12 +10,6 @@ namespace EntityLayer.Concrete
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
-        public string CategoryDescription { get; set; }
-        public bool CategoryStatus { get; set; } //ilişkili tablolarda silme işlemi problem olduğundan,
-                                                 //bir categoryi silmek yerine aktif ya da pasif duruma
-                                                 //getireceğiz bu nedenle CategoryStatus kullanıyoruz.
-                                                 //bool iki tane ihtimalin olduğu yerlerde kullanılır evet ya da hayır gibi.
-
 
         public List<Blog> Blogs { get; set; }
     }

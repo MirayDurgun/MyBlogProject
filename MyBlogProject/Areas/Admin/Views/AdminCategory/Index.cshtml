@@ -1,0 +1,77 @@
+﻿ @using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .card {
+        position: relative;
+    }
+
+    .category-close,
+    .category-edit {
+        position: absolute;
+        top: 5px;
+    }
+
+    .category-close {
+        right: 10px;
+    }
+
+    .category-edit {
+        border: none;
+        right: 40px;
+        background: none;
+        color: #a0a0a0;
+    }
+
+</style>
+
+
+
+<div class="content-page">
+    <div class="content">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="tab-pane" id="category">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="row">
+
+                                    <a href="/Admin/AdminCategory/CategoryAdd" class="btn btn-info mb-4"> Kategori Ekle</a>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-md-3">
+                                            <div class="card border border-info">
+                                                <div class="card-header text-center text-info">
+                                                    <h5 class="card-title mt-2">@item.CategoryName</h5>
+
+                                                    <a href="/Admin/AdminCategory/CategoryUpdate/@item.CategoryID" class="category-edit fas fa-pencil-alt">
+                                                    </a>
+
+                                                    <a href="/Admin/AdminCategory/CategoryDelete/@item.CategoryID" type="button" class="category-close btn-close" aria-label="Sil"></a>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

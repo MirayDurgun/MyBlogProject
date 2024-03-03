@@ -60,20 +60,19 @@
                                         <input class="form-check-input" type="checkbox" role="switch" id="projectStatus_@item.ProjectId" onchange="toggleProjectStatus('@item.ProjectId')" @((item.ProjectStatus ? "checked" : ""))>
                                     </div>
 
-
                                     <h4 class="mt-0"><a href="" class="text-dark">@item.ProjectName.ToUpper()</a></h4>
-                                 
 
                                     @if (item.ProjectStatus == true)
                                     {
-                                        <div class="badge bg-success float-end">Yayında</div>
+                                        <div class="badge bg-success float-start">Yayında</div>
                                     }
                                     else
                                     {
-                                        <div class="badge bg-danger float-end">Yayında Değil</div>
+                                        <div class="badge bg-danger float-start">Yayında Değil</div>
                                     }
+                                    <br />
+                                    <br />
 
-                                    <p class="text-success text-uppercase font-13">Kategorisi</p>
                                     <p class="text-muted font-13">
                                         @item.ProjectSummary
                                     </p>
