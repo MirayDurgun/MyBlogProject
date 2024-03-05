@@ -1,0 +1,121 @@
+﻿<div class="row">
+
+    @* toplam blog *@
+    <div class="col-xl-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h4 class="header-title mt-0 mb-4">Toplam Blog Sayısı</h4>
+                    <h2 class="fw-normal mt-0 text-danger">@ViewBag.BlogCount</h2>
+                </div>
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1 float-start" dir="ltr">
+                        <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
+                               data-bgColor="#F9B9B9" value="@ViewBag.Percentage"
+                               data-skin="tron" data-angleOffset="180" data-readOnly=true
+                               data-thickness=".15" />
+                    </div>
+                    <div class="widget-detail-1 text-end">
+
+                        <div style="display: inline-block; margin-right: 20px;">
+                            <p class="text-muted mb-1">Aktif Blog</p>
+                            <h3 class="fw-normal pt-1 mb-1">@ViewBag.ActiveBlogCount</h3>
+                        </div>
+                        <div style="display: inline-block;">
+                            <p class="text-muted mb-1">Pasif Blog</p>
+                            <h3 class="fw-normal pt-1 mb-1">@ViewBag.PassiveBlogCount</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @* Toplam Sertifika *@
+    <div class="col-xl-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mt-0 mb-3">Toplam Sertifika Sayısı</h4>
+                <div class="widget-box-2">
+                    <div class="widget-detail-2 text-end">
+                        <div style="position: relative;">
+                            <span class="badge bg-success rounded-pill float-start mt-3">@ViewBag.TopCertificateHours <i class="mdi mdi-clock"></i> </span>
+                            <p class="text-muted mb-3" style="position: absolute;">Toplam saat</p>
+                        </div>
+
+                        <h2 class="fw-normal mb-1 text-success"> @ViewBag.CertificateCount </h2>
+                        <p class="text-muted mb-3">Elde edilen sertifika</p>
+                    </div>
+                    <div class="progress progress-bar-alt-success progress-sm">
+                        <div class="progress-bar bg-success" role="progressbar"
+                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 100%;">
+                            <span class="visually-hidden">100% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* toplam proje *@
+    <div class="col-xl-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h4 class="header-title mt-0 mb-4">Toplam Proje Sayısı</h4>
+                    <h2 class="fw-normal mt-0 text-warning">@ViewBag.ProjectCount</h2>
+                </div>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1 float-start" dir="ltr">
+                        <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#ffbd4a"
+                               data-bgColor="#FFE6BA" value="@ViewBag.Percentage2"
+                               data-skin="tron" data-angleOffset="180" data-readOnly=true
+                               data-thickness=".15" />
+                    </div>
+                    <div class="widget-detail-1 text-end">
+                        <div style="display: inline-block; margin-right: 20px;">
+                            <p class="text-muted mb-1">Aktif Proje</p>
+                            <h3 class="fw-normal pt-1 mb-1">@ViewBag.ActiveProjectCount</h3>
+                        </div>
+                        <div style="display: inline-block;">
+                            <p class="text-muted mb-1">Pasif Proje</p>
+                            <h3 class="fw-normal pt-1 mb-1">@ViewBag.PassiveProjectCount</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Toplam yetkinlik sayısı *@
+    <div class="col-xl-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mt-0 mb-3">Toplam Yetkinlik Sayısı</h4>
+                <div class="widget-box-2">
+                    <div class="widget-detail-2 text-end">
+                        <div style="position: relative;">
+                            <span class="badge bg-pink rounded-pill float-start mt-3">@ViewBag.TopScore <i class="mdi mdi-trending-up"></i> </span>
+                            <p class="text-muted mb-3" style="position: absolute;">Ortalama skor</p>
+                        </div>
+
+                        <h2 class="fw-normal mb-1 text-pink "> @ViewBag.SkillCount </h2>
+                        <p class="text-muted mb-3">Elde edilen yetkinlik</p>
+                    </div>
+                    <div class="progress progress-bar-alt-pink progress-sm">
+                        <div class="progress-bar bg-pink" role="progressbar"
+                             aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 77%;">
+                            <span class="visually-hidden">77% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
