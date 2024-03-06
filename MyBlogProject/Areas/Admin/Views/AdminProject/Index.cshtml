@@ -52,10 +52,10 @@
                             <div class="card">
                                 <div class="card-body project-box">
 
-                                    
+
                                     <a href="/Admin/AdminProject/ProjectDelete/@item.ProjectId" class="close-icon"><i class=" fas fa-window-close"></i></a>
                                     <a href="/Admin/AdminProject/ProjectUpdate/@item.ProjectId" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
-                                    
+
                                     <div class="form-check form-switch float-end">
                                         <input class="form-check-input" type="checkbox" role="switch" id="projectStatus_@item.ProjectId" onchange="toggleProjectStatus('@item.ProjectId')" @((item.ProjectStatus ? "checked" : ""))>
                                     </div>
@@ -78,10 +78,6 @@
                                     </p>
 
                                     <ul class="list-inline">
-                                        <li class="list-inline-item me-4">
-                                            <h4 class="mb-0">56</h4>
-                                            <p class="text-muted">Görüntülenme sayısı</p>
-                                        </li>
                                         <li class="list-inline-item">
                                             <h4 class="mb-0">452</h4>
                                             <p class="text-muted">Yorum sayısı</p>
