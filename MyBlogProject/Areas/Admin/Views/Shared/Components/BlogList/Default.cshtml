@@ -9,7 +9,7 @@
 
 </style>
 
-<div class="col-xl-8">
+<div class="col-xl-12">
     <div class="card">
         <div class="card-body">
             <h4 class="header-title mt-0 mb-3">Son Bloglar</h4>
@@ -39,8 +39,8 @@
                                 <tr>
                                     <td>@item.BlogID</td>
                                     <td>@item.BlogTitle</td>
-                                    <td><a href="/Admin/AdminBlog/BlogDetail/@item.BlogID">@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 40).LastIndexOf(" "))....</a></td>
-                                    <td><img src="@item.BlogImage" class="img-fluid" style="width:100px; height:50;" /></td>
+                                    <td><a href="/Admin/AdminBlog/BlogDetail/@item.BlogID">@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 200).LastIndexOf(" "))....</a></td>
+                                    <td><img src="@item.BlogImage" class="img-fluid" style="width:200px; height:110px;" /></td>
                                     <td style="font-size:15px;"><span class="badge @colors[colorIndex % colors.Length]">@item.BlogStatus</span></td>
                                     <td>@(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</td>
                                 </tr>

@@ -10,7 +10,7 @@
 </style>
 
 
-<div class="col-xl-12">
+<div class="col-xl-8">
     <div class="card">
         <div class="card-body">
             <h4 class="header-title mt-0 mb-3">Son Projeler</h4>
@@ -30,7 +30,7 @@
 
                     @{
                         // Renkleri tutacak olan bir dizi oluşturuyoruz
-                        string[] colors = { "bg-pink", "bg-info", "bg-warning", "bg-purple", "bg-success", "bg-primary"};
+                        string[] colors = { "bg-pink", "bg-info", "bg-warning", "bg-purple", "bg-success", "bg-primary" };
                         int colorIndex = 0; // Renk dizisindeki indeksi takip edecek değişken
                     }
                     @foreach (var item in Model)
@@ -51,7 +51,7 @@
                                         <td></td>
                                     }
                                     <td style="font-size:15px;"><span class="badge @colors[colorIndex % colors.Length]">@item.ProjectCompletion%</span></td>
-                                    <td><img src="@item.Image1" class="img-fluid" style="width:100px; height:50;" /></td>
+                                    <td><img src="@item.Image1" class="img-fluid" style="width:100px; height:50px;" /></td>
                                     <td style="font-size:15px;"><span class="badge @colors[colorIndex % colors.Length]">@item.ProjectStatus</span></td>
                                 </tr>
                             </tbody>
