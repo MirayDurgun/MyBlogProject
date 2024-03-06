@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -13,53 +12,6 @@
 
             @* toplam blog *@
             @await Component.InvokeAsync("BlogCountWidgets")
-            @* kategoriler *@
-            <div class="row">
-                <div class="col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <h4 class="header-title mt-0">Kategoriler</h4>
-
-                            <div class="widget-chart text-center">
-                                <div id="morris-donut-example" dir="ltr" style="height: 245px;" class="morris-chart"></div>
-                                <ul class="list-inline chart-detail-list mb-0">
-                                    <li class="list-inline-item">
-                                        <h5 style="color: #ff8acc;"><i class="fa fa-circle me-1"></i>Series A</h5>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <h5 style="color: #5b69bc;"><i class="fa fa-circle me-1"></i>Series B</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                @* ziyaret edlilen bloglar *@
-                <div class="col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <h4 class="header-title mt-0">Ziyaret Edilen Bloglar</h4>
-                            <div id="morris-bar-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <h4 class="header-title mt-0">Ziyaret Edilen Projeler</h4>
-                            <div id="morris-line-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
 
             @* gelen kutusu *@
             <div class="row">
@@ -121,83 +73,9 @@
                 </div>
 
                 @* Bloglar *@
+                @await Component.InvokeAsync("BlogList")
 
-                <div class="col-xl-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title mt-0 mb-3">Son Bloglar</h4>
-
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Project Name</th>
-                                            <th>Start Date</th>
-                                            <th>Due Date</th>
-                                            <th>Status</th>
-                                            <th>Assign</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Adminto Admin v1</td>
-                                            <td>01/01/2017</td>
-                                            <td>26/04/2017</td>
-                                            <td><span class="badge bg-danger">Released</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Adminto Frontend v1</td>
-                                            <td>01/01/2017</td>
-                                            <td>26/04/2017</td>
-                                            <td><span class="badge bg-success">Released</span></td>
-                                            <td>Adminto admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Adminto Admin v1.1</td>
-                                            <td>01/05/2017</td>
-                                            <td>10/05/2017</td>
-                                            <td><span class="badge bg-pink">Pending</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Adminto Frontend v1.1</td>
-                                            <td>01/01/2017</td>
-                                            <td>31/05/2017</td>
-                                            <td>
-                                                <span class="badge bg-purple">Work in Progress</span>
-                                            </td>
-                                            <td>Adminto admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Adminto Admin v1.3</td>
-                                            <td>01/01/2017</td>
-                                            <td>31/05/2017</td>
-                                            <td><span class="badge bg-warning">Coming soon</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Adminto Admin v1.3</td>
-                                            <td>01/01/2017</td>
-                                            <td>31/05/2017</td>
-                                            <td><span class="badge bg-primary">Coming soon</span></td>
-                                            <td>Adminto admin</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
 
             @* Projeler *@

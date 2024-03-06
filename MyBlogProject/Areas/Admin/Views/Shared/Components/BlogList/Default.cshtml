@@ -1,0 +1,55 @@
+﻿@model List<Blog>
+
+
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+</style>
+
+<div class="col-xl-8">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title mt-0 mb-3">Son Bloglar</h4>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Görsel</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                        </tr>
+                    </thead>
+                    @{
+                        // Renkleri tutacak olan bir dizi oluşturuyoruz
+                        string[] colors = { "bg-pink", "bg-info", "bg-warning", "bg-purple, bg-successx" };
+                        int colorIndex = 0; // Renk dizisindeki indeksi takip edecek değişken
+                    }
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.BlogStatus == true)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.BlogID</td>
+                                    <td>@item.BlogTitle</td>
+                                    <td><a href="/Admin/AdminBlog/BlogDetail/@item.BlogID">@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 40).LastIndexOf(" "))....</a></td>
+                                    <td><img src="@item.BlogImage" class="img-fluid" style="width:100px; height:50;" /></td>
+                                    <td style="font-size:15px;"><span class="badge @colors[colorIndex % colors.Length]">@item.BlogStatus</span></td>
+                                    <td>@(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</td>
+                                </tr>
+                            </tbody>
+                            colorIndex++; // Her bir döngüde renk indeksini bir arttırıyoruz
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -55,12 +55,13 @@
                                     <h4 class="mt-0">@Model.BlogTitle.ToUpper()</h4>
                                     <p class="text-success text-uppercase font-13">@Model.Category.CategoryName</p>
 
+
                                     <a href="/Admin/AdminBlog/index/" class="btn btn-dark float-end ">Geri Dön</a>
 
                                     <ul class="list-inline">
                                         <li class="list-inline-item me-4">
-                                            <h4 class="mb-0">56</h4>
-                                            <p class="text-muted">Görüntülenme sayısı</p>
+                                            <h4 class="mb-0">@(((DateTime)Model.BlogCreateDate).ToString("dd/MM/yyyy"))</h4>
+                                            <p class="text-muted">Oluşturma Tarihi</p>
                                         </li>
                                         <li class="list-inline-item">
                                             <h4 class="mb-0">452</h4>
