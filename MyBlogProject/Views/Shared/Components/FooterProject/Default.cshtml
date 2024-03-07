@@ -1,0 +1,12 @@
+﻿@model List<Project>
+
+<aside class="widget widget_tag_cloud">
+    <h3 class="widget-title">Son Projeler</h3>
+    @foreach (var item in Model)
+    {
+        <div class="tagcloud">
+            <a href="/Project/ProjectSingle/@item.ProjectId/" style="font-size: 22pt;">@item.ProjectName</a>
+        </div>
+    }
+
+</aside>

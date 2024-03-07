@@ -10,14 +10,10 @@
 
         </div>
         <div class="footer-sidebar widget-area" role="complementary">
-
+   
             @await Component.InvokeAsync("FooterAbout")
-
-            <aside class="widget widget_tag_cloud">
-                <h3 class="widget-title">Tags</h3>
-                <div class="tagcloud"> <a href="#" title="1 topic" style="font-size: 8pt;">adaptive</a> <a href="#" title="2 topics" style="font-size: 22pt;">design</a> <a href="#" title="1 topic" style="font-size: 8pt;">html</a> <a href="#" title="2 topics" style="font-size: 22pt;">responsive</a> <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic" style="font-size: 8pt;">web design</a> <a href="#" title="1 topic" style="font-size: 8pt;">css</a> <a href="#" title="2 topics" style="font-size: 22pt;">animations</a> <a href="#" title="1 topic" style="font-size: 8pt;">layout</a> <a href="#" title="2 topics" style="font-size: 14pt;">mobile</a> <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic" style="font-size: 8pt;">typography</a> </div>
-            </aside>
             @await Component.InvokeAsync("FooterCategory")
+            @await Component.InvokeAsync("FooterProject")      
             @await Component.InvokeAsync("BlogLast4Post")
 
         </div>
