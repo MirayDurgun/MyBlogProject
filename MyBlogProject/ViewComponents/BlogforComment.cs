@@ -6,11 +6,13 @@ namespace MyBlogProject.ViewComponents.Comment
 {
     public class BlogforComment : ViewComponent
     {
-        AdminManager pm = new AdminManager(new EfAdminRepositoy());
+        CommentManager cm = new CommentManager(new EfCommentRepository());
+
         public IViewComponentResult Invoke(int id)
         {
-            var values = pm.GetList();
+            var values = cm.GetList(id);
             return View(values);
         }
     }
 }
+    

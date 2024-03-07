@@ -1,19 +1,89 @@
-﻿@model List<Blog>
+﻿@model List<Comment>
+<aside class="about-author">
 
-
-<aside class="widget widget_recent_entries">
-    <h3 class="widget-title">Son Postlar</h3>
-
-    @if (Model != null)
+    <h3 class="section-title">YORUMLAR</h3>
+    @foreach (var item in Model)
     {
-        <ul>
-            @foreach (var item in Model)
+        if (item.BlogID == ViewBag.BlogID)
+        {
+            @if (Model.Count() == 0)
             {
-                <li>
-                    <a href="#">@item.BlogTitle</a>
-                    <br>@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))
-                </li>
+                <p>Bu blogta henüz yorum yapılmadı, ilk yorumu siz yazın.</p>
             }
-        </ul>
+            else
+            {
+                <div class="commentlist">
+                    <div class="comment even thread-even depth-1">
+                        <article class="comment">
+                            <header class="comment-meta comment-author vcard">
+                                @if (item.Image != null)
+                                {
+                                    <img src="@item.Image" class="avatar" height="75" width="75">
+                                }
+                                <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
+                                <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
+                                <p>@item.CommentTitle</p>
+                            </header>
+                            <section class="comment-content comment">
+                                <p>@item.CommentContent</p>
+                            </section>
+                            <div class="reply">
+                                <a class="comment-reply-link" href="/Blog/BlogSingle/@item.CommentID/">Yanıtla <span>↓</span></a>
+                            </div>
+                        </article>
+                        <hr />
+                        <br />
+
+                        @if (item.ParentCommentId != null)
+                        {
+                            <div class="children">
+                                <div class="comment odd alt depth-2 bypostauthor">
+                                    <article class="comment">
+
+                                        <header class="comment-meta comment-author vcard">
+                                            <img alt="" src="images/site/author-1.jpg" class="avatar photo" height="75" width="75">
+                                            <cite class="fn"><a href="#" rel="external nofollow" class="url">Johnny Doe</a></cite>
+                                            <span class="comment-date">October 17, 2013 at 2:16 PM</span>
+                                        </header>
+                                        <section class="comment-content comment">
+                                            <p>Thanks Phillip, glad you liked it. Nice to see you around.</p>
+                                        </section>
+                                        <div class="reply">
+                                            <a class="comment-reply-link" href="/Blog/BlogSingle/@item.ParentCommentId/">Yanıtla <span>↓</span></a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                    </div>
+                </div>
+            }
+        }
+
     }
+    <hr />
+    <form method="post" asp-controller="Comment" asp-action="AddComment">
+        <input type="hidden" name="BlogID" value="@ViewBag.BlogID" />
+        <div class="form-group">
+            <label>Ad Soyad</label>
+            <input type="text" name="CommentUserName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Başlık</label>
+            <input type="text" name="CommentTitle" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Açıklama</label>
+            <textarea name="CommentContent" class="form-control" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Görsel</label>
+            <input type="file" name="Image" class="form-control" />
+        </div>
+        <br />
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-info">Yorum Yap</button>
+        </div>
+    </form>
 </aside>

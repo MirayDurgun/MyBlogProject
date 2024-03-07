@@ -22,7 +22,7 @@ namespace MyBlogProject.Controllers
         public IActionResult BlogSingle(int id)
         {
             //idye göre detayları getirecek
-            ViewBag.i = id; //yorum için
+            ViewBag.BlogID = id; //yorum için
             var values = bm.GetBlogById(id);
             return View(values);
         }

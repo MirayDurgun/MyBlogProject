@@ -36,26 +36,16 @@
                     <div class="entry-content">
                         <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-                       @if (Model != null)
+                        @if (Model != null)
                         {
 
                             foreach (var item in Model)
                             {
                                 <p>@item.BlogContent</p>
-                                @* <nav class="nav-single row">
 
-                        <div class="nav-previous col-sm-6">
-                        <h4>ÖNCEKİ POST</h4>
-                        <a href="/Blog/BlogSingle/@item.BlogID/" rel="prev"><span class="meta-nav">←</span> There's always light at the end of the tunnel</a>
-                        </div>
-
-                        <div class="nav-next col-sm-6">
-                        <h4>SONRAKİ POST</h4>
-                        <a href="/Blog/BlogSingle/@item.BlogID/" rel="next">Becoming A DragonFly <span class="meta-nav">→</span></a>
-                        </div>
-                        </nav> *@
                             }
                         }
+                        @await Component.InvokeAsync("BlogforComment")
                         <nav class="nav-single row">
 
                             <div class="nav-previous col-sm-6">
@@ -69,7 +59,7 @@
 
                     </div>
                 </article>
-                @* @await Component.InvokeAsync("BlogforComment") *@
+
 
             </div>
         </div>
@@ -111,23 +101,7 @@
                                 <tr> </tr>
                                 }
                             }
-@* 
-                            @foreach(var item in Model)
-                            {
-                                if(item.Comments.pa==null)
-                                {
-                                    <p>@item.CommentContent</p>
-                                }
-                                else if(item.ParentCommentId!=null && item.ParentCommentId==item.CommentID)
-                                {
-                                <p>@item.Comments.con</p>
-                                    @foreach(var item2 in Model.Comments.Where(c=>c.CommentID==item.ParentCommentId).ToList())
-                                    {
-                                        <p>@item2.CommentContent</p>
-                                    }
-                                }
 
-                            }  *@
                         </tbody>
                     </table>
                 </div>
