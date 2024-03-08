@@ -1,0 +1,89 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+.close-icon {
+        float: right;
+        margin-left: 10px;
+        color: #ec5353;
+    }
+
+        .close-icon:hover {
+            color: #FF3333;
+        }
+</style>
+
+<div id="wrapper">
+    <div class="content-page">
+        <div class="content">
+            <div class="row">
+  <h2>Yorumlar</h2>
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-body project-box">
+                                    <p class="text-muted font-13 text-info">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy hh:mm"))</p>
+                                    <a href="/Admin/AdminComment/CommentDelete/@item.CommentID" class="close-icon"><i class=" fas fa-window-close"></i></a>
+                                    <div class="form-check form-switch float-end">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="status_@item.CommentID" onchange="toggleBlogStatus('@item.CommentID')" @((item.Status ? "checked" : ""))>
+                                    </div>
+                                    <h4 class="mt-0"><a href="/Blog/BlogSingle/@item.BlogID" class="text-dark">@item.CommentTitle</a></h4>   
+                                    <p class="text-muted font-13 text-purple">@item.CommentUserName.ToUpper()</p>
+                                    <p class="text-muted font-13">@item.CommentContent</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function toggleBlogStatus(CommentID) {
+        // Anahtarın (switchin) işaretli olup olmadığını kontrol eder
+        var isChecked = $('#status_' + CommentID).prop('checked');
+        $.ajax({
+            url: '/Admin/AdminComment/AdminCommentActive/' + CommentID,
+            //Controllera gider
+            type: 'POST',
+            data: { id: CommentID, status: isChecked },
+            // isChecked true ise, status true olur; eğer isChecked false ise, status false olur.
+            // Sunucuya gönderilecek veri belirtilir (blogun ID'si ve durumu).
+            success: function (response) {
+                // AJAX isteği başarılı olduğunda
+                if (isChecked) {
+                    alert("Comment yayında"); // Anahtar (switch) işaretliyse
+                } else {
+                    alert("Comment yayında değil"); // Anahtar (switch) işaretli değilse
+                }
+                location.reload(); // Sayfayı yenile
+            },
+            error: function (xhr, status, error) {
+                // AJAX isteği sırasında bir hata oluştuğunda
+                alert("Hata oluştu: " + error); // Hata mesajını kullanıcıya göster
+            }
+        });
+    }
+
+</script>
+
+

@@ -16,9 +16,20 @@ namespace BusinessLayer.Concrete
         {
             _commentDal = commentDal;
         }
-        public void CommentAdd(Comment comment)
+
+        public void TDelete(Comment comment)
         {
-           _commentDal.Insert(comment);
+            _commentDal.Delete(comment);
+        }
+
+        public void TAdd(Comment comment)
+        {
+            _commentDal.Insert(comment);
+        }
+
+        public Comment GetById(int id)
+        {
+            return _commentDal.GetById(id);
         }
 
         public List<Comment> GetCommentListWithBlog()
@@ -26,9 +37,19 @@ namespace BusinessLayer.Concrete
             return _commentDal.GetListWithBlog();
         }
 
-        public List<Comment> GetList(int id)
+        public List<Comment> GetList()
         {
             return _commentDal.GetListAll();
+        }
+
+        public List<Comment> GetListAll(int id)
+        {
+            return _commentDal.GetListAll();
+        }
+
+        public void TUpdate(Comment t)
+        {
+            _commentDal.Update(t);
         }
     }
 }

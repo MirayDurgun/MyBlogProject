@@ -12,29 +12,33 @@
             }
             else
             {
-                <div class="commentlist">
-                    <div class="comment even thread-even depth-1">
-                                            <article class="comment">
-            <header class="comment-meta comment-author vcard">
-            @if (item.Image != null)
-            {
-            <img src="@item.Image" class="avatar" height="75" width="75">
-            }
-            <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
-            <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
-            <p>@item.CommentTitle</p>
-            </header>
-            <section class="comment-content comment">
-            <p>@item.CommentContent</p>
-            </section>
-            <div class="reply">
-            <a href="/Comment/ParentAddComment/@item.CommentID/" class="comment-reply-link">Yanıtla <span>↓</span></a>
-            </div>
-            </article> 
-                        <hr />
-                        <br />
-                        @*
-            @if (item.ParentComments != null)
+                if (item.Status == true)
+                {
+                    <div class="commentlist">
+                        <div class="comment even thread-even depth-1">
+                            <article class="comment">
+                                <header class="comment-meta comment-author vcard">
+                                    @if (item.Image != null)
+                                    {
+                                        <img src="@item.Image" class="avatar" height="75" width="75">
+                                    }
+                                    <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
+                                    <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
+                                    <p>@item.CommentTitle</p>
+                                </header>
+                                <section class="comment-content comment">
+                                    <p>@item.CommentContent</p>
+                                </section>
+                                <div class="reply">
+                                    <a href="/Comment/ParentAddComment/@item.CommentID/" class="comment-reply-link">Yanıtla <span>↓</span></a>
+                                </div>
+                            </article>
+                            <hr />
+                            <br />
+
+
+
+                            @*   @if (item != null)
             {
             <div class="children">
             <div class="comment odd alt depth-2 bypostauthor">
@@ -57,9 +61,12 @@
             </div>
             </div>
             <br />
-            } *@
+            }  *@
+                        </div>
                     </div>
-                </div>
+                }
+
+
             }
         }
 

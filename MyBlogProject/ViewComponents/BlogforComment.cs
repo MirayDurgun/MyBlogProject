@@ -10,7 +10,7 @@ namespace MyBlogProject.ViewComponents.Comment
 
         public IViewComponentResult Invoke(int id)
         {
-            var values = cm.GetList(id);
+            var values = cm.GetListAll(id);
             return View(values);
         }
     }

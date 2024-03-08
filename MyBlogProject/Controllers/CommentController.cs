@@ -22,7 +22,8 @@ namespace MyBlogProject.Controllers
         [HttpPost]
         public IActionResult AddComment(Comment comment)
         {
-            cm.CommentAdd(comment);
+            comment.Status = false;
+            cm.TAdd(comment);
             return RedirectToAction("BlogSingle", "Blog", new { id = comment.BlogID });
         }
 

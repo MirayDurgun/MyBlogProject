@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public string CommentTitle { get; set; }
         public string CommentContent { get; set; }
         public string? Image { get; set; }
+        public bool Status { get; set; }
         public DateTime CommentDate { get; set; } = DateTime.Now;
 
         //blog
