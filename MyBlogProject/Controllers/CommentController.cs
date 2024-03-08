@@ -8,6 +8,7 @@ namespace MyBlogProject.Controllers
     public class CommentController : Controller
     {
         CommentManager cm = new CommentManager(new EfCommentRepository());
+        ParentCommentManager pcm = new ParentCommentManager(new EfParentCommentRepository());
         public IActionResult Index()
         {
             return View();
@@ -23,6 +24,19 @@ namespace MyBlogProject.Controllers
         {
             cm.CommentAdd(comment);
             return RedirectToAction("BlogSingle", "Blog", new { id = comment.BlogID });
+        }
+
+        [HttpGet]
+        public IActionResult ParentAddComment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ParentAddComment(ParentComment parentComment)
+        {
+            pcm.ParentCommentAdd(parentComment);
+            return RedirectToAction("BlogSingle", "Blog");
         }
     }
 }

@@ -14,51 +14,50 @@
             {
                 <div class="commentlist">
                     <div class="comment even thread-even depth-1">
-                        <article class="comment">
-                            <header class="comment-meta comment-author vcard">
-                                @if (item.Image != null)
-                                {
-                                    <img src="@item.Image" class="avatar" height="75" width="75">
-                                }
-                                <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
-                                <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
-                                <p>@item.CommentTitle</p>
-                            </header>
-                            <section class="comment-content comment">
-                                <p>@item.CommentContent</p>
-                            </section>
-                            <div class="reply">
-
-                                <a href="#" class="comment-reply-link">Yanıtla <span>↓</span></a>
-                            </div>                      
-                        </article>
+                                            <article class="comment">
+            <header class="comment-meta comment-author vcard">
+            @if (item.Image != null)
+            {
+            <img src="@item.Image" class="avatar" height="75" width="75">
+            }
+            <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
+            <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
+            <p>@item.CommentTitle</p>
+            </header>
+            <section class="comment-content comment">
+            <p>@item.CommentContent</p>
+            </section>
+            <div class="reply">
+            <a href="/Comment/ParentAddComment/@item.CommentID/" class="comment-reply-link">Yanıtla <span>↓</span></a>
+            </div>
+            </article> 
                         <hr />
                         <br />
-@* 
-                        @if (item.ParentComments != null)
-                        {
-                            <div class="children">
-                                <div class="comment odd alt depth-2 bypostauthor">
-                                    <article class="comment">
+                        @*
+            @if (item.ParentComments != null)
+            {
+            <div class="children">
+            <div class="comment odd alt depth-2 bypostauthor">
+            <article class="comment">
 
-                                        <header class="comment-meta comment-author vcard">
-                                            <img alt="" src="images/site/author-1.jpg" class="avatar photo" height="75" width="75">
-                                            <cite class="fn"><a href="#" rel="external nofollow" class="url">Johnny Doe</a></cite>
-                                            <span class="comment-date">October 17, 2013 at 2:16 PM</span>
-                                        </header>
-                                        <section class="comment-content comment">
-                                            <p>Thanks Phillip, glad you liked it. Nice to see you around.</p>
-                                        </section>
-                                        <div class="reply">
-                                            <a class="comment-reply-link" href="/Blog/BlogSingle//">
-                                                Yanıtla <span>↓</span>
-                                            </a>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                            <br />
-                        } *@
+            <header class="comment-meta comment-author vcard">
+            <img alt="" src="images/site/author-1.jpg" class="avatar photo" height="75" width="75">
+            <cite class="fn"><a href="#" rel="external nofollow" class="url">Johnny Doe</a></cite>
+            <span class="comment-date">October 17, 2013 at 2:16 PM</span>
+            </header>
+            <section class="comment-content comment">
+            <p>Thanks Phillip, glad you liked it. Nice to see you around.</p>
+            </section>
+            <div class="reply">
+            <a class="comment-reply-link" href="/Blog/BlogSingle//">
+            Yanıtla <span>↓</span>
+            </a>
+            </div>
+            </article>
+            </div>
+            </div>
+            <br />
+            } *@
                     </div>
                 </div>
             }
@@ -101,5 +100,4 @@
             var form = document.getElementById("hiddenForm");
             form.classList.toggle("hidden"); // formun hidden sınıfını ekleyip kaldırarak görünürlüğünü değiştirir
         });
-
     </script>
