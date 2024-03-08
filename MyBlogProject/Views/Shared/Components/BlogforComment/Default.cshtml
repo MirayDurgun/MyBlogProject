@@ -28,13 +28,14 @@
                                 <p>@item.CommentContent</p>
                             </section>
                             <div class="reply">
-                                <a class="comment-reply-link" href="/Blog/BlogSingle/@item.CommentID/">Yanıtla <span>↓</span></a>
-                            </div>
+
+                                <a href="#" class="comment-reply-link">Yanıtla <span>↓</span></a>
+                            </div>                      
                         </article>
                         <hr />
                         <br />
-
-                        @if (item.ParentCommentId != null)
+@* 
+                        @if (item.ParentComments != null)
                         {
                             <div class="children">
                                 <div class="comment odd alt depth-2 bypostauthor">
@@ -49,41 +50,56 @@
                                             <p>Thanks Phillip, glad you liked it. Nice to see you around.</p>
                                         </section>
                                         <div class="reply">
-                                            <a class="comment-reply-link" href="/Blog/BlogSingle/@item.ParentCommentId/">Yanıtla <span>↓</span></a>
+                                            <a class="comment-reply-link" href="/Blog/BlogSingle//">
+                                                Yanıtla <span>↓</span>
+                                            </a>
                                         </div>
                                     </article>
                                 </div>
                             </div>
                             <br />
-                        }
+                        } *@
                     </div>
                 </div>
             }
         }
 
     }
-    <hr />
-    <form method="post" asp-controller="Comment" asp-action="AddComment">
+    <div class="col-md-12" style="bottom:10px;">
+        <button id="showFormButton" class="btn btn-info">Yorum Yap</button>
+    </div>
+
+    <form method="post" asp-controller="Comment" asp-action="AddComment" id="hiddenForm" class="hidden">
+        <!-- form başlangıçta gizli olarak tanımlandı -->
         <input type="hidden" name="BlogID" value="@ViewBag.BlogID" />
-        <div class="form-group">
-            <label>Ad Soyad</label>
-            <input type="text" name="CommentUserName" class="form-control" />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Ad Soyad</label>
+                <input type="text" name="CommentUserName" class="form-control" />
+            </div>
+            <div class="form-group col-md-6">
+                <label>Başlık</label>
+                <input type="text" name="CommentTitle" class="form-control" />
+            </div>
         </div>
-        <div class="form-group">
-            <label>Başlık</label>
-            <input type="text" name="CommentTitle" class="form-control" />
-        </div>
-        <div class="form-group">
+        <div class="form-group col-md-12">
             <label>Açıklama</label>
             <textarea name="CommentContent" class="form-control" rows="5"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-12">
             <label>Görsel</label>
             <input type="file" name="Image" class="form-control" />
         </div>
-        <br />
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-info">Yorum Yap</button>
+        <div class="modal-footer col-md-12" style="top:10px;">
+            <button type="submit" class="btn btn-info">Gönder</button>
         </div>
     </form>
-</aside>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        document.getElementById("showFormButton").addEventListener("click", function () {
+            var form = document.getElementById("hiddenForm");
+            form.classList.toggle("hidden"); // formun hidden sınıfını ekleyip kaldırarak görünürlüğünü değiştirir
+        });
+
+    </script>
