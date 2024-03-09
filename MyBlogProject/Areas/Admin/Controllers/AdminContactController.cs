@@ -22,6 +22,10 @@ namespace MyBlogProject.Areas.Admin.Controllers
             return RedirectToAction("Index", "AdminContact");
 
         }
-
+        public IActionResult ContactDetail(int id)
+        {
+            var contact = cm.GetById(id);
+            return View(contact);
+        }
     }
 }
