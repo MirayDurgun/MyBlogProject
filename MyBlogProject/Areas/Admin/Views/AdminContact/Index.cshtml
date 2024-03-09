@@ -1,0 +1,81 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<style>
+    .card-testimonial {
+        border-top: 2px solid #9900FF;
+        border-right: 2px solid #9966FF;
+        border-bottom: 2px solid #9999FF;
+        border-left: 2px solid #99CCFF;
+    }
+
+
+    .test-name {
+        color: #9900FF;
+    }
+
+    .test-title {
+        color: #808080;
+    }
+
+    .btn-success {
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        margin-right: 10px;
+    }
+</style>
+
+
+<div class="content-page">
+    <div class="content">
+        <div class="col-xl-12">
+            <h2 class="header-title mb-4">Mesajlar</h2>
+            <div class="card">
+
+                <div class="card-body">
+                    <div class="row">
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-sm-6">
+                                    <div class="card card-body card-testimonial">
+                                        <h4 class="card-title test-name">@item.ContactUserName</h4>
+                                        <h5 class="card-title">@item.ContactMail</h5>
+                                        <h5 class="card-title test-title">@(((DateTime)item.ContactDate).ToString("dd/MM/yyyy"))</h5>
+
+
+                                        <p class="card-text">
+                                            @item.ContactMessage.Substring(0, item.ContactMessage.Substring(0, 15).LastIndexOf(" "))....
+                                        </p>
+
+                                        <div class="d-flex">
+                                            <a href="/admin/AdminContact/ContactDelete/@item.ContactId" class="btn btn-danger" style="margin-right: 10px;">Sil</a>
+                                            <a href="/Admin/AdminContact/ContactDetail/@item.ContactId" class="btn btn-purple">Detaylar</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-sm-12">
+                                <p>Henüz hiç mesaj yok.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
