@@ -7,9 +7,8 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Abstract
 {
-	public interface IContactService
+	public interface IContactService:IGenericService<Contact>
 	{
-		//sadece eklemeye ihtiyaç olduğundan generic yapıya bağlamadım
-		void ContactAdd(Contact contact);
+
 	}
 }
