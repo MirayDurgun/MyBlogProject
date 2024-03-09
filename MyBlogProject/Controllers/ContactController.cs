@@ -27,6 +27,7 @@ namespace MyBlogProject.Controllers
         [HttpPost]
         public IActionResult AddContact(Contact contact)
         {
+            contact.ContactStatus = false;
             cm.TAdd(contact);
             return RedirectToAction("Index", "Blog");
         }

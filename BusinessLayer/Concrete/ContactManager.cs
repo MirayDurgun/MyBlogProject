@@ -39,7 +39,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Contact t)
         {
-            throw new NotImplementedException();
+           _contactDal.Update(t);
         }
     }
 }
