@@ -12,30 +12,32 @@
             }
             else
             {
-                if (item.Status == true)
-                {
-                    <div class="commentlist">
-                        <div class="comment even thread-even depth-1">
-                            <article class="comment">
-                                <header class="comment-meta comment-author vcard">
-                                    @if (item.Image != null)
-                                    {
-                                        <img src="@item.Image" class="avatar" height="75" width="75">
-                                    }
-                                    <cite class="fn"><a href="#" rel="external nofollow" class="url" style="color:#baa27f;">@item.CommentUserName.ToUpper()</a></cite>
-                                    <span class="comment-date">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
-                                    <p>@item.CommentTitle</p>
-                                </header>
-                                <section class="comment-content comment">
-                                    <p>@item.CommentContent</p>
-                                </section>
-                            </article>
-                            <hr />
-                            <br />
-                        </div>
-                    </div>
-                }
-            }
+        if (item.Status == true)
+        {
+            <div class="commentlist">
+                <div class="comment even thread-even depth-1">
+                    <article class="comment">
+                        <div class="comment-author vcard">
+                            @if (item.Image != null)
+                            {
+                                <img src="@item.Image" height="20%" width="20%" style="float: left; margin-right: 10px; border-radius: 50%;">
+
+                            }
+                            <div style="overflow: hidden;">
+                                <cite class="fn" style="color:#baa27f; float: none;">@item.CommentUserName.ToUpper()</cite>
+                                <span class="comment-date" style="float: right;">@(((DateTime)item.CommentDate).ToString("dd/MM/yyyy"))</span>
+                                <p style="float: none;">@item.CommentTitle</p>
+                                <div class="comment-content comment">
+                                    <p style ="margin-left:-5rem; margin-top:-0.7rem;">@item.CommentContent</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </article>
+                    <hr style="clear: both;" />
+                </div>
+            </div>
+        }
+    }
         }
     }
     <div class="col-md-12" style="bottom:10px;">
