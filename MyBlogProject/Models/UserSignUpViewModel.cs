@@ -28,13 +28,5 @@ namespace MyBlogProject.Models
         [Display(Name = "Şifre Tekrar")]
         [Required(ErrorMessage = "Şifreler uyuşmuyor!")]
         public string confirmPassword { get; set; }
-
-
-        [Display(Name = "Fotoğraf")]
-        [Required(ErrorMessage = "Fotoğraf Ekleyiniz!")]
-        public string imageUrl { get; set; }
-
-
-
     }
 }

@@ -20,35 +20,37 @@
         <div class="inner-sec">
             <div class="login p-5 bg-light mx-auto mw-100">
                 <form class="m-t" asp-action="Index">
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <span asp-validation-for="nameSurname" class="text-danger"></span>
                             <input type="text" class="form-control" asp-for="nameSurname" placeholder="Adınız Soyadınız">
                         </div>
+
                         <div class="form-group col-md-6">
                             <span asp-validation-for="userName" class="text-danger"></span>
                             <input type="text" class="form-control" asp-for="userName" placeholder="Kullanıcı Adınız">
                         </div>
                     </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <span asp-validation-for="mail" class="text-danger"></span>
                             <input type="email" class="form-control" asp-for="mail" placeholder="Email">
                         </div>
+
                         <div class="form-group col-md-6">
                             <span asp-validation-for="password" class="text-danger"></span>
                             <input type="password" class="form-control" asp-for="password" placeholder="Şifre">
                         </div>
                     </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <span asp-validation-for="confirmPassword" class="text-danger"></span>
                             <input type="password" class="form-control" asp-for="confirmPassword" placeholder="Şifre Tekrar">
                         </div>
-                        <div class="form-group col-md-6">
-                            <span asp-validation-for="imageUrl" class="text-danger"></span>
-                            <input type="text" class="form-control" asp-for="imageUrl" placeholder="Fotoğraf">
-                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary submit" style="top:15px; left:15px;">Kayıt Ol</button>
                     <div class="text-danger" asp-validation-summary="ModelOnly">
@@ -58,3 +60,19 @@
         </div>
     </div>
 </section>
+
+<script>
+    $(document).ready(function () {
+        // Şifre alanlarının değişikliklerini dinle
+        $('#password, #confirmPassword').on('keyup', function () {
+            var password = $('#password').val();
+            var confirmPassword = $('#confirmPassword').val();
+            // Şifreler eşleşmiyorsa hata mesajı göster
+            if (password !== confirmPassword) {
+                $('#confirmPassword').get(0).setCustomValidity('Şifreler eşleşmiyor');
+            } else {
+                $('#confirmPassword').get(0).setCustomValidity('');
+            }
+        });
+    });
+</script>

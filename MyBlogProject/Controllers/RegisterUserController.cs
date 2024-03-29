@@ -33,8 +33,7 @@ namespace MyBlogProject.Controllers
                 AppUser user = new AppUser()
                 {
                     Email = p.mail,
-                    UserName=p.userName,
-                    ImageUrl = p.imageUrl,
+                    UserName=p.userName,     
                     NameSurname = p.nameSurname
                 };
                 var result = await _userManager.CreateAsync(user, p.password);
