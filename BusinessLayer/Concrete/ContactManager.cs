@@ -41,5 +41,10 @@ namespace BusinessLayer.Concrete
         {
            _contactDal.Update(t);
         }
+
+        public List<Contact> GetLast5Contact()
+        {
+            return _contactDal.GetListAll().Take(5).ToList();
+        }
     }
 }
