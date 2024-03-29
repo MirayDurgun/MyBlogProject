@@ -23,7 +23,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Category> Categories { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<ParentComment> ParentComments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Education> Educations { get; set; }
         public DbSet<Job> Jobs { get; set; }
