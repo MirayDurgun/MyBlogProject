@@ -1,6 +1,6 @@
 ﻿@model List<Project>
 
-    @* portfolio için kullanıldı *@
+@* portfolio için kullanıldı *@
 @if (Model != null)
 {
     <h2 class="section-title">PROJELER</h2>
@@ -9,13 +9,15 @@
 
             @foreach (var item in Model)
             {
-                <h4>@item.ProjectName</h4>
-                <p>@item.ProjectSummary</p>
-                <p style="color:#c9b69b; font-size:13px; margin-top:auto;">Tamamlanma Yüzdesi</p>
-                <div style="margin-bottom:10%;" class="bar" data-percent="@item.ProjectCompletion">
+                <a href="/Project/ProjectSingle/@item.ProjectId/" style="text-decoration: none; color: inherit;">
+                    <h4>@item.ProjectName</h4>
+                    <p>@item.ProjectSummary</p>
+                    <p style="color:#c9b69b; font-size:13px; margin-top:auto;">Tamamlanma Yüzdesi</p>
+                    <div style="margin-bottom:10%;" class="bar" data-percent="@item.ProjectCompletion">
 
-                    <div class="progress"></div>
-                </div>
+                        <div class="progress"></div>
+                    </div>
+                </a>
             }
 
         </div>

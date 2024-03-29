@@ -16,9 +16,17 @@
                 @(((DateTime)item.CertificateStartDate).ToString("MMMM yyyy")) -
                 @if (item.CertificateEndDate != null)
                 {
-                    @(((DateTime)item.CertificateEndDate).ToString("MMMM yyyy"))
+                    @(((DateTime)item.CertificateEndDate).ToString("MMMM yyyy"))  
                 }
-                @item.EducationDurationHours Saat
+                @if (item.EducationDurationHours != null)
+                {
+                    <text>     @item.EducationDurationHours Saat</text>
+                }
+                else
+                {
+                    <text>Süresiz</text>
+                }
+
             </span>
 
             <h4>@item.CertificateName</h4>
