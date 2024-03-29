@@ -1,10 +1,10 @@
-﻿using CoreBlog.Models;
+﻿using MyBlogProject.Models;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreBlog.Controllers
+namespace MyBlogProject.Controllers
 {
     [AllowAnonymous]
 

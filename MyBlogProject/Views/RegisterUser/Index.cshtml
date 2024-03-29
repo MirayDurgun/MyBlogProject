@@ -1,0 +1,60 @@
+﻿@model UserSignUpViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<style>
+
+    .form-group{
+        margin-bottom:15px;
+    }
+
+</style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Kayıt Sayfası</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                <form class="m-t" asp-action="Index">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="nameSurname" class="text-danger"></span>
+                            <input type="text" class="form-control" asp-for="nameSurname" placeholder="Adınız Soyadınız">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="userName" class="text-danger"></span>
+                            <input type="text" class="form-control" asp-for="userName" placeholder="Kullanıcı Adınız">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="mail" class="text-danger"></span>
+                            <input type="email" class="form-control" asp-for="mail" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="password" class="text-danger"></span>
+                            <input type="password" class="form-control" asp-for="password" placeholder="Şifre">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="confirmPassword" class="text-danger"></span>
+                            <input type="password" class="form-control" asp-for="confirmPassword" placeholder="Şifre Tekrar">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <span asp-validation-for="imageUrl" class="text-danger"></span>
+                            <input type="text" class="form-control" asp-for="imageUrl" placeholder="Fotoğraf">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit" style="top:15px; left:15px;">Kayıt Ol</button>
+                    <div class="text-danger" asp-validation-summary="ModelOnly">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

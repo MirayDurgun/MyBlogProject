@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CoreBlog.Models
+namespace MyBlogProject.Models
 {
     public class UserSignInViewModel
     {
