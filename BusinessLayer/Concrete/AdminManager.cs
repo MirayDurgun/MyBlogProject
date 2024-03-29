@@ -41,5 +41,10 @@ namespace BusinessLayer.Concrete
         {
             _adminDal.Update(t);
         }
+
+        public List<Admin> GetFooterAbout()
+        {
+            return _adminDal.GetListAll();
+        }
     }
 }

@@ -7,8 +7,8 @@
 
 <style>
     .post-slider .owl-item img {
-        width: 100%; /* İstenen genişlik */
-        height: 10%; /* İstenen yükseklik */
+        width: 100%; 
+        height: 10%; 
         object-fit: cover; /* Resmin oranını koruyarak sığdırma */
     }
 
@@ -19,43 +19,11 @@
 {
     foreach (var item in Model)
     {
-        @* <div class="entry-header">
-            <h1 class="entry-title">@item.ProjectName</h1>
-
-        </div>
-
-
-        <div id="rg-gallery" class="rg-gallery">
-            <ul id="carousel" class="elastislide-list">
-                <li>
-                    <a href="~/blogtema/images/blog/01.jpg">
-                        <img src="@item.Image" />
-                    </a>
-                </li>
-            </ul>
-
-            <div class="rg-image-wrapper">
-                <div class="rg-image-nav">
-                    <a href="#" class="rg-image-nav-prev">Önceki Görsel</a>
-                    <a href="#" class="rg-image-nav-next">Sonraki Görsel</a>
-                </div>
-                <div class="rg-image"></div>
-                <div class="rg-loading"></div>
-                <div class="rg-caption-wrapper">
-                    <div class="rg-caption">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-
-
-        </div> *@
-
         <article class="hentry post sticky">
             <div class="entry-header">
                 <h1 class="entry-title">@item.ProjectName</h1>
                 <span class="comment-link">
-                    <a href="blog-single.html#comments">64 Comments</a>
+                    <a href="blog-single.html#comments">64 Yorum</a>
                 </span>
                 <span class="cat-links">
                     <a href="#" title="View all posts in Adventure" rel="category tag">vv</a>
@@ -67,16 +35,26 @@
 
         <div id="main" class="site-main">
 
-            <div class="post-slider owl-carousel ratio-wide" data-items="1" data-loop="true" data-dots="true" data-nav="true" data-nav-prev-text="prev" data-nav-next-text="next">
+            <div class="post-slider owl-carousel ratio-wide" data-items="1" data-loop="true" data-dots="true" data-nav="true" data-nav-prev-text="Önceki" data-nav-next-text="Sonraki">
+                @{
+                    string[] imageUrls = new string[20]; // 20 elemanlı bir dizi oluşturuyoruz
 
-                <img src="@item.Image1" class="" />
-                <img src="~/blogtema/images/blog/01.jpg" />
-                <img src="~/blogtema/images/blog/01.jpg" class="" />
-                <img src="~/blogtema/images/blog/01.jpg" class="" />
+                    for (int i = 0; i < 20; i++)
+                    {
+                        imageUrls[i] = "Image" + (i + 1); // Her elemanı "Image1" den "Image20"ye kadar olan stringlerle dolduruyoruz
+                    }
+                }
 
+                @foreach (var imageUrl in imageUrls)
+                {
+                    var imageValue = item.GetType().GetProperty(imageUrl).GetValue(item);
+                    // imageUrl değişkeninin temsil ettiği isimle ilişkilendirilen özelliğin değerini alır.
+                    if (imageValue != null)
+                    {
+                        <img src="@imageValue" />
+                    }
+                }
             </div>
-
-
 
             <div class="layout-medium">
 
@@ -86,13 +64,13 @@
                         <div class="blog-regular">
 
                             <article class="hentry post sticky">
-                                <div class="featured-image">
+                               @*  <div class="featured-image">
                                     <a href="blog-single.html">
                                         <div class="entry-content">
                                             <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                         </div>
                                     </a>
-                                </div>
+                                </div> *@
                                 <div class="entry-content">
 
                                     <p>@item.ProjectDescription</p>
@@ -103,17 +81,10 @@
                                     }
 
                                 </div>
-
                             </article>
-
-
                         </div>
-
-
                     </div>
-
                 </div>
-
             </div>
             <div id="secondary" class="widget-area sidebar" role="complementary">
 
@@ -174,12 +145,9 @@
 }
 
 
-
 <div class="header-links">
     <a href="/Project/index/"><i class="pw-icon-level-up"></i>Geri Dön</a>
 </div>
-
-
 
 <script>
     let dizi = [

@@ -1,4 +1,4 @@
-﻿@model List<About>
+﻿@model List<Admin>
 
 
 <aside class="widget widget_text">
@@ -8,11 +8,12 @@
         @foreach (var item in Model)
 
         {
-            if (item.AboutDetails1 != null)
+            if (item.ShortDescription != null)
             {
                 <div class="textwidget">
-                    <img src="@item.AboutImage1" alt="avatar">
-                    <p>@item.AboutDetails1.Substring(0,item.AboutDetails1.Substring(0,150).LastIndexOf(" "))....</p>
+                    <img src="@item.ImageURL" class="rounded-circle" width="55%" height="55%">
+
+                    <p>@item.ShortDescription.Substring(0,item.ShortDescription.Substring(0,150).LastIndexOf(" "))....</p>
                 </div>
             }
         }

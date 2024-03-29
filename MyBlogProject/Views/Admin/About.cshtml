@@ -1,4 +1,4 @@
-﻿@model List<About>
+﻿@model List<Admin>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
@@ -10,14 +10,21 @@
         <div class="layout-fixed">
             <article class="hentry post">
 
-                @await Component.InvokeAsync("AboutforPortfolio")
+                <header class="entry-header">
+
+                    @foreach (var item in Model)
+                    {
+                        <h1 class="entry-title">@item.NameSurname</h1>
+                    }
+
+                </header>
 
                 <div class="entry-content">
                     @if (Model != null)
                     {
                         foreach (var item in Model)
                         {
-                            <p class="drop-cap">@item.AboutDetails1</p>
+                            <p class="drop-cap">@item.ShortDescription</p>
                         }
 
 
@@ -27,14 +34,12 @@
                         foreach (var item in Model)
                         {
 
-                            if (item.AboutDetails2 != null || item.AboutDetails3 != null || item.AboutDetails4 != null)
+                            if (item.Description != null)
                             {
                                 <blockquote class="alignleft" style="font-size:30px;">
                                     Geleceği belirlemek için geleceği tahmin etmekten daha etkilisi, onu yaratmaktır.
                                 </blockquote>
-                                <p>@item.AboutDetails2</p>
-                                <p>@item.AboutDetails3</p>
-                                <p>@item.AboutDetails4</p>
+                                <p>@item.Description</p>
                             }
                         }
                     }

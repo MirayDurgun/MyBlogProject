@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
 {
     public class AdminController : Controller
     {
+        AdminManager adm=new AdminManager(new EfAdminRepositoy());
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult About()
+        {
+            var values = adm.GetList();
+            return View(values);
         }
     }
 }

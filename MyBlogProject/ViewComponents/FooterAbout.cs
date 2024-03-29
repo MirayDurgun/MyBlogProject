@@ -7,7 +7,7 @@ namespace MyBlogProject.ViewComponents.About
 	public class FooterAbout : ViewComponent
 	{
 		
-		AboutManager abm = new AboutManager(new EfAboutRepository());
+		AdminManager abm = new AdminManager(new EfAdminRepositoy());
 		public IViewComponentResult Invoke(int id)
         //id parametresini kullanarak ilgili kategori veya içeriği getirme işlemi yapılabilir.
         {

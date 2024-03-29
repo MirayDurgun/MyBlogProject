@@ -19,7 +19,6 @@ namespace DataAccessLayer.Concrete
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { base.OnModelCreating(modelBuilder); }
-        public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
