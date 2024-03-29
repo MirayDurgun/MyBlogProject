@@ -1,15 +1,13 @@
-﻿using MyBlogProject.Models;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MyBlogProject.Models;
+using System.Threading.Tasks;
 
-namespace MyBlogProject.Controllers
+namespace CoreBlog.Controllers
 {
     [AllowAnonymous]
-
-    //identity ile login sağlayacağız 125. video
-
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
@@ -29,15 +27,13 @@ namespace MyBlogProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(p.userName, p.password, false, true);
-                //buradaki false çerezleri hatırlamasın,true 5 kere yanlış giriş yapınca belli bir süre giriş yapamayacak
+                var result = await _signInManager.PasswordSignInAsync(p.email, p.password, false, true);
+                // isPersistent: false - Oturumun kalıcı olmayacağını belirtir. Tarayıcı kapandığında oturum sona erecektir.
+                // lockoutOnFailure: false - Başarısız giriş denemelerinde hesabın kilitlenmeyeceğini belirtir.
+                // Giriş işlemi başarılı mı kontrol ediliyor
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Blog");
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Index", "Admin", new { area = "Admin" });
                 }
             }
             return View();

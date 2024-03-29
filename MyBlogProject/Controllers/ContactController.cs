@@ -19,11 +19,11 @@ namespace MyBlogProject.Controllers
             return View();
         }
 
-
         public IActionResult AddContact()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult AddContact(Contact contact)
         {

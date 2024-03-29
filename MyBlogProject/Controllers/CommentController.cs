@@ -1,14 +1,18 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
 {
+
     public class CommentController : Controller
     {
         CommentManager cm = new CommentManager(new EfCommentRepository());
-        ParentCommentManager pcm = new ParentCommentManager(new EfParentCommentRepository());
+        ParentCommentManager pcm = new ParentCommentManager(new EfParentCommentRepository()); 
+        
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -19,6 +23,7 @@ namespace MyBlogProject.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult AddComment(Comment comment)
         {

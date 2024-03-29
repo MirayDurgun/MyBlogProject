@@ -5,9 +5,9 @@ namespace MyBlogProject.Models
     public class UserSignInViewModel
     {
 
-        [Display(Name = "Kullanıcı Adı")]
-        [Required(ErrorMessage = "Lütfen kullanıcı adınızı giriniz")]
-        public string userName { get; set; }
+        [Display(Name = "Mail")]
+        [Required(ErrorMessage = "Lütfen mail adresi giriniz")]
+        public string email { get; set; }
 
         [Display(Name = "Şifre")]
         [Required(ErrorMessage = "Lütfen şifre giriniz")]
