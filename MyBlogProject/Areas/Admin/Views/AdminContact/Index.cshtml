@@ -57,9 +57,18 @@
 
                                         <h5 class="card-title">@item.ContactMail</h5>
                                         <h5 class="card-title test-title">@(((DateTime)item.ContactDate).ToString("dd/MM/yyyy"))</h5>
-                                        <p class="card-text">
+                                        <td>
+                                            @if (item.ContactMessage.Length >= 15)
+                                            {
+                                              <p class="card-text">
                                             @item.ContactMessage.Substring(0, item.ContactMessage.Substring(0, 15).LastIndexOf(" "))....
-                                        </p>
+                                                </p>
+                                            }
+                                            else
+                                            {
+                                                <p class="card-text">@item.ContactMessage</p>
+                                            }
+
                                         <div class="d-flex">
                                             <a href="/admin/AdminContact/ContactDelete/@item.ContactId" class="btn btn-danger" style="margin-right: 10px;">Sil</a>
                                             <a href="/admin/AdminContact/ContactDetail/@item.ContactId" class="btn btn-purple">Detaylar</a>

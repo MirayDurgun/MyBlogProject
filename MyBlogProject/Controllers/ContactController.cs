@@ -29,7 +29,7 @@ namespace MyBlogProject.Controllers
         {
             contact.ContactStatus = false;
             cm.TAdd(contact);
-            return RedirectToAction("Index", "Blog");
+            return RedirectToAction("Index", "Contact");
         }
     }
 }

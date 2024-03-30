@@ -56,10 +56,17 @@
                             }
                         </div>
 
+                        @if (item.EducationDescription.Length >= 200)
+                        {
+                            <p class="card-text">
+                                @item.EducationDescription.Substring(0, item.EducationDescription.Substring(0, 200).LastIndexOf(" "))....
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="card-text">@item.EducationDescription</p>
+                        }
 
-                        <p class="card-text">
-                            @(item.EducationDescription.Length > 150 ? item.EducationDescription.Substring(0, 200).TrimEnd() + "..." : item.EducationDescription)
-                        </p>
                         <div class="d-flex">
                             <a href="/admin/admineducation/educationadd/" class="btn btn-success"><i class="fas fa-graduation-cap"></i> Eğitim Ekle</a>
                             <a href="/admin/admineducation/educationupdate/ @item.EducationId" class="btn btn-primary">Güncelle</a>

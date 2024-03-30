@@ -44,7 +44,14 @@
                                     <td>@item.ProjectName</td>
                                     @if (item.ProjectSummary != null)
                                     {
-                                        <td>@item.ProjectSummary.Substring(0, item.ProjectSummary.Substring(0, 35).LastIndexOf(" "))....</td>
+                                        @if (item.ProjectSummary.Length >= 35)
+                                        {
+                                            <td>@item.ProjectSummary.Substring(0, item.ProjectSummary.Substring(0, 35).LastIndexOf(" "))....</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@item.ProjectSummary</td>
+                                        }
                                     }
                                     else
                                     {

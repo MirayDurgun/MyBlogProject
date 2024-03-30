@@ -38,7 +38,14 @@ else // Model listesi boş değilse veya en az bir öğenin ContactStatus özell
                         <div class="inbox-item">
                             <a href="/admin/AdminContact/ContactDetail/@item.ContactId">
                                 <h5 class="inbox-item-author mt-0 mb-1">@item.ContactUserName</h5>
-                                <p class="inbox-item-text">@item.ContactMessage.Substring(0, item.ContactMessage.Substring(0, 15).LastIndexOf(" "))....</p>
+                                @if (item.ContactMessage.Length >= 15)
+                                {
+                                    <p class="inbox-item-text">@item.ContactMessage.Substring(0, item.ContactMessage.Substring(0, 15).LastIndexOf(" "))....</p>
+                                }
+                                else
+                                {
+                                    <p class="inbox-item-text">@item.ContactMessage</p>
+                                }
                                 <p class="inbox-item-date">@(((DateTime)item.ContactDate).ToString("dd MMMM yyyy HH:mm"))</p>
                             </a>
                         </div>
