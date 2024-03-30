@@ -56,5 +56,10 @@ namespace BusinessLayer.Concrete
             //project single son projelerin hepsini yansıtmak yerine sadece 
             //8 tane getirmesini sağladım
         }
+
+        public List<Project> GetLast4Project()
+        {
+            return _projectDal.GetListAll().Take(4).ToList();
+        }
     }
 }

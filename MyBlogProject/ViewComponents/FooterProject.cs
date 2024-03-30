@@ -10,7 +10,7 @@ namespace MyBlogProject.ViewComponents.Project
 		ProjectManager cm = new ProjectManager(new EfProjectRepository());
 		public IViewComponentResult Invoke(int id)
         {
-            var values = cm.GetLast8Project();
+            var values = cm.GetLast4Project();
 			return View(values);
 		}
 	}

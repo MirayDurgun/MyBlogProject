@@ -2,7 +2,7 @@
 
 
 <aside class="widget widget_recent_entries">
-    <h3 class="widget-title">Son Postlar</h3>
+    <h3 class="widget-title">Postlar</h3>
 
     @if (Model != null)
     {
@@ -10,8 +10,10 @@
             @foreach (var item in Model)
             {
                 <li>
+                    <img src="@item.BlogImage" height="37%" width="37%" style="float:left; margin-right:10px; border-radius:100%;">
                     <a href="/Blog/BlogSingle/@item.BlogID/">@item.BlogTitle</a>
-                    <br>@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))
+                    <br>
+                    <div style="margin-bottom:10px;">@(((DateTime)item.BlogCreateDate).ToString("MMMM yyyy"))</div>
                 </li>
             }
         </ul>

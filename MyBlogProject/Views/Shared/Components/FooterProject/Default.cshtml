@@ -1,12 +1,16 @@
 ﻿@model List<Project>
 
 <aside class="widget widget_tag_cloud">
-    <h3 class="widget-title">Son Projeler</h3>
+    <h3 class="widget-title">Projeler</h3>
+
     @foreach (var item in Model)
     {
-        <div class="tagcloud">
-            <a href="/Project/ProjectSingle/@item.ProjectId/" style="font-size: 22pt;">@item.ProjectName</a>
+        <div class="tagcloud">       
+            <a href="/Project/ProjectSingle/@item.ProjectId/">@item.ProjectName
+                <img src="@item.Image1" height="38%" width="38%" style="float:left; margin-right:10px; border-radius:5%;">
+                </a>
         </div>
     }
 
 </aside>
+
