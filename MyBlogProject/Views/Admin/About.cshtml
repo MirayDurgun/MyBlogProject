@@ -34,12 +34,14 @@
                         foreach (var item in Model)
                         {
 
-                            if (item.Description != null)
+                            if (item.Description != null || item.Description2 != null)
                             {
                                 <blockquote class="alignleft" style="font-size:30px;">
                                     Geleceği belirlemek için geleceği tahmin etmekten daha etkilisi, onu yaratmaktır.
                                 </blockquote>
                                 <p>@item.Description</p>
+                                <br />
+                                <p>@item.Description2</p>
                             }
                         }
                     }

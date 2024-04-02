@@ -23,20 +23,8 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProgramAdd(EntityLayer.Concrete.Program p)
         {
-
-            //if (results.IsValid)
-            //{
             pm.TAdd(p);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var itpm in results.Errors)
-            //    {
-            //        ModelState.AddModelError(itpm.PropertyName, itpm.ErrorMessage);
-            //    }
-            //    return View();
-            //}
         }
 
         public IActionResult ProgramDelete(int id)
@@ -48,6 +36,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
 
         }
 
+
         [HttpGet]
         public IActionResult ProgramUpdate(int id)
         {
@@ -58,24 +47,9 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProgramUpdate(EntityLayer.Concrete.Program p)
         {
-            //ProgramValidator jv = new ProgramValidator();
-            //ValidationResult results = jv.Validate(j);
-
-            //if (results.IsValid)
-            //{
             var programvalue = pm.GetById(p.Id);
             pm.TUpdate(p);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
         }
-
     }
 }

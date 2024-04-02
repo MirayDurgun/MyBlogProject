@@ -9,6 +9,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
     public class AdminController : Controller
     {
         AdminManager adm = new AdminManager(new EfAdminRepositoy());
+
         public IActionResult Index()
         {
             return View();
@@ -23,15 +24,18 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult AdminUpdate(int id)
         {
-            var educationvalue = adm.GetById(id);
-            return View(educationvalue);
+            var adminnvalue = adm.GetById(id);
+            return View(adminnvalue);
         }
 
         [HttpPost]
         public IActionResult AdminUpdate(EntityLayer.Concrete.Admin a)
         {
-
-            var educationvalue = adm.GetById(a.AdminID);
+            if (!ModelState.IsValid)
+            {
+                return View(a);
+            }
+            var adminnvalue = adm.GetById(a.AdminID);
             adm.TUpdate(a);
             return RedirectToAction("Profile", "Admin");
 

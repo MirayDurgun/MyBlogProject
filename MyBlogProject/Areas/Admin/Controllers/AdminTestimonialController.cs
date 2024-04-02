@@ -1,5 +1,4 @@
 ﻿using BusinessLayer.Concrete;
-using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -25,20 +24,8 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult TestimonialAdd(Testimonial t)
         {
-
-            //if (results.IsValid)
-            //{
             tm.TAdd(t);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
         }
 
         public IActionResult TestimonialDelete(int id)
@@ -60,24 +47,9 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult TestimonialUpdate(Testimonial t)
         {
-            //TestimonialValidator jv = new TestimonialValidator();
-            //ValidationResult results = jv.Validate(j);
-
-            //if (results.IsValid)
-            //{
             var educationvalue = tm.GetById(t.TestimonialId);
             tm.TUpdate(t);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
-
         }
     }
 }

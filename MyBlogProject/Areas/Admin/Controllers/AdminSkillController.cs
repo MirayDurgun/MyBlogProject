@@ -1,5 +1,4 @@
 ﻿using BusinessLayer.Concrete;
-using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -25,20 +24,8 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult SkillAdd(Skill s)
         {
-
-            //if (results.IsValid)
-            //{
             sm.TAdd(s);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var itsm in results.Errors)
-            //    {
-            //        ModelState.AddModelError(itsm.PropertyName, itsm.ErrorMessage);
-            //    }
-            //    return View();
-            //}
         }
 
         public IActionResult SkillDelete(int id)
@@ -60,24 +47,9 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult SkillUpdate(Skill s)
         {
-            //SkillValidator jv = new SkillValidator();
-            //ValidationResult results = jv.Validate(j);
-
-            //if (results.IsValid)
-            //{
             var skillvalue = sm.GetById(s.SkillId);
             sm.TUpdate(s);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
-
         }
 
     }

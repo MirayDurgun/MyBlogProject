@@ -26,11 +26,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-              
+
                 cm.TAdd(c);
                 return RedirectToAction("Index", "AdminPortfolio");
             }
-            
+
             return View(c);
         }
 
@@ -53,24 +53,9 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CertificateUpdate(Certificate c)
         {
-            //CertificateValidator jv = new CertificateValidator();
-            //ValidationResult results = jv.Validate(j);
-
-            //if (results.IsValid)
-            //{
             var certificatevalue = cm.GetById(c.CertificateId);
             cm.TUpdate(c);
             return RedirectToAction("Index", "AdminPortfolio");
-            //}
-            //else
-            //{
-            //    foreach (var item in results.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //    }
-            //    return View();
-            //}
-
         }
     }
 }
