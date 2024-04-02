@@ -24,14 +24,14 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CertificateAdd(Certificate c)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                return View(c);
+            }
+
 
                 cm.TAdd(c);
                 return RedirectToAction("Index", "AdminPortfolio");
-            }
-
-            return View(c);
         }
 
         public IActionResult CertificateDelete(int id)
@@ -53,6 +53,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CertificateUpdate(Certificate c)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(c);
+            }
+
             var certificatevalue = cm.GetById(c.CertificateId);
             cm.TUpdate(c);
             return RedirectToAction("Index", "AdminPortfolio");

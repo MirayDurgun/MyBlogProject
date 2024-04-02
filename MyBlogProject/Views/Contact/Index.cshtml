@@ -23,16 +23,16 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Ad Soyad</label>
-                                        <input asp-for="ContactUserName" class="form-control" />
+                                        <input asp-for="ContactUserName" class="form-control" required minlength="5" />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Mail</label>
-                                        <input asp-for="ContactMail" class="required email" />
+                                        <input asp-for="ContactMail" class="required email" required minlength="5" />
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label>Mesaj</label>
-                                    <textarea asp-for="ContactMessage" class="required"></textarea>
+                                    <textarea asp-for="ContactMessage" class="required" required minlength="15"></textarea>
                                 </div>
                                 <div>
                                     <button type="submit" class="form-gorup submit button" style="top:20px;"><span class="submit-label">Gönder</span><span class="submit-status"></span></button>

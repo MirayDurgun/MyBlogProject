@@ -24,6 +24,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult EducationAdd(Education e)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(e);
+            }
+
             em.TAdd(e);
             return RedirectToAction("Index", "AdminPortfolio");
         }
@@ -47,6 +52,10 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult EducationUpdate(Education e)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(e);
+            }
 
             var educationvalue = em.GetById(e.EducationId);
             em.TUpdate(e);

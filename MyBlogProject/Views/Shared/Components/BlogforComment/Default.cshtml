@@ -50,21 +50,22 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Ad Soyad</label>
-                <input type="text" name="CommentUserName" class="form-control" />
+                <input type="text" name="CommentUserName" class="form-control" required minlength="3" />
             </div>
             <div class="form-group col-md-6">
                 <label>Başlık</label>
-                <input type="text" name="CommentTitle" class="form-control" />
+                <input type="text" name="CommentTitle" class="form-control" required minlength="3" />
             </div>
         </div>
         <div class="form-group col-md-12">
             <label>Açıklama</label>
-            <textarea name="CommentContent" class="form-control" rows="5"></textarea>
+            <textarea name="CommentContent" class="form-control" rows="5" required minlength="5"></textarea>
         </div>
         <div class="form-group col-md-12">
             <label>Görsel</label>
-            <input type="file" name="Image" class="form-control" />
+            <input type="file" name="Image" class="form-control"/>
         </div>
+
         <div class="modal-footer col-md-12" style="top:10px;">
             <button type="submit" class="btn btn-info">Gönder</button>
         </div>

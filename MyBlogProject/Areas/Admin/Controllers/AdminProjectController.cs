@@ -27,7 +27,10 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProjectAdd(Project p)
         {
-
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
 
             p.ProjectStatus = true;
             pm.TAdd(p);
@@ -53,6 +56,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProjectUpdate(Project p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
+
             var projectvalue = pm.GetById(p.ProjectId);
             p.ProjectStatus = true;
             pm.TUpdate(p);

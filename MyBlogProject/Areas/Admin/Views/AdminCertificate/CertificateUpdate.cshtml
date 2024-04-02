@@ -58,30 +58,24 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Açıklama</label>
-                                                <textarea asp-for="CertificateDescription" class="form-control" rows="5"></textarea>
-                                                <span asp-validation-for="CertificateDescription" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label>Başlangıç Tarihi</label>
                                                 <input asp-for="CertificateStartDate" class="form-control" type="date" />
-                                                <span asp-validation-for="CertificateStartDate" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label>Bitiş Tarihi</label>
                                                 <input asp-for="CertificateEndDate" class="form-control" type="date" />
-                                                <span asp-validation-for="CertificateEndDate" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label>Süresi</label>
                                                 <input asp-for="EducationDurationHours" class="form-control" />
-                                                <span asp-validation-for="EducationDurationHours" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-info">Güncelle</button>
                                                 <a asp-controller="AdminPortfolio" asp-action="Index" class="btn btn-danger">İptal Et</a>
                                             </div>
                                         </form>
-
 
                                     </div>
                                 </div>

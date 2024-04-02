@@ -7,8 +7,8 @@
 
 <style>
     .post-slider .owl-item img {
-        width: 100%; 
-        height: 10%; 
+        width: 100%;
+        height: 10%;
         object-fit: cover; /* Resmin oranını koruyarak sığdırma */
     }
 
@@ -64,20 +64,24 @@
                         <div class="blog-regular">
 
                             <article class="hentry post sticky">
-                               @*  <div class="featured-image">
-                                    <a href="blog-single.html">
-                                        <div class="entry-content">
-                                            <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                        </div>
-                                    </a>
-                                </div> *@
+                                @*  <div class="featured-image">
+                        <a href="blog-single.html">
+                        <div class="entry-content">
+                        <iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        </a>
+                        </div> *@
                                 <div class="entry-content">
-
-                                    <p>@item.ProjectDescription</p>
-
-                                    @if (item.ProjectDescription2 != null)
+                                    @if (item.ProjectDescription != null || item.ProjectDescription2 != null)
                                     {
+                                        <p>@item.ProjectDescription</p>
+
+
                                         <p>@item.ProjectDescription2</p>
+                                    }
+                                    else
+                                    {
+                                        <p>@item.ProjectSummary</p>
                                     }
 
                                 </div>

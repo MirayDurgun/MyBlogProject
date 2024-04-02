@@ -60,6 +60,10 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult BlogAdd(Blog b)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(b);
+            }
 
             b.BlogStatus = true;
             bm.TAdd(b);
@@ -122,6 +126,12 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AdminBlogUpdate(Blog b)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View(b);
+            } 
+
             var adminblogvalue = bm.GetById(b.BlogID);
             b.BlogStatus = true;
             bm.TUpdate(b);

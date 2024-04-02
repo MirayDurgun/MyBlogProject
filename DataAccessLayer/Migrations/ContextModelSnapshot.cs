@@ -54,7 +54,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("AdminID");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>
@@ -191,7 +191,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -208,7 +208,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Certificate", b =>
@@ -241,7 +241,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CertificateId");
 
-                    b.ToTable("Certificates");
+                    b.ToTable("Certificates", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
@@ -279,7 +279,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BlogID");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -310,7 +310,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Education", b =>
@@ -343,7 +343,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("EducationId");
 
-                    b.ToTable("Educations");
+                    b.ToTable("Educations", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
@@ -376,7 +376,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("JobId");
 
-                    b.ToTable("Jobs");
+                    b.ToTable("Jobs", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Program", b =>
@@ -393,7 +393,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Programs");
+                    b.ToTable("Programs", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
@@ -488,7 +488,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Skill", b =>
@@ -508,7 +508,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("SkillId");
 
-                    b.ToTable("Skills");
+                    b.ToTable("Skills", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>
@@ -539,7 +539,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("TestimonialId");
 
-                    b.ToTable("Testimonials");
+                    b.ToTable("Testimonials", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

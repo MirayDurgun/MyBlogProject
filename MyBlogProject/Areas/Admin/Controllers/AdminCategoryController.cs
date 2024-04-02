@@ -25,6 +25,12 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CategoryAdd(Category c)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View(c);
+            }
+
             cm.TAdd(c);
             return RedirectToAction("Index", "AdminCategory");
 
@@ -50,7 +56,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CategoryUpdate(Category c)
         {
-            
+            if (!ModelState.IsValid)
+            {
+                return View(c);
+            }
+
             var categoryvalue = cm.GetById(c.CategoryID);
             cm.TUpdate(c);
             return RedirectToAction("Index", "AdminCategory");

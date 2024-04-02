@@ -27,6 +27,10 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult JobAdd(Job j)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(j);
+            }
 
             jm.TAdd(j);
             return RedirectToAction("Index", "AdminPortfolio");
@@ -52,6 +56,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult JobUpdate(Job j)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(j);
+            }
+
             var jobvalue = jm.GetById(j.JobId);
             jm.TUpdate(j);
             return RedirectToAction("Index", "AdminPortfolio");

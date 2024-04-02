@@ -24,6 +24,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult SkillAdd(Skill s)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(s);
+            }
+
             sm.TAdd(s);
             return RedirectToAction("Index", "AdminPortfolio");
         }
@@ -47,6 +52,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult SkillUpdate(Skill s)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(s);
+            }
+
             var skillvalue = sm.GetById(s.SkillId);
             sm.TUpdate(s);
             return RedirectToAction("Index", "AdminPortfolio");

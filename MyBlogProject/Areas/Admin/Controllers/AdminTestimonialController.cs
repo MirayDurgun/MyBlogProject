@@ -24,6 +24,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult TestimonialAdd(Testimonial t)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(t);
+            }
+
             tm.TAdd(t);
             return RedirectToAction("Index", "AdminPortfolio");
         }
@@ -47,6 +52,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult TestimonialUpdate(Testimonial t)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(t);
+            }
+
             var educationvalue = tm.GetById(t.TestimonialId);
             tm.TUpdate(t);
             return RedirectToAction("Index", "AdminPortfolio");

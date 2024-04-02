@@ -23,6 +23,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProgramAdd(EntityLayer.Concrete.Program p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
+
             pm.TAdd(p);
             return RedirectToAction("Index", "AdminPortfolio");
         }
@@ -47,6 +52,11 @@ namespace MyBlogProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult ProgramUpdate(EntityLayer.Concrete.Program p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
+
             var programvalue = pm.GetById(p.Id);
             pm.TUpdate(p);
             return RedirectToAction("Index", "AdminPortfolio");
