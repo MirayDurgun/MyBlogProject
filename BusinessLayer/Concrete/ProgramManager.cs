@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Program> GetList()
         {
-            return _programDal.GetListAll();
+            return _programDal.GetListAll().OrderByDescending(e => e.Id).ToList();
         }
 
         public void TAdd(Program t)

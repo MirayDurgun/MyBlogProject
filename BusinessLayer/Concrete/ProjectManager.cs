@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public List<Project> GetList()
         {
-            return _projectDal.GetListAll();
+            return _projectDal.GetListAll().OrderByDescending(e => e.ProjectId).ToList();
         }
 
         public void TAdd(Project t)
@@ -49,8 +49,8 @@ namespace BusinessLayer.Concrete
 
         public List<Project> GetLast8Project()
         {
-            return _projectDal.GetListAll().Take(8).ToList();
-            //koleksiyondan sadece ilk 8 öğeyi seçer.
+            return _projectDal.GetListAll().Take(8).OrderByDescending(e => e.ProjectId).ToList();
+            //sadece idsi yakın olan ilk 8 öğeyi seçer.
 
 
             //project single son projelerin hepsini yansıtmak yerine sadece 
@@ -59,7 +59,7 @@ namespace BusinessLayer.Concrete
 
         public List<Project> GetLast4Project()
         {
-            return _projectDal.GetListAll().Take(4).ToList();
+            return _projectDal.GetListAll().Take(4).OrderByDescending(e => e.ProjectId).ToList();
         }
     }
 }

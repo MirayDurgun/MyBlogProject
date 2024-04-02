@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Certificate> GetList()
         {
-           return _certificateDal.GetListAll();
+           return _certificateDal.GetListAll().OrderByDescending(e => e.CertificateStartDate).ToList();
         }
 
         public void TAdd(Certificate t)

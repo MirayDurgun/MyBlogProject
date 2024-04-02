@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Education> GetList()
         {
-            return _educationDal.GetListAll();
+            return _educationDal.GetListAll().OrderByDescending(e => e.EducationStartDate).ToList();
         }
 
         public void TAdd(Education t)

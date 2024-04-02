@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Contact> GetList()
         {
-            return _contactDal.GetListAll();
+            return _contactDal.GetListAll().OrderByDescending(e => e.ContactDate).ToList();
         }
 
         public void TAdd(Contact t)
@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
 
         public List<Contact> GetLast5Contact()
         {
-            return _contactDal.GetListAll().Take(5).ToList();
+            return _contactDal.GetListAll().Take(5).OrderByDescending(e => e.ContactDate).ToList();
         }
     }
 }

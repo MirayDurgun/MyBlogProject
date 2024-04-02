@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Skill> GetList()
         {
-            return _skillDal.GetListAll();
+            return _skillDal.GetListAll().OrderByDescending(e => e.SkillId).ToList();
         }
 
         public void TAdd(Skill t)

@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Job> GetList()
         {
-            return _jobDal.GetListAll();
+            return _jobDal.GetListAll().OrderByDescending(e => e.StartDate).ToList();
         }
 
         public void TAdd(Job t)

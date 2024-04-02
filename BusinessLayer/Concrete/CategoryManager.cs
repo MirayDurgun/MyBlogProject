@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
 
         public List<Category> GetList()
         {
-            return _categoryDal.GetListAll();
+            return _categoryDal.GetListAll().OrderByDescending(e => e.CategoryID).ToList();
         }
 
         public void TAdd(Category t)
@@ -43,7 +43,7 @@ namespace BusinessLayer.Concrete
 
         public List<Category> GetFooterCategory()
         {
-            return _categoryDal.GetListAll();
+            return _categoryDal.GetListAll().OrderByDescending(e => e.CategoryID).ToList();
         }
     }
 }

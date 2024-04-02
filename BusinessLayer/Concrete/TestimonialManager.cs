@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<Testimonial> GetList()
         {
-            return _testimonialDal.GetListAll();
+            return _testimonialDal.GetListAll().OrderByDescending(e => e.TestimonialId).ToList();
         }
 
         public void TAdd(Testimonial t)

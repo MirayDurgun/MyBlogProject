@@ -12,7 +12,6 @@
                     <table class="table table-centered mb-0" id="btn-editable">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Firma Adı</th>
                                 <th>Ünvan</th>
                                 <th>Açıklama</th>
@@ -27,7 +26,6 @@
                         {
                             <tbody>
                                 <tr>
-                                    <td>@item.JobId</td>
                                     <td style="color:#66CCCC;">@item.CompanyName</td>
                                     <td>@item.JobTitle</td>
                                     <td>@(item.Description.Length > 150 ? item.Description.Substring(0, 100).TrimEnd() + "..." : item.Description)</td>

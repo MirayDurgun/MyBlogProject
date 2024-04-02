@@ -34,17 +34,17 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> GetCommentListWithBlog()
         {
-            return _commentDal.GetListWithBlog();
+            return _commentDal.GetListWithBlog().OrderByDescending(e => e.CommentDate).ToList();
         }
 
         public List<Comment> GetList()
         {
-            return _commentDal.GetListAll();
+            return _commentDal.GetListAll().OrderByDescending(e => e.CommentDate).ToList();
         }
 
         public List<Comment> GetListAll(int id)
         {
-            return _commentDal.GetListAll();
+            return _commentDal.GetListAll().OrderByDescending(e => e.CommentDate).ToList();
         }
 
         public void TUpdate(Comment t)
