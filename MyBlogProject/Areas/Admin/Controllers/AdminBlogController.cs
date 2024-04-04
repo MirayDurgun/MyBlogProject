@@ -3,6 +3,7 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
@@ -12,6 +13,7 @@ using System.Reflection.Metadata;
 namespace MyBlogProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminBlogController : Controller
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
@@ -112,7 +114,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
                 if (item.Value == adminblogvalue.CategoryID.ToString())
                 {
                     item.Selected = true; // Seçilen bloğun kategorisini seçili yapar.
-                    break; 
+                    break;
                 }
             }
 
@@ -130,7 +132,7 @@ namespace MyBlogProject.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 return View(b);
-            } 
+            }
 
             var adminblogvalue = bm.GetById(b.BlogID);
             b.BlogStatus = true;

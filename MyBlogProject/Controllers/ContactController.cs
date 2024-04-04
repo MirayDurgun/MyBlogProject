@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         ContactManager cm = new ContactManager(new EfContactRepository());
 
-        [AllowAnonymous]
+
         public IActionResult Index()
         {
             return View();

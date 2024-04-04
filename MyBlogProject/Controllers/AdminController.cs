@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
@@ -12,6 +13,7 @@ namespace MyBlogProject.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult About()
         {
             var values = adm.GetList();

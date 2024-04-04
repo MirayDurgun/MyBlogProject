@@ -1,11 +1,13 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminCertificateController : Controller
     {
         CertificateManager cm = new CertificateManager(new EfCertificateRepository());

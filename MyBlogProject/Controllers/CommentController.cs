@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
 {
-
+    [AllowAnonymous]
     public class CommentController : Controller
     {
         CommentManager cm = new CommentManager(new EfCommentRepository());

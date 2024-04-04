@@ -6,12 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
-        BlogManager bm = new BlogManager (new EfBlogRepository ());
+        BlogManager bm = new BlogManager(new EfBlogRepository());
 
 
-        [AllowAnonymous]
+
         public IActionResult Index()
         {
             var values = bm.GetBlogListWithCategory();

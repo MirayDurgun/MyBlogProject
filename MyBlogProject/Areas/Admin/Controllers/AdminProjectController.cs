@@ -2,12 +2,14 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminProjectController : Controller
     {
         ProjectManager pm = new ProjectManager(new EfProjectRepository());

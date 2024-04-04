@@ -42,15 +42,15 @@
                 <div class="col-md-12">
                     @if (Model != null)
                     {
-
+                            
                         <div class="row">
                             <div class="col-md-9 mx-auto blogdetail">
                                 <div class="col-md-10 mx-auto icerik">
-                                    <a href="/Admin/AdminContact/ContactDelete/@Model.ContactId" class="close-icon float-end"><i class=" fas fa-window-close"></i></a>
+                                    <a href="/Admin/AdminContact/index/" class="close-icon float-end"><i class="fas fa-window-close"></i></a>
+                                    <a href="/Admin/AdminContact/ContactDelete/@Model.ContactId" class="close-icon float-end"><i class="fa fa-trash"></i></a>
                                     <h4 class="mt-0" style="color:#9900FF;">@Model.ContactUserName.ToUpper()</h4>
                                   
                                     <p class="text-uppercase font-13" style="color:#99CCFF;">@Model.ContactMail</p>
-                                    <a href="/Admin/AdminContact/index/" class="btn btn-purple float-end ">Geri Dön</a>
                                     <ul class="list-inline">
                                         <li class="list-inline-item me-4">
                                             <h4 class="mb-0">@(((DateTime)Model.ContactDate).ToString("dd/MM/yyyy"))</h4>

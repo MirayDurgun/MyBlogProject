@@ -2,12 +2,14 @@
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminJobController : Controller
     {
         JobManager jm = new JobManager(new EfJobRepository());

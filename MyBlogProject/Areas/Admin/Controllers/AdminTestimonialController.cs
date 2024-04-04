@@ -1,11 +1,13 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminTestimonialController : Controller
     {
         TestimonialManager tm = new TestimonialManager(new EfTestimonialRepository());

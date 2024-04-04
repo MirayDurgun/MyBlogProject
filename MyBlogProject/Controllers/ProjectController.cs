@@ -5,12 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class ProjectController : Controller
     {
         ProjectManager pm = new ProjectManager(new EfProjectRepository());
 
 
-        [AllowAnonymous]
+
         public IActionResult Index()
         {
             var values = pm.GetList();
