@@ -6,15 +6,16 @@ ASP.Net Core 8.0 ile Entity Framework Core, N-Tier Architechture ile veritabanı
 Proje Kullanıcı ve Admin Panelli bir Blog sitesidir. Kullanıcı yorum yapabilir, blog yazılarını beğenebilir ve Admine mesaj iletebilir.
 
 ## Proje Aşamaları:
-* Entity Framework Repository oluşturuldu.
-* Fluent Validation işlemleri yapılacak.
-* Tema Projeye eklendi.
-* Admin Girişi (Dasboard) olacak.
-* Partial View ve Await Async kullanıldı
-* View Component ile parametre kullanımı gerçekleştirildi.
-* 404 not found sayfası oluşturulacak.
-* HttpGet ve HttpPost attributeleri kullanıldı.
-* Generic Service yapıları kullanıldı
+* Entity Framework ile Repository oluşturuldu.
+* Fluent Validation kütüphanesi kullanılarak giriş validasyon işlemleri yapıldı.
+* Proje için bir tema entegrasyonu gerçekleştirildi.
+* Admin Girişi için bir Dashboard oluşturuldu.
+* Partial View ve Async Await kullanılarak işlemler optimize edildi.
+* View Component kullanılarak parametrelerin dinamik olarak kullanıldığı bileşenler eklendi.
+* Sayfa bulunamadı (404 not found) sayfası oluşturuldu.
+* HTTP GET ve HTTP POST attribute'leri kullanılarak HTTP istekleri yönlendirildi.
+* Generic Service yapıları kullanılarak tekrar eden işlemler merkezileştirildi.
+* Authentication ve Controller seviyesinde Authorize yapıldı.
 
 ## Görsel
 ![1](https://github.com/acunmedyaakademi/MirayDurgun_BlogProject/assets/117771962/e15420b7-3a23-410c-a6f3-f3f6aa40e099)
