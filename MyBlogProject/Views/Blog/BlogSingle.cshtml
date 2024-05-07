@@ -20,21 +20,26 @@
                                     <span class="entry-date">
                                         <time class="entry-date">@(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</time>
                                     </span>
-                                    <span class="cat-links">
-                                        @if (item.Category != null)
-                                        {
+                                    @if (item.Category != null)
+                                    {
+                                        <span>
                                             <a href="#" rel="category tag">@item.Category.CategoryName</a>
-                                        }
-                                    </span>
+                                        </span>
+                                    }
+                                    @if (ViewBag.CommentCount != 0)
+                                    {
+                                        <span>@ViewBag.CommentCount Yorum</span>
+                                    }
                                 </div>
                             </header>
+
                             <div class="featured-image">
                                 <img src="@item.BlogImage">
                             </div>
                         }
                     }
                     <div class="entry-content">
-                        
+
                         @if (Model != null)
                         {
 
