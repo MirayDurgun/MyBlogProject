@@ -18,11 +18,14 @@ namespace MyBlogProject.Areas.Admin.Controllers
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
+        CommentManager com =new CommentManager(new EfCommentRepository());
         Context c = new Context();
 
-        public IActionResult Index(string category)
+        public IActionResult Index(string category, int commentId)
         {
             var blogs = bm.GetList();
+
+
             foreach (var blog in blogs)
             {
                 // Her bir blogun kategorisini, CategoryManager sınıfından kategori ID'sine göre alır.

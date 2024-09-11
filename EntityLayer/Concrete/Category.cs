@@ -15,6 +15,6 @@ namespace EntityLayer.Concrete
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Kategori adı en az 3, en fazla 50 karakter içermelidir")]
         public string CategoryName { get; set; }
 
-        public List<Blog> Blogs { get; set; }
+        public List<Blog>? Blogs { get; set; }
     }
 }
