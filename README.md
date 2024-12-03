@@ -1,21 +1,23 @@
 # MyBlogProject
+## Kişisel Blog Platformu - Admin Paneli ile
+Teknolojiler: ASP.NET Core 8.0, Entity Framework Core, SQL Server, FluentValidation, MVC, LINQ, Authorization, Authentication, ViewComponent, Repository Pattern, Async/Await
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
 ## Proje Hakkında: 
-ASP.Net Core 8.0 ile Entity Framework Core, N-Tier Architechture ile veritabanı olarak SQL Server kullanılarak kodlanmaktadır.
-Proje Kullanıcı ve Admin Panelli bir Blog sitesidir. Kullanıcı yorum yapabilir, blog yazılarını beğenebilir ve Admine mesaj iletebilir.
+ASP.NET Core ile geliştirilen kişisel blog platformu. Kullanıcılar yorum yapabilir, yazarın portföyünü görüntüleyebilir ve içerikle etkileşime geçebilir. Admin blog yazılarını, portföy bilgilerini ve iş bilgilerini yönetebilir. Güvenlik, ASP.NET Core Identity ile sağlanmış ve kimlik doğrulama ve yetkilendirme işlemleri yapılmıştır.
 
-## Proje Aşamaları:
-* Entity Framework ile Repository oluşturuldu.
-* Fluent Validation kütüphanesi kullanılarak giriş validasyon işlemleri yapıldı.
-* Proje için bir tema entegrasyonu gerçekleştirildi.
-* Admin Girişi için bir Dashboard oluşturuldu.
-* Partial View ve Async Await kullanılarak işlemler optimize edildi.
-* View Component kullanılarak parametrelerin dinamik olarak kullanıldığı bileşenler eklendi.
-* Sayfa bulunamadı (404 not found) sayfası oluşturuldu.
-* HTTP GET ve HTTP POST attribute'leri kullanılarak HTTP istekleri yönlendirildi.
-* Generic Service yapıları kullanılarak tekrar eden işlemler merkezileştirildi.
-* Authentication ve Controller seviyesinde Authorize yapıldı.
+## Öne Çıkan Özellikler:
+Admin Paneli: Blog içeriği ve kullanıcı etkileşimini güvenli bir şekilde yönetmek için Authorization kullanıldı.
+Generic Repository Yapısı: Entity Framework Core ile Generic Repository Pattern implementasyonu kullanılarak veritabanı erişimi merkezileştirildi ve CRUD işlemleri optimize edildi.
+Kullanıcı Kimlik Doğrulama: ASP.NET Core Identity ve Cookie Authentication ile kullanıcı ve admin kimlik doğrulama işlemleri yapıldı.
+Validasyon: FluentValidation ile form doğrulama işlemleri gerçekleştirildi.
+Dinamik İçerik Yönetimi: ViewComponent kullanılarak sayfalarda dinamik içerik yönetimi sağlandı.
+Performans İyileştirmeleri: Async/Await kullanılarak asenkron veri işlemleri yapıldı.
+## Proje Yapısı:
+Veri Katmanı: Entity Framework Core ve SQL Server kullanılarak veritabanı ile etkileşim sağlandı.
+İş Katmanı: Blog yazıları, yorumlar ve admin içeriği yönetimi için servis sınıfları oluşturuldu.
+Sunum Katmanı: ASP.NET Core MVC kullanılarak controller, view ve view component yapıları oluşturuldu.
+Güvenlik: ASP.NET Core Identity kullanılarak güvenli kullanıcı kimlik doğrulama ve yetkilendirme işlemleri yapılmış, admin ve kullanıcı rollerine özel erişim sağlanmıştır.
 
 ## Görsel
 ![1](https://github.com/user-attachments/assets/64abdb60-b9e3-4594-ba68-7f4312a99901)
