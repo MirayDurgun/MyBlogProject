@@ -4,7 +4,7 @@ Teknolojiler: ASP.NET Core 8.0, Entity Framework Core, SQL Server, FluentValidat
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
 ## Proje Hakkında: 
-ASP.NET Core ile geliştirilen kişisel blog platformu. Kullanıcılar yorum yapabilir, yazarın portföyünü görüntüleyebilir ve içerikle etkileşime geçebilir. Admin blog yazılarını, portföy bilgilerini ve iş bilgilerini yönetebilir. Güvenlik, ASP.NET Core Identity ile sağlanmış ve kimlik doğrulama ve yetkilendirme işlemleri yapılmıştır.
+Kişisel blog platformumda, ASP.NET Core ve MVC ile modern bir yapı kurarak Entity Framework Core ve SQL Server ile veritabanı yönetimini sağladım. Authentication ve Authorization entegrasyonu ile güvenli kullanıcı girişleri sağladım. Admin paneliyle, içerik yönetimi ve yorum denetimi gibi işlevleri etkin bir şekilde yönettim. LINQ kullanarak veritabanı sorgularını optimize ettim ve kullanıcı dostu bir deneyim sundum. Projem, güvenlik, ölçeklenebilirlik ve şık bir arayüzle tasarlandı. Şu an, platformumda sadece kişisel portföyüm ve seyahat paylaşımlarım yer almakta.
 
 ## Öne Çıkan Özellikler:
 Admin Paneli: Blog içeriği ve kullanıcı etkileşimini güvenli bir şekilde yönetmek için Authorization kullanıldı.
